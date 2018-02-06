@@ -2,9 +2,16 @@
 <ion-content>
     <div style="position:absolute; z-index:9999999">
         <button menuToggle ion-button icon-only>
-            <ion-icon name="heart"></ion-icon>
+            <ion-icon md="md-menu" ios="md-menu"></ion-icon>
         </button>
     </div>
         <div #map id="map"></div>
+        
 </ion-content>
+<ion-footer>
+        <div [ngClass]="{'bot':okay}">
+                <ion-icon *ngIf="okay" [name]="icon"></ion-icon>
+            </div>
+</ion-footer>
+
 

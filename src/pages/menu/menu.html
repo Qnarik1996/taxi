@@ -1,12 +1,30 @@
 
-<ion-menu side="left" [content]="content">
-
+<ion-menu side="left" type="overlay" [content]="content">
+<ion-header>
+    <ion-navbar no-padding no-margin>
+    <img src="assets/imgs/taxi.jpg"> 
+   
+</ion-navbar>
+<div class="image-div">  
+    <img src="assets/imgs/girl.jpg">      
+    </div>
+</ion-header>
     <ion-content>
         
         <ion-list>
-            <ion-item><button ion-button>gfre</button></ion-item>
-            <ion-item><button ion-button>greger</button></ion-item>
-            <ion-item><button ion-button>grehyre</button></ion-item>
+           <button ion-item *ngFor="let page of pages" detail-none no-lines>
+               <ion-grid>
+                 <ion-row>
+                    <ion-col col-3>
+                            <ion-icon name={{page.iconsName}}></ion-icon>
+                    </ion-col> 
+                    <ion-col>
+                            <span class="span">{{page.text}}</span>
+                    </ion-col>
+                 </ion-row>           
+               
+            </ion-grid>
+            </button>
         </ion-list>
       </ion-content>
 </ion-menu>

@@ -14,12 +14,27 @@ export class HomePage {
   }
   ionViewDidLoad(){
     this.loadMap()
+    //giygiygiygyigiyg
+    document.addEventListener('click', () => {
+      this.ok()
+    })
+  }
+  //yhguyguyguyfgy
+  private icon:string = "arrow-up";
+  ok(){
+    this.okay = !this.okay;
+    if(this.okay){
+      this.icon = 'arrow-down';
+    }else{
+      this.icon = 'arrow-up';
+    }
   }
 
   @ViewChild('map') mapElement:ElementRef;
   mapInitialised: boolean = false;
   map:any;
   enabled:boolean=false;
+  okay:boolean = false;
   initMap(latLng){
     let  mapOption={
       center:latLng,
@@ -33,8 +48,7 @@ export class HomePage {
       fullscreenControl: false
       }
   this.map=new google.maps.Map(this.mapElement.nativeElement,mapOption);
-  
-  }
+      }
   loadMap(){
     this.geolocation.getCurrentPosition()
     .then((location) => {

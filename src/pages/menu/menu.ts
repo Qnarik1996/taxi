@@ -23,11 +23,11 @@ export class MenuPage {
       text:"Booking"
     },
     {
-      iconsName:"",
+      iconsName:"ios-card",
       text:"Payments"
     },
     {
-      iconsName:"",
+      iconsName:"contacts",
       text:"Contact Us"
     },
 

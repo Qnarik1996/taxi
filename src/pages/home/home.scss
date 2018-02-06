@@ -1,6 +1,30 @@
 page-home {
+
+    @keyframes lineInserted {
+        from {
+          height: 0;
+        }
+        to {
+          height: 400px; /* your line height here */
+        }
+      }
+      .bot {
+        animation-duration: .3s;
+        animation-name: lineInserted;
+        animation-fill-mode: forwards;
+        transition: min-height .3s ease-in-out;
+        background: red;
+        
+      }
+
+
+    
 #map{
     height: 100%;
     width: 100%
+}
+.button-ios{
+    color: #999;
+    background-color: white;
 }
 }
