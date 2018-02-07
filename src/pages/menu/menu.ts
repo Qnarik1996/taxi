@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import {NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { Component, ViewChild } from '@angular/core';
+import {NavController, NavParams, Nav } from 'ionic-angular';
+
+import { BookingPage, PaymentsPage, MapPage,HomePage  } from '../barrel';
+
 
 @Component({
   selector: 'page-menu',
@@ -8,29 +10,45 @@ import { HomePage } from '../home/home';
 
 })
 export class MenuPage {
-
+@ViewChild(Nav) nav:Nav
   constructor() {
   }
 
-  rootPage=HomePage;
+  rootPage=MapPage;
   pages:any[]=[
     {
       iconsName:"ios-pin",
-      text:"Home"
+      pageName:"Home",
+      component:HomePage
     },
     {
       iconsName:"ios-bookmark",
-      text:"Booking"
+      pageName:"Booking",
+      component:BookingPage
     },
     {
       iconsName:"ios-card",
-      text:"Payments"
+      pageName:"Payments",
+      component:PaymentsPage
     },
     {
-      iconsName:"contacts",
-      text:"Contact Us"
+      iconsName:"ios-ionitron",
+      pageName:"Contact Us"
     },
 
   ]
+  downPages:any[]=[
+    {
+      pageName:"About Us"
+    },
+    {
+      pageName:"Privacy Policy"
+    }
+  ]
+  openPage(page){
+    
+      this.nav.setRoot(page.component, {pageName:page.pageName})
+    
+  }
   
 }

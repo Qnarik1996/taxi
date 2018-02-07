@@ -4,9 +4,13 @@ page-menu {
         font-size: 2.2em;
     }
     .span{
-        font-size: 3vw;
+        font-size: 2.5vw;
         
     }
+
+
+
+
     .toolbar-content-ios{
         margin-bottom: -4px;
         position: relative;
@@ -19,8 +23,25 @@ page-menu {
         background-color: rgba(0, 0, 0, 0.5);
         img{
             border-radius: 50%;
-            width: 5vw;
-            height: 5vw;
+            width: 9vw;
+            height: 9vw;
+            margin: 26px;
         }
     }
+    .setting-icon{
+        position: absolute;
+        right: 3vw;
+        bottom: 2vw;
+        color: white;
+        font-size: 2vw;
+    }
+    .down-menu{
+        margin-top: 4vw;
+    }
+        [offset-3]{
+            color: grey;
+            margin-bottom: 3vw;
+            font-size: 2.5vw
+        }
+    
 }

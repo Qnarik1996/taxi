@@ -1,31 +1,56 @@
 
 <ion-menu side="left" type="overlay" [content]="content">
-<ion-header>
-    <ion-navbar no-padding no-margin>
-    <img src="assets/imgs/taxi.jpg"> 
-   
-</ion-navbar>
-<div class="image-div">  
-    <img src="assets/imgs/girl.jpg">      
-    </div>
-</ion-header>
+
+        <ion-header>
+           <ion-navbar no-padding>
+
+               <img src="assets/imgs/taxi.jpg">
+               <div class="image-div">  
+                    <img src="assets/imgs/girl.jpg">
+                   
+                            <ion-icon class="setting-icon" ios="md-settings" md="md-settings" color="white"></ion-icon>    
+                   
+                      
+                    </div>
+           </ion-navbar>
+            </ion-header>
     <ion-content>
         
         <ion-list>
-           <button ion-item *ngFor="let page of pages" detail-none no-lines>
+           <button ion-item *ngFor="let page of pages" menuClose (tap)="openPage(page)" detail-none no-lines>
                <ion-grid>
                  <ion-row>
                     <ion-col col-3>
-                            <ion-icon name={{page.iconsName}}></ion-icon>
+                            <ion-icon [name]="page.iconsName"></ion-icon>
                     </ion-col> 
                     <ion-col>
-                            <span class="span">{{page.text}}</span>
+                            <span class="span">{{page.pageName}}</span>
                     </ion-col>
-                 </ion-row>           
+                 </ion-row>  
+                 <ion-row>
+
+                 </ion-row>         
                
-            </ion-grid>
+                </ion-grid>
             </button>
+       
+
+        <ion-grid class="down-menu">
+            <ion-row *ngFor="let page of downPages">
+                <ion-col offset-3 >{{page.pageName}}</ion-col>
+                </ion-row>
+                <ion-row>
+                        <ion-col style="font-size: 1.5vw" offset-3>Log Out</ion-col>
+                    </ion-row>
+                
+        </ion-grid>
+
+
+
         </ion-list>
       </ion-content>
 </ion-menu>
 <ion-nav #content [root]="rootPage"></ion-nav>
+
+
+

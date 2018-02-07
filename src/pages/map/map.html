@@ -1,0 +1,18 @@
+<ion-content>
+       
+    <div class="content">
+        <button menuToggle ion-button icon-only>
+            <ion-icon md="md-menu" ios="md-menu"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="ok()">
+                <ion-icon md="ios-car" ios="ios-car"></ion-icon>
+            </button>
+            <div [ngClass]="{'bot':okay == false, 'bottom':okay == true}">
+                    <ion-icon  [name]="icon"></ion-icon>
+                    <p>yuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu</p>
+                </div>
+    </div>
+    <div #map id="map"></div>
+    
+    
+</ion-content>

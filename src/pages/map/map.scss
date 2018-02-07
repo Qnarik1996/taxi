@@ -1,0 +1,40 @@
+page-map {
+
+
+      .bot {
+        position: absolute;
+        height: 400px;
+        width: 100%;
+        bottom: -400px;
+        background: grey;  
+        transition: bottom 1s;
+      }
+      .bottom{
+        bottom: 0;
+        position: absolute;
+        height: 400px;
+        width: 100%; 
+        background: grey;  
+        transition: bottom 1s;
+       }
+     
+    
+#map{
+    height: 100%;
+    width: 100%
+}
+.button-ios{
+    color: #999;
+    background-color: white;
+}
+.button-ios.activated{
+  background-color: white;
+}
+.content{
+ position: absolute;
+ z-index: 999999;
+ height: 100%;
+ width: 100%;
+  
+}
+}

@@ -4,17 +4,31 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Geolocation } from '@ionic-native/geolocation';
-
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { MenuPage } from '../pages/menu/menu';
 import { NavController } from 'ionic-angular';
+
+
+
+import {MenuPage,
+        BookingPage,
+        MapPage,
+        NewHeader,
+        HomePage,
+        MyApp,
+        PaymentsPage
+} from '../pages/barrel';
+
+
+
 
 @NgModule({
   declarations: [
     MyApp,
+    MapPage,
+    MenuPage,
+    BookingPage,
+    NewHeader,
     HomePage,
-    MenuPage
+    PaymentsPage
   ],
   imports: [
     BrowserModule,
@@ -23,8 +37,12 @@ import { NavController } from 'ionic-angular';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    MapPage,
+    MenuPage,
+    BookingPage,
+    NewHeader,
     HomePage,
-    MenuPage
+    PaymentsPage
   ],
   providers: [
     StatusBar,

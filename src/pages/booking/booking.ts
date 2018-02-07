@@ -2,15 +2,14 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-booking',
+  templateUrl: 'booking.html',
 })
-export class HomePage {
+export class BookingPage {
 pageName;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.pageName=this.navParams.get('pageName')
+  this.pageName = this.navParams.get('pageName')
   }
-
 
 
 }
