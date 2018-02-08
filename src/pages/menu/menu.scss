@@ -23,9 +23,10 @@ page-menu {
         background-color: rgba(0, 0, 0, 0.5);
         img{
             border-radius: 50%;
+            border: 3px solid silver;
             width: 9vw;
             height: 9vw;
-            margin: 26px;
+            margin:26px 26px 10px;
         }
     }
     .setting-icon{
@@ -42,6 +43,20 @@ page-menu {
             color: grey;
             margin-bottom: 3vw;
             font-size: 2.5vw
+        }
+        .identity{
+            color: white;
+            margin-left: 20px;
+            font-size: 1.2em;
+            p{
+                margin: 0;
+            }
+        }
+
+
+
+        .checked-menu{
+            background-color: grey
         }
     
 }

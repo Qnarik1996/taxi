@@ -12,7 +12,6 @@ import {MenuPage,
         BookingPage,
         MapPage,
         NewHeader,
-        HomePage,
         MyApp,
         PaymentsPage
 } from '../pages/barrel';
@@ -27,7 +26,6 @@ import {MenuPage,
     MenuPage,
     BookingPage,
     NewHeader,
-    HomePage,
     PaymentsPage
   ],
   imports: [
@@ -41,7 +39,6 @@ import {MenuPage,
     MenuPage,
     BookingPage,
     NewHeader,
-    HomePage,
     PaymentsPage
   ],
   providers: [

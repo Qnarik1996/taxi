@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import {NavController, NavParams, Nav } from 'ionic-angular';
 
-import { BookingPage, PaymentsPage, MapPage,HomePage  } from '../barrel';
+import { BookingPage, PaymentsPage, MapPage} from '../barrel';
 
 
 @Component({
@@ -13,13 +13,13 @@ export class MenuPage {
 @ViewChild(Nav) nav:Nav
   constructor() {
   }
-
+activePage=MapPage
   rootPage=MapPage;
   pages:any[]=[
     {
       iconsName:"ios-pin",
       pageName:"Home",
-      component:HomePage
+      component:MapPage
     },
     {
       iconsName:"ios-bookmark",
@@ -37,6 +37,7 @@ export class MenuPage {
     },
 
   ]
+
   downPages:any[]=[
     {
       pageName:"About Us"
@@ -45,8 +46,12 @@ export class MenuPage {
       pageName:"Privacy Policy"
     }
   ]
-  openPage(page){
+  addClass(page){
     
+      return  this.activePage==page.component
+  }
+  openPage(page){
+      this.activePage=page.component;
       this.nav.setRoot(page.component, {pageName:page.pageName})
     
   }

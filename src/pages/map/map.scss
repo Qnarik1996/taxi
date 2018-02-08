@@ -3,25 +3,27 @@ page-map {
 
       .bot {
         position: absolute;
-        height: 400px;
+        height: 27vw;
         width: 100%;
         bottom: -400px;
-        background: grey;  
+        background: white;  
         transition: bottom 1s;
+        z-index: 99999999
       }
       .bottom{
         bottom: 0;
         position: absolute;
-        height: 400px;
+        height:27vw;
         width: 100%; 
-        background: grey;  
+        background: white;  
         transition: bottom 1s;
+        z-index: 99999999
        }
      
     
 #map{
     height: 100%;
-    width: 100%
+     width: 100%
 }
 .button-ios{
     color: #999;
@@ -36,5 +38,11 @@ page-map {
  height: 100%;
  width: 100%;
   
+}
+.menuopen{
+  z-index:9999999;
+  position:absolute;
+   top:0; 
+   left:0  
 }
 }
