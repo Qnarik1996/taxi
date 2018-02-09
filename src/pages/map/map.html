@@ -7,9 +7,83 @@
                 </div>                
             <div [ngClass]="{'bot':okay == false, 'bottom':okay == true}">
                     
-                    <div style="text-align:center">
+                    <div style="text-align:center; color: gray;">
                         <ion-icon  [name]="icon" (click)="ok()"></ion-icon>
                     </div>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col offset-2>
+                                <div class="Cardiv">
+                                <div class="orderCar"> 
+                                    <ion-icon name="car"></ion-icon>
+                                </div>
+                                <div class="text">
+                                <span>Basic</span>
+                                <span>$8.20</span>
+                                </div>
+                                </div>
+                            </ion-col>
+                            <ion-col>
+                                <div class="coneqt">                               
+                                     <div class="line">    
+                                </div>                               
+                                </div>
+                            </ion-col>
+                            <ion-col >
+                                    <div class="Cardiv">
+                                    <div class="orderCar"> 
+                                        <ion-icon name="car"></ion-icon>
+                                    </div>
+                                    <div class="text">
+                                            <span>Normal</span>
+                                            <span>$25.30</span>
+                                            </div>
+                                    </div>
+                                </ion-col>
+                                <ion-col >
+                                        <div class="coneqt">                               
+                                             <div class="line">    
+                                        </div>                               
+                                        </div>
+                                    </ion-col>
+                            <ion-col >
+                                    <div class="Cardiv">
+                                    <div class="orderCar"> 
+                                        <ion-icon name="car"></ion-icon>
+                                    </div>
+                                    <div class="text">
+                                            <span>Luxurious</span>
+                                            <span>$38.20</span>
+                                            </div>
+                                    </div>
+                                </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <div class="footer">
+                        <div class="mony">
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col >
+                                            <div class="price">
+                                                    <div>$</div>
+                                                </div>
+                                    </ion-col>
+                                    <ion-col >
+                                        <span>Cash</span>
+                                    </ion-col>
+                                    <ion-col  >
+                                            <div class="promo"> 
+                                                <p> %</p>   
+                                                   </div>
+                                    </ion-col>
+                                    <ion-col  >
+                                        <span>Promo</span>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>                   
+                    
+                    </div>
+                </div>
                 </div>   
     <div #map id="map">       
     </div>   

@@ -45,4 +45,109 @@ page-map {
    top:0; 
    left:0  
 }
+.orderCar{
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background: LightGray ;
+  display: flex;
+  align-items: center;
+  ion-icon{
+    font-size: 55px;
+    color: #6b0b0b;
+    margin: 0 auto;
+  }
 }
+ion-grid{
+  left: 9%;
+  position: relative;
+ion-row{
+width: 70%;
+}
+}
+.Cardiv{
+  .text{
+    text-align: center;
+    width: 100px;
+    color: grey;
+    font-size: 1.5em;
+        }
+  }
+  .coneqt{
+    height: 100px;
+    display: flex;
+    align-items: center;
+  .line{
+    width: 15vh;
+    height: 1vh;
+    border-radius: 20px;
+    background-color: silver
+     ;
+  }
+  }
+  .footer{
+    width: 100%;
+    border-top: 3px solid silver;
+     position: relative;
+    .mony{
+      width: 40%;
+      position: absolute;
+      right: 50px;
+      ion-grid{
+        ion-row{
+          width: 100%;
+          ion-col{
+            display: flex;
+            align-items: center;
+            span{
+              font-size: 2em;
+            color:grey;
+          }
+             
+    .price{
+      position: absolute;
+      background-color: silver;
+      border-radius: 5px;
+      height: 55px;
+      width: 80px;
+      text-align: center;
+      align-items: center;
+      margin: 0 auto;
+      display: flex;
+    div{
+      border-radius: 50%;
+      background-color: white;
+      height: 30px;
+      margin: 0 auto;
+      width: 30px;
+      color: gray;
+      font-size: 1.5em;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  .promo{
+   
+      background-color: silver;
+      border-radius: 5px;
+      height: 55px;
+      width: 80px;
+      text-align: center;
+      align-items: center;
+      margin: 0 auto;
+      display: flex;
+      color: white;
+      font-size: 2.5em;
+      p{
+        margin: 0 auto;
+      }
+  }
+  }
+}
+}
+      }
+    }
+  }
+
+
+
