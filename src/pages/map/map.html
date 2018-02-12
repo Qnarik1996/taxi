@@ -1,91 +1,111 @@
-<ion-content>        
-    
-        <div class="menuopen">
-                <button  menuToggle ion-button icon-only>
-                        <ion-icon md="md-menu" ios="md-menu"></ion-icon>
-                    </button>
-                </div>                
-            <div [ngClass]="{'bot':okay == false, 'bottom':okay == true}">
-                    
-                    <div style="text-align:center; color: gray;">
-                        <ion-icon  [name]="icon" (click)="ok()"></ion-icon>
+<ion-content>
+    <button (tap)="addNewCard()" ion-button style="position:absolute;z-index:5;top:0; height:20px; width:20px; right:0;"> </button>
+    <div class="menuopen">
+        <button menuToggle ion-button icon-only>
+            <ion-icon md="md-menu" ios="md-menu"></ion-icon>
+        </button>
+    </div>
+    <div [ngClass]="{'bot':okay == false, 'bottom':okay == true}">
+
+        <ion-grid class="messege-grid">
+            <ion-row *ngFor="let item of order; let i=index">
+                <ion-col>
+                    <div [ngClass]="{'pickup-locetion' : !item.delete, 'pickup-locetion-delete' : item.delete}">
+                        <div class="on-icon"></div>
+                        <div>
+                            <p class="pickup">Pickup Location {{i}}</p>
+                            <p class="order">{{item.text}}</p>
+                        </div>
                     </div>
-                    <ion-grid>
-                        <ion-row>
-                            <ion-col offset-2>
-                                <div class="Cardiv">
-                                <div class="orderCar"> 
-                                    <ion-icon name="car"></ion-icon>
-                                </div>
-                                <div class="text">
-                                <span>Basic</span>
-                                <span>$8.20</span>
-                                </div>
-                                </div>
-                            </ion-col>
-                            <ion-col>
-                                <div class="coneqt">                               
-                                     <div class="line">    
-                                </div>                               
-                                </div>
-                            </ion-col>
-                            <ion-col >
-                                    <div class="Cardiv">
-                                    <div class="orderCar"> 
-                                        <ion-icon name="car"></ion-icon>
-                                    </div>
-                                    <div class="text">
-                                            <span>Normal</span>
-                                            <span>$25.30</span>
-                                            </div>
-                                    </div>
-                                </ion-col>
-                                <ion-col >
-                                        <div class="coneqt">                               
-                                             <div class="line">    
-                                        </div>                               
-                                        </div>
-                                    </ion-col>
-                            <ion-col >
-                                    <div class="Cardiv">
-                                    <div class="orderCar"> 
-                                        <ion-icon name="car"></ion-icon>
-                                    </div>
-                                    <div class="text">
-                                            <span>Luxurious</span>
-                                            <span>$38.20</span>
-                                            </div>
-                                    </div>
-                                </ion-col>
-                        </ion-row>
-                    </ion-grid>
-                    <div class="footer">
-                        <div class="mony">
-                            <ion-grid>
-                                <ion-row>
-                                    <ion-col >
-                                            <div class="price">
-                                                    <div>$</div>
-                                                </div>
-                                    </ion-col>
-                                    <ion-col >
-                                        <span>Cash</span>
-                                    </ion-col>
-                                    <ion-col  >
-                                            <div class="promo"> 
-                                                <p> %</p>   
-                                                   </div>
-                                    </ion-col>
-                                    <ion-col  >
-                                        <span>Promo</span>
-                                    </ion-col>
-                                </ion-row>
-                            </ion-grid>                   
-                    
+                </ion-col>
+            </ion-row>
+
+        </ion-grid>
+
+
+
+        <div style="text-align:center; color: gray;">
+            <ion-icon [name]="icon" (click)="ok()"></ion-icon>
+        </div>
+        <ion-grid>
+            <ion-row justify-content-center>
+                <ion-col>
+                    <div class="Cardiv">
+                        <div class="orderCar">
+                            <ion-icon name="car"></ion-icon>
+                        </div>
+                        <div class="text">
+                            <span>Basic</span>
+                            <span>$8.20</span>
+                        </div>
                     </div>
-                </div>
-                </div>   
-    <div #map id="map">       
-    </div>   
-    
+                </ion-col>
+                <ion-col>
+                    <div class="coneqt">
+                        <div class="line">
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div class="Cardiv">
+                        <div class="orderCar">
+                            <ion-icon name="car"></ion-icon>
+                        </div>
+                        <div class="text">
+                            <span>Normal</span>
+                            <span>$25.30</span>
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div class="coneqt">
+                        <div class="line">
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div class="Cardiv">
+                        <div class="orderCar">
+                            <ion-icon name="car"></ion-icon>
+                        </div>
+                        <div class="text">
+                            <span>Luxurious</span>
+                            <span>$38.20</span>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+
+
+        </ion-grid>
+
+        <div class="footer">
+            <div class="mony">
+                <ion-grid>
+                    <ion-row justify-content-end>
+                        <ion-col>
+                            <div class="price">
+                                <div>$</div>
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <span>Cash</span>
+                        </ion-col>
+                        <ion-col>
+                            <div class="promo">
+                                <p> %</p>
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <span>Promo</span>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+            </div>
+        </div>
+    </div>
+    <div #map id="map">
+    </div>
+
 </ion-content>

@@ -1,21 +1,107 @@
 page-map {
+  ion-content{
+    .scroll-content{
+      overflow: hidden
+    }
+  
+  .messege-grid{
+    flex-direction: column-reverse;
+    height: 35vw;
+    width: fit-content;  
+    position: absolute;
+    right: 20px;
+    top: -35vw;
+    .row{
+      margin: 1vw 0;
+      .col{
 
+         
+          .pickup-locetion{
+            background-color: white;
+            width: 35vw;
+            height: 8vw;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px 6px silver;
+            display: flex;
+            align-items: center;
+            .on-icon{
+              background-color: #1feb88;
+              border-radius: 50%;
+              height: 20px;
+              width: 20px;
+              margin: 16px
+            }
+            div{            
+             .pickup{
+                margin: 0;
+                color: grey;
+             }
+             .order{
+               font-size: 1.5em;
+               margin: 0
+             }
+               
+              }
+              animation: card-animation 0.3s;
+            }
+            .pickup-locetion-delete{
+              background-color: white;
+              width: 35vw;
+              height: 8vw;
+              border-radius: 20px;
+              box-shadow: 0px 0px 20px 6px silver;
+              display: flex;
+              align-items: center;
+              .on-icon{
+                background-color: #1feb88;
+                border-radius: 50%;
+                height: 20px;
+                width: 20px;
+                margin: 16px
+              }
+              div{            
+               .pickup{
+                  margin: 0;
+                  color: grey;
+               }
+               .order{
+                 font-size: 1.5em;
+                 margin: 0
+               }
+                 
+                }
+                animation: card-animation-delete 0.01s;
+              }
+            @keyframes card-animation {
+              0%{opacity: 0};
+              100%{opacity: 1};
+            }
+            @keyframes card-animation-delete {
+              0%{opacity: 1};
+              100%{opacity: 0};
+            }
+          
+      }
+    }
+
+}
+  
 
       .bot {
         position: absolute;
-        height: 27vw;
+        height: 35vh;
         width: 100%;
-        bottom: -400px;
-        background: white;  
+        bottom: -35vh;
+        background: white; 
         transition: bottom 1s;
         z-index: 99999999
       }
       .bottom{
         bottom: 0;
         position: absolute;
-        height:27vw;
+       height: 35vh;
         width: 100%; 
-        background: white;  
+        background: white; 
         transition: bottom 1s;
         z-index: 99999999
        }
@@ -47,8 +133,8 @@ page-map {
 }
 .orderCar{
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  height: 12vh;
+  width: 12vh;
   background: LightGray ;
   display: flex;
   align-items: center;
@@ -59,22 +145,22 @@ page-map {
   }
 }
 ion-grid{
-  left: 9%;
-  position: relative;
+  
+ 
 ion-row{
-width: 70%;
+margin: 0 auto
 }
 }
 .Cardiv{
   .text{
     text-align: center;
-    width: 100px;
+    width: 12vh;
     color: grey;
     font-size: 1.5em;
         }
   }
   .coneqt{
-    height: 100px;
+    height: 12vh;
     display: flex;
     align-items: center;
   .line{
@@ -108,8 +194,8 @@ width: 70%;
       position: absolute;
       background-color: silver;
       border-radius: 5px;
-      height: 55px;
-      width: 80px;
+      height: 6vh;
+      width: 9vh;
       text-align: center;
       align-items: center;
       margin: 0 auto;
@@ -117,9 +203,8 @@ width: 70%;
     div{
       border-radius: 50%;
       background-color: white;
-      height: 30px;
       margin: 0 auto;
-      width: 30px;
+      width: 4vh;
       color: gray;
       font-size: 1.5em;
       font-weight: bold;
@@ -130,8 +215,8 @@ width: 70%;
    
       background-color: silver;
       border-radius: 5px;
-      height: 55px;
-      width: 80px;
+      height: 6vh;
+      width: 9vh;
       text-align: center;
       align-items: center;
       margin: 0 auto;
@@ -147,6 +232,8 @@ width: 70%;
 }
       }
     }
+   
+  }
   }
 
 
