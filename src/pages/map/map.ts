@@ -27,7 +27,7 @@ count=0;
       let interval=setTimeout(()=>{ 
         this.order.splice(0,1);
         this.order.push({ text: "Historical Library & Museum"+this.count.toString(), delete:false});
-   },1000);
+   },10);
     }
     else{
       this.order.push({ text: "Historical Library & Museum"+this.count.toString(), delete:false});

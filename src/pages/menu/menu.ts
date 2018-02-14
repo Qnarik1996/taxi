@@ -18,34 +18,27 @@ activePage=MapPage
   pages:any[]=[
     {
       iconsName:"ios-pin",
-      pageName:"Home",
+      pageName:"Main",
       component:MapPage
     },
     {
       iconsName:"ios-bookmark",
-      pageName:"Booking",
+      pageName:"Hotels",
       component:BookingPage
     },
     {
       iconsName:"ios-card",
-      pageName:"Payments",
+      pageName:"History",
       component:PaymentsPage
     },
     {
-      iconsName:"ios-ionitron",
-      pageName:"Contact Us"
+      iconsName:"md-settings",
+      pageName:"Settings"
     },
 
   ]
 
-  downPages:any[]=[
-    {
-      pageName:"About Us"
-    },
-    {
-      pageName:"Privacy Policy"
-    }
-  ]
+ 
   addClass(page){
     
       return  this.activePage==page.component

@@ -144,6 +144,9 @@ page-map {
     margin: 0 auto;
   }
 }
+
+
+
 ion-grid{
   
  
@@ -159,7 +162,7 @@ margin: 0 auto
     font-size: 1.5em;
         }
   }
-  .coneqt{
+  .connect{
     height: 12vh;
     display: flex;
     align-items: center;
@@ -175,7 +178,7 @@ margin: 0 auto
     width: 100%;
     border-top: 3px solid silver;
      position: relative;
-    .mony{
+    .money{
       width: 40%;
       position: absolute;
       right: 50px;
@@ -183,8 +186,7 @@ margin: 0 auto
         ion-row{
           width: 100%;
           ion-col{
-            display: flex;
-            align-items: center;
+           
             span{
               font-size: 2em;
             color:grey;
