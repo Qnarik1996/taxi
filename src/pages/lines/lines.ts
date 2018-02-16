@@ -1,15 +1,22 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-@Component({
-  selector: 'page-booking',
-  templateUrl: 'booking.html',
-})
-export class BookingPage {
-pageName;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  this.pageName = this.navParams.get('pageName')
-  }
+const linse=[
+  [],
+  [],
+  [],
+  []
+] 
 
+
+@Component({
+  selector: 'page-lines',
+  templateUrl: 'lines.html',
+})
+export class LinesPage {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+ linse = linse
 
 }

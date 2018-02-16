@@ -9,11 +9,13 @@ import { NavController } from 'ionic-angular';
 
 
 import {MenuPage,
-        BookingPage,
+        HotelPage,
         MapPage,
         NewHeader,
         MyApp,
-        PaymentsPage
+        HistoryPage,
+        LinesPage
+
 } from '../pages/barrel';
 
 
@@ -24,9 +26,10 @@ import {MenuPage,
     MyApp,
     MapPage,
     MenuPage,
-    BookingPage,
+    HotelPage,
     NewHeader,
-    PaymentsPage
+    HistoryPage,
+    LinesPage
   ],
   imports: [
     BrowserModule,
@@ -37,9 +40,10 @@ import {MenuPage,
     MyApp,
     MapPage,
     MenuPage,
-    BookingPage,
+    HotelPage,
     NewHeader,
-    PaymentsPage
+    HistoryPage,
+    LinesPage
   ],
   providers: [
     StatusBar,

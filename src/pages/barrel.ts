@@ -1,6 +1,7 @@
-export * from './booking/booking';
+export * from './hotel/hotel';
 export * from './menu/menu';
 export *from './map/map';
 export * from './new-header';
 export * from './../app/app.component';
-export *from './payments/payments'
+export *from './history/history'
+export *from './lines/lines'

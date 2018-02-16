@@ -3,10 +3,10 @@ import {NavController, NavParams } from 'ionic-angular';
 
 
 @Component({
-  selector: 'page-payments',
-  templateUrl: 'payments.html',
+  selector: 'page-history',
+  templateUrl: 'history.html',
 })
-export class PaymentsPage {
+export class HistoryPage {
 pageName;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.pageName=this.navParams.get('pageName')
