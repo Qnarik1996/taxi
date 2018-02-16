@@ -1,22 +1,15 @@
 page-hotel {
     ion-content{
        
-        .card{
-            height: 30vh;
-            width: 40vh;
+        .card{           
             padding: 10px;
             border-bottom: 8px solid #980b2e;
-            margin: 35px 12px;
+            margin: 5vh 2vh;
             box-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
-            .card-content{
-                position: relative;
-                height: 26vh;
-            }
+          
         }
         .buttons-grid{
-            position: absolute;
-            bottom: 0;
-            left: 0;
+           margin-top: 14vh;
         }
         .foto{
             height: 10vh;
@@ -26,13 +19,14 @@ page-hotel {
             float: left;
         }
         .text{
-            margin-left: 13vh;
+           float: right;
+           margin-right: 2vh;
         }
         .name{
-            font-size: 1.7em;
+            font-size: 2.2vw;
         }
         .tel{
-            font-size: 1.2em;
+            font-size: 1.5vw;
             color: grey
         }
     }
