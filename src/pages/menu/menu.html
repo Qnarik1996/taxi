@@ -1,51 +1,27 @@
-
 <ion-menu side="left" type="overlay" [content]="content">
 
-        <ion-header>
-           <ion-navbar no-padding>
 
-               <img src="assets/imgs/taxi.jpg">
-               <div class="image-div">  
-                    <img src="assets/imgs/girl.jpg">                   
-                           
-                <div class="identity">
-                   <p>Vannesa Donavan </p>  
-                   <p>(+374) 546 218 454</p>    
-                   </div>               
-                    </div>
-           </ion-navbar>
-            </ion-header>
-    <ion-content>
-        
-        <ion-list>
-           <button ion-item *ngFor="let page of pages" menuClose (tap)="openPage(page)" [class.checked-menu]="addClass(page)" detail-none no-lines>
-               <ion-grid>
-                 <ion-row>
-                    <ion-col col-3>
-                            <ion-icon [name]="page.iconsName"></ion-icon>
-                    </ion-col> 
-                    <ion-col>
-                            <span class="span">{{page.pageName}}</span>
-                    </ion-col>
-                 </ion-row>  
-                        
-                </ion-grid>
-            </button>
-       
+        <ion-content>
 
-      
-          
-              <div class="down-menu">Sing Out</div>
-                      
-                   
-        
+                <div class="taxi-image">
+                        <div class="image-div">
+                                <div class="photo-information-user">
+                                        <img src="assets/imgs/girl.jpg">
+                                        <div class="identity">
+                                                <p p1-size>Vannesa Donavan </p>
+                                                <p p2-size>(+374) 546 218 454</p>
+                                        </div>
+                                </div>
+                             
+                                        <button ion-item *ngFor="let page of pages" class="nobackground" menuClose [class.checked-menu]="addClass(page)" (tap)="openPage(page)" detail-none>
 
-
-
-        </ion-list>
-      </ion-content>
+                                                <ion-icon [name]="page.iconsName" item-start color="danger"></ion-icon>
+                                                <ion-label>{{page.pageName}}</ion-label>
+                                        </button>
+                                        <div class="down-menu">Sing Out</div>
+                               
+                        </div>
+                </div>
+        </ion-content>
 </ion-menu>
 <ion-nav #content [root]="rootPage"></ion-nav>
-
-
-

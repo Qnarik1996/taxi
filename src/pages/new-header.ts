@@ -11,7 +11,7 @@ import {Component, Input} from '@angular/core';
                         </button>
                     </div>
                     <div class="title-name">
-                    <span>{{pageName}}</span>
+                    {{pageName}}
                     </div>
         </ion-navbar>
 </ion-header>`,
@@ -21,6 +21,10 @@ styles:[
     }
     ion-navbar{
         height: 9vh;
+        .toolbar-content-ios{
+            align-items: center;
+            display: flex;
+        }
     }
     .bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default{
         font-size: 30px;
@@ -28,12 +32,11 @@ styles:[
        
     }
     .title-name{
-        position: absolute;
-        top: 0.4vh;
-        left: 18vh;
+        margin-left:10vh;
         font-size: 1.6em;
         
     }
+    
 
 
     `

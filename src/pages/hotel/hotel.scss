@@ -1,33 +1,65 @@
 page-hotel {
     ion-content{
-       
-        .card{           
-            padding: 10px;
-            border-bottom: 8px solid #980b2e;
-            margin: 5vh 2vh;
-            box-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
-          
+        .scroll-content{
+            top:7vh;
         }
-        .buttons-grid{
-           margin-top: 14vh;
-        }
-        .foto{
-            height: 10vh;
-            width: 10vh;
-            border-radius: 50%;
-            background-color: #980b2e;
-            float: left;
-        }
-        .text{
-           float: right;
-           margin-right: 2vh;
-        }
-        .name{
-            font-size: 2.2vw;
-        }
-        .tel{
-            font-size: 1.5vw;
-            color: grey
+        [col-4]{
+            max-width: 32.33333%;
+            width: 32.33333%;
+            padding: 15px;
+            .in-card{
+                
+                background-image: url(../../assets/imgs/taxi.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                .card{           
+                    background: rgba(39, 10, 16, 0.8);
+                    height: 100%;
+                    width: 100%;
+                    margin-left: 0vh;
+                    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+                
+                }
+                .buttons-grid{
+                margin-top: 14vh;
+                }
+                .photo{
+                    height: 8vh;
+                    width: 8vh;
+                    border-radius: 50%;
+                    float: left;
+                
+                    img{
+                        height: 8vh;
+                    width: 8vh;
+                    border-radius: 50%;
+                    border: 3px solid white;
+                    }
+                }
+                .text{
+                float: left;
+                margin-top: 1vh;
+                color: white;
+                margin-left: 3vh;
+                }
+                .name{
+                    font-size: 1.3em;
+                }
+                .tel{
+                    font-size: 1em;
+                    text-align: center;
+                }
+                .button-outline-ios-newblue{
+                    border-color: white;
+                    color: white;
+                    border: 2px solid white;
+                    font-weight: bold;
+                    height: 2.1em
+                }
+            
+             }
+            
         }
     }
 }

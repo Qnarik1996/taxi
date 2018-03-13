@@ -2,7 +2,7 @@
 
 
 <ion-content  top>
-<ion-card>
+<ion-card *ngFor="let item of history" >
   <ion-grid >
     <ion-row class="first-row">
      <ion-col col-1>
@@ -11,7 +11,7 @@
      </ion-col>
      <ion-col>
       <div class="place">Pickup Location</div>
-      <div class="place-name">Historical Library & Museum</div>
+      <div class="place-name">{{item.from}}</div>
      </ion-col>
     </ion-row>
     <ion-row >
@@ -20,37 +20,9 @@
       </ion-col>
       <ion-col >
         <div class="place">Pickup Location</div>
-        <div class="place-name">Historical Library & Museum</div>
+        <div class="place-name">{{item.to}}</div>
       </ion-col>
     </ion-row>
-  </ion-grid>
-   
-   
-</ion-card>
-
-  <ion-card>
-    <ion-grid>
-      <ion-row  class="first-row">
-       <ion-col col-1 >
-        <div class="on-icon"></div>
-        <page-lines></page-lines>
-       </ion-col>
-       <ion-col>
-        <div class="place">Pickup Location</div>
-        <div class="place-name">Historical Library & Museum</div>
-       </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-1 align-self-end>
-          <ion-icon md="md-pin" ios="md-pin"></ion-icon>
-        </ion-col>
-        <ion-col >
-          <div class="place">Pickup Location</div>
-          <div class="place-name">Historical Library & Museum</div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-     
-     
+  </ion-grid>       
   </ion-card>
 </ion-content>

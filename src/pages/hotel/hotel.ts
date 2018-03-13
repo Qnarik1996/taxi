@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 const cards=[  
-  {name:"Naeme Name", tel:"(+374) 546 218 454"},
-  {name:"Naeme Name", tel:"(+374) 546 218 454"},
-  {name:"Naeme Name", tel:"(+374) 546 218 454"},
-  {name:"Naeme Name", tel:"(+374) 546 218 454"},
-  {name:"Naeme Name", tel:"(+374) 546 218 454"},
-  {name:"Naeme Name", tel:"(+374) 546 218 454"},  
+  {name:"Vannesa Donavan", tel:"(+374) 546 218 454",photo:'assets/imgs/girl.jpg'},
+  {name:"Vannesa Donavan", tel:"(+374) 546 218 454",photo:'assets/imgs/girl.jpg'},
+  {name:"Vannesa Donavan", tel:"(+374) 546 218 454",photo:'assets/imgs/girl.jpg'},
+  {name:"Vannesa Donavan", tel:"(+374) 546 218 454",photo:'assets/imgs/girl.jpg'},
+  {name:"Vannesa Donavan", tel:"(+374) 546 218 454",photo:'assets/imgs/girl.jpg'},
+  {name:"Vannesa Donavan", tel:"(+374) 546 218 454",photo:'assets/imgs/girl.jpg'},  
 ]
 
 @Component({

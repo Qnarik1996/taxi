@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import {NavController, NavParams, Nav } from 'ionic-angular';
 
-import { HotelPage, HistoryPage, MapPage} from '../barrel';
+import { HotelPage, HistoryPage, MapPage,SettingPage} from '../barrel';
 
 
 @Component({
@@ -23,7 +23,7 @@ activePage=MapPage
     },
     {
       iconsName:"ios-bookmark",
-      pageName:"Hotel",
+      pageName:"Hotels",
       component:HotelPage
     },
     {
@@ -33,7 +33,8 @@ activePage=MapPage
     },
     {
       iconsName:"md-settings",
-      pageName:"Settings"
+      pageName:"Settings",
+      component:SettingPage
     },
 
   ]

@@ -14,7 +14,8 @@ import {MenuPage,
         NewHeader,
         MyApp,
         HistoryPage,
-        LinesPage
+        LinesPage,
+        SettingPage
 
 } from '../pages/barrel';
 
@@ -29,7 +30,8 @@ import {MenuPage,
     HotelPage,
     NewHeader,
     HistoryPage,
-    LinesPage
+    LinesPage,
+    SettingPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import {MenuPage,
     HotelPage,
     NewHeader,
     HistoryPage,
-    LinesPage
+    LinesPage,
+    SettingPage
   ],
   providers: [
     StatusBar,

@@ -1,32 +1,40 @@
 <new-header [pageName]="pageName"></new-header>
 <ion-content top>
 
-  <ion-grid>
-      <ion-row>
-          <ion-col  *ngFor="let item of cards"col-4 >
-            <ion-card>
-                <ion-card-content>
-                    <div class="foto"></div>
-                    <div class="text">
-                        <div class="name">{{item.name}}</div>
-                        <div class="tel">{{item.tel}}</div>
-                    </div>
-                    <ion-grid class="buttons-grid">
-                        <ion-row>
-                            <ion-col>
-                                <button full  color="newblue" ion-button round>Switch</button>
-                            </ion-col>
-                            <ion-col>
-                                <button full color="newblue" ion-button round>Info</button>
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
-                </ion-card-content>
-                <ion-footer>
-                    
-                </ion-footer>
-            </ion-card>
-          </ion-col>
-      </ion-row>
-  </ion-grid>
+    <ion-grid>
+        <ion-row>
+            <ion-col *ngFor="let item of cards" col-4>
+                <div class="in-card">
+                    <ion-card>
+
+                        <ion-card-content>
+
+                            <div class="photo">
+                                <img [src]=item.photo>
+                            </div>
+                            <div class="text">
+                                <div class="name">{{item.name}}</div>
+                                <div class="tel">{{item.tel}}</div>
+                            </div>
+                            <ion-grid class="buttons-grid">
+                                <ion-row>
+                                    <ion-col>
+                                        <button block color="newblue" ion-button round outline>Switch</button>
+                                    </ion-col>
+                                    <ion-col>
+                                        <button block color="newblue" ion-button round outline>Info</button>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </ion-card-content>
+
+                        <ion-footer>
+
+                        </ion-footer>
+
+                    </ion-card>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

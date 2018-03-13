@@ -1,17 +1,37 @@
 page-menu {
-  
+  ion-content{
+      .scroll-content{
+
+        overflow: hidden
+      }
     ion-icon{
         font-size: 2.2em;
     }
-    .span{
-        font-size: 2.5vw;
-        
+    
+.taxi-image{
+    background-image: url('../../assets/imgs/taxi.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100%;
+    width: 100%;
+    .photo-information-user{
+        text-align: center;
+        margin-bottom: 8vh;
+        margin-top: 3vh;
+    } 
+    .label{
+        margin: -3px 8px 11px 0;
     }
+    .item ion-icon[item-left], .item ion-icon[item-right], .item ion-icon[item-start], .item ion-icon[item-end]{
+        margin-top: -5px;
+
+    }
+}
 
 
 
-
-    .toolbar-content-ios{
+    .toolbar-content{
         margin-bottom: -4px;
         position: relative;
     }
@@ -24,9 +44,9 @@ page-menu {
         img{
             border-radius: 50%;
             border: 3px solid silver;
-            width: 9vw;
-            height: 9vw;
-            margin:26px 26px 10px;
+            width: 10vh;
+            height: 10vh;
+          
         }
     }
     .setting-icon{
@@ -39,22 +59,41 @@ page-menu {
     .down-menu{
         margin-top: 14vh;
         color: grey;
-        margin-left: 37%;
+        text-align: center;
         font-size: 1.1em
     }
         .identity{
             color: white;
             margin-left: 20px;
-            font-size: 1.2em;
+            
             p{
                 margin: 0;
             }
+        }
+        .nobackground{
+            background: none;
+            color: white;
+            height: 8vh;
+            ion-icon{
+                color: whitesmoke
+            }
+            
         }
 
 
 
         .checked-menu{
-            background-color: grey
+            background-color: rgba(39, 10, 16, 0.8)
+        }
+        .item.activated{
+            background-color: rgba(39, 10, 16, 0.8)
         }
     
+}
+*[p1-size]{
+    font-size: 1em
+}
+*[p2-size]{
+    font-size: 0.8em
+}
 }
