@@ -7,6 +7,18 @@ page-menu {
     ion-icon{
         font-size: 2.2em;
     }
+    .photo-user{
+        background-image: url(../../assets/imgs/girl.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 8vh;
+        background-size: cover;
+        width: 8vh;
+        border-radius: 50%;
+        margin: 0 auto;
+        border: 2px solid white;
+
+    }
     
 .taxi-image{
     background-image: url('../../assets/imgs/taxi.jpg');
@@ -19,6 +31,7 @@ page-menu {
         text-align: center;
         margin-bottom: 8vh;
         margin-top: 3vh;
+   
     } 
     .label{
         margin: -3px 8px 11px 0;
@@ -64,7 +77,8 @@ page-menu {
     }
         .identity{
             color: white;
-            margin-left: 20px;
+            margin-top: 1vh;
+        
             
             p{
                 margin: 0;

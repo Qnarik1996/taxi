@@ -50,7 +50,6 @@ count=0;
 
   CenterControl(controlDiv, thisComponent) {
 
-    // Set CSS for the control border.
     var controlUI = document.createElement('div');
     controlUI.style.backgroundImage = "url('assets/imgs/car.png')";
     controlUI.style.height = '100px';
@@ -59,7 +58,7 @@ count=0;
       controlUI.style.backgroundPosition = 'center';
     controlDiv.style.marginLeft = "calc(50% - 50px)";
     controlDiv.appendChild(controlUI);
-
+    
     controlUI.addEventListener('click', function () {
       thisComponent.ok()
     });
@@ -85,7 +84,6 @@ count=0;
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOption);
     var centerControlDiv = document.createElement('div');
     var centerControl = new this.CenterControl(centerControlDiv, this);
-
     this.map.controls[google.maps.ControlPosition.LEFT_CENTER].push(centerControlDiv);
   }
   loadMap() {
@@ -93,7 +91,6 @@ count=0;
       .then((location) => {
         let latLng = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
         this.initMap(latLng);
-        console.log(location.coords.latitude, location.coords.longitude)
 
       })
       .catch(() => {

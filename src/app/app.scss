@@ -1,7 +1,20 @@
 *[top]{
     top: 65px;
 }
-.toolbar-content-ios{
+.toolbar-content{
     display: flex;
     align-items: center
 }
+
+.modal-wrapper{
+    height: 60vh;
+    width: 112vh;
+    left: 10vh;
+    top: calc(50% - (600px/2));
+    
+}
+@media only screen and (min-height: 600px) and (min-width: 768px){
+    .ios .modal-wrapper {
+        border-radius: 1px;
+    }
+    }

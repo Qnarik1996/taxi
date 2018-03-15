@@ -5,4 +5,5 @@ export * from './new-header';
 export * from './../app/app.component';
 export *from './history/history';
 export *from './lines/lines';
-export * from './setting/setting'
+export * from './setting/setting';
+export * from './drive-information/drive-information'

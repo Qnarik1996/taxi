@@ -15,7 +15,8 @@ import {MenuPage,
         MyApp,
         HistoryPage,
         LinesPage,
-        SettingPage
+        SettingPage,
+        DriveInformationPage
 
 } from '../pages/barrel';
 
@@ -31,7 +32,8 @@ import {MenuPage,
     NewHeader,
     HistoryPage,
     LinesPage,
-    SettingPage
+    SettingPage,
+    DriveInformationPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import {MenuPage,
     NewHeader,
     HistoryPage,
     LinesPage,
-    SettingPage
+    SettingPage,
+    DriveInformationPage
   ],
   providers: [
     StatusBar,

@@ -9,7 +9,7 @@ page-hotel {
             padding: 15px;
             .in-card{
                 
-                background-image: url(../../assets/imgs/taxi.jpg);
+                background-image: url('../../assets/imgs/taxi.jpg');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -29,13 +29,11 @@ page-hotel {
                     width: 8vh;
                     border-radius: 50%;
                     float: left;
-                
-                    img{
-                        height: 8vh;
-                    width: 8vh;
-                    border-radius: 50%;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-image: url('../../assets/imgs/girl.jpg');
                     border: 3px solid white;
-                    }
                 }
                 .text{
                 float: left;
@@ -50,7 +48,7 @@ page-hotel {
                     font-size: 1em;
                     text-align: center;
                 }
-                .button-outline-ios-newblue{
+                .button-outline-ios-newblue, .button-outline-android-newblue {
                     border-color: white;
                     color: white;
                     border: 2px solid white;

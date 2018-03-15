@@ -2,7 +2,7 @@
 
 
 <ion-content  top>
-<ion-card *ngFor="let item of history" >
+<ion-card *ngFor="let item of history" (tap)="openInformation(item)">
   <ion-grid >
     <ion-row class="first-row">
      <ion-col col-1>
