@@ -1,15 +1,83 @@
 page-drive-information {
  
 ion-content{
+    .map-col{
+        max-width: fit-content;
+        width: fit-content;
+    
     #map{
         height: 37vh;
         width: 35vh;
         float: left;
     }
+}
+.users-col{
+    height: fit-content;
+    max-height: fit-content
+}
     .scroll-content{
         padding: 25px;
         overflow: hidden
     }
+    .on-icon{
+        background-color: #1feb88;
+        border-radius: 50%;
+        height: 1.5vh;
+        width: 1.5vh;   
+    }
+       
+    .to-row{
+        position: absolute;
+        bottom: 1vh;
+    }
+    .from-row{
+        position: relative;
+    }
+    .grid{
+     
+        ion-row{
+            [col-1]{
+                width: fit-content;
+                max-width: fit-content;
+                position: relative;
+                left: -1vh
+               
+            }
+            
+                .place{
+                    color: grey;
+                    font-size: 0.9em
+                }
+                .place-name{
+                    font-size: 1.2em
+                }
+               
+            
+              ion-icon{
+                  font-size: 1.5em
+              }
+        
+        }
+    }
+    .users{
+       text-align: center;
+        .image-users{
+            height: 12vh;
+            width: 12vh;
+            background-image: url('../../assets/imgs/girl.jpg');
+            border-radius: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0 auto;
+
+        }
+        .name-users{
+            font-size: 2em;
+            margin-top: 2vh;
+        }
+    }
+ 
   
 } 
 }

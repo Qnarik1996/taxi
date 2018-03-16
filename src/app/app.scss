@@ -8,9 +8,10 @@
 
 .modal-wrapper{
     height: 60vh;
-    width: 112vh;
-    left: 10vh;
-    top: calc(50% - (600px/2));
+    width: 83vw;
+    left: calc(50% - (83vw/2));
+    top: calc(50% - (60vh/2));
+
     
 }
 @media only screen and (min-height: 600px) and (min-width: 768px){

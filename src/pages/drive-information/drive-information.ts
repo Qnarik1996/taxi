@@ -6,30 +6,30 @@ declare var google;
   selector: 'page-drive-information',
   templateUrl: 'drive-information.html',
 })
+
 export class DriveInformationPage {
-  @ViewChild('map') mapElement: ElementRef;
  
+  @ViewChild('map') mapElement: ElementRef;
   map: any;
-information;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
-    this.information=this.navParams.get('item');
+  start = 'erevan';
+  end = 'gyumri';
+  directionsService = new google.maps.DirectionsService;
+  directionsDisplay = new google.maps.DirectionsRenderer;
+  information;
+  constructor(public navCtrl: NavController,public navParams:NavParams) {
+    this.information=this.navParams.get('history');
     console.log(this.information);
     
   }
-  directionsService = new google.maps.DirectionsService;
-  directionsDisplay = new google.maps.DirectionsRenderer({map: this.map});
-  stepDisplay = new google.maps.InfoWindow
-  start:any;
-  end:any;
-  ionViewDidLoad() {
-    this.loadMap();
-   
-   
+
+  ionViewDidLoad(){
+    this.initMap();
   }
-  initMap(latLng) {
-    let mapOption = {
-      center: latLng,
-      zoom: 15,
+
+  initMap() {
+    this.map = new google.maps.Map(this.mapElement.nativeElement, {
+      zoom: 7,
+      center: {lat: 41.85, lng: -87.65},
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       streetViewControl: false,
       zoomControl: false,
@@ -38,42 +38,27 @@ information;
       rotateControl: false,
       fullscreenControl: false
 
-    }
-    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOption);
+    });
+
+    this.directionsDisplay.setMap(this.map);
+    this. calculateAndDisplayRoute()
   }
-  loadMap() {
-    this.geolocation.getCurrentPosition()
-      .then((location) => {
-        let latLng = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
-        this.initMap(latLng);
 
-      })
-      .catch(() => {
-
-        let latLng = new google.maps.LatLng(40.7958024, 43.8570917);
-        this.initMap(latLng)
-      });
-
-
-}
-getDriveTravel(){
-this.directionsService.route({
-  origin: this.start,
-  destination:this.end,
-  travelMode: 'DRIVING'
-}, function(response, status) {
-  // Route the directions and pass the response to a function to create
-  // markers for each step.
-  if (status === 'OK') {
-    document.getElementById('warnings-panel').innerHTML =
-        '<b>' + response.routes[0].warnings + '</b>';
-    this.directionsDisplay.setDirections(response);
-  
-  } else {
-    window.alert('Directions request failed due to ' + status);
+  calculateAndDisplayRoute() {
+    this.directionsService.route({
+      origin: this.start,
+      destination: this.end,
+      travelMode: 'DRIVING'
+    }, (response, status) => {
+      if (status === 'OK') {
+        this.directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
   }
-});
+
 }
 
 
-}
+

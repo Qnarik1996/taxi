@@ -1,8 +1,40 @@
 <ion-content >
+  <ion-grid>
+    <ion-row>
+      <ion-col class="map-col"><div #map id="map" > </div></ion-col>
+      <ion-col class="users-col">
+          <div class="users">
+              <div class="image-users">
+                
+              </div>
+              <div class="name-users">{{information.userName}}</div>
+            </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   
-    
-  <div #map id="map" >
-
-  </div>
-
+ 
+  <ion-grid >
+    <ion-row class="from-row">
+     <ion-col col-1>
+      <div class="on-icon"></div>
+      <page-lines></page-lines>
+     </ion-col>
+     <ion-col>
+      <div class="place">Pickup Location</div>
+      <div class="place-name">{{information.from}}</div>
+     </ion-col>
+    </ion-row>
+    <ion-row class="to-row">
+      <ion-col col-1 align-self-end>
+        <ion-icon md="md-pin" ios="md-pin" color="secondary"></ion-icon>
+      </ion-col>
+      <ion-col >
+        <div class="place">Pickup Location</div>
+        <div class="place-name">{{information.to}}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
 </ion-content>
+
