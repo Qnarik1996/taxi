@@ -1,40 +1,72 @@
 <ion-content >
   <ion-grid>
     <ion-row>
-      <ion-col class="map-col"><div #map id="map" > </div></ion-col>
-      <ion-col class="users-col">
+      <ion-col class="map-col" col-4><div #map id="map" > </div>
+        <ion-grid >
+            <ion-row class="first-row">
+             <ion-col col-1>
+              <div class="on-icon"></div>
+              <page-lines></page-lines>
+              <ion-icon color="secondary" md="md-pin" ios="md-pin"></ion-icon>
+             </ion-col>
+            <ion-col>
+              <div class="place">Pickup Location</div>
+              <div class="place-name">{{information.from}}</div>
+              <div class="to-place">
+                <div class="place">Pickup Location</div>
+                <div class="place-name">{{information.to}}</div>
+              </div>              
+             </ion-col>
+            </ion-row>          
+          </ion-grid> 
+      </ion-col>
+      <ion-col class="users-col" >
           <div class="users">
               <div class="image-users">
                 
               </div>
               <div class="name-users">{{information.userName}}</div>
             </div>
+            <ion-grid class="inform">
+              <ion-row>
+                <ion-col class="ul" col-7>                  
+                    <div class="driverfoto"></div>                  
+                  <div >
+                      <rating [(ngModel)]="rate" class="rating" 
+                      readOnly="true"                     
+                      max="4" 
+                      emptyStarIconName="star-outline" 
+                      halfStarIconName="star-half" 
+                      starIconName="star" 
+                      nullable="false"></rating>
+                      <div class="driverinformation">{{information.driverName}}</div>
+                  </div>
+                   
+                </ion-col>
+                <ion-col align-self-end class="colinform"> 
+                  <ion-icon name="calendar">                                       
+                  </ion-icon>
+                  <span>{{information.date}}</span> 
+                </ion-col>
+              </ion-row>
+              <ion-row style="margin-top: 3vh">
+                <ion-col col-7 class="colinform">
+                  <ion-icon name="cash"></ion-icon>
+                  <span>{{information.price}}</span>
+                </ion-col>
+                <ion-col class="colinform">
+                    <ion-icon name="clock"></ion-icon>
+                    <span>{{information.speed}}</span>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
       </ion-col>
     </ion-row>
+ 
   </ion-grid>
   
  
-  <ion-grid >
-    <ion-row class="from-row">
-     <ion-col col-1>
-      <div class="on-icon"></div>
-      <page-lines></page-lines>
-     </ion-col>
-     <ion-col>
-      <div class="place">Pickup Location</div>
-      <div class="place-name">{{information.from}}</div>
-     </ion-col>
-    </ion-row>
-    <ion-row class="to-row">
-      <ion-col col-1 align-self-end>
-        <ion-icon md="md-pin" ios="md-pin" color="secondary"></ion-icon>
-      </ion-col>
-      <ion-col >
-        <div class="place">Pickup Location</div>
-        <div class="place-name">{{information.to}}</div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+
  
 </ion-content>
 

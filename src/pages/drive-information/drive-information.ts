@@ -1,6 +1,9 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController,NavParams, Platform } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+
+
+
 declare var google;
 @Component({
   selector: 'page-drive-information',
@@ -9,27 +12,46 @@ declare var google;
 
 export class DriveInformationPage {
  
-  @ViewChild('map') mapElement: ElementRef;
+ @ViewChild('map') mapElement:ElementRef
   map: any;
   start = 'erevan';
   end = 'gyumri';
-  directionsService = new google.maps.DirectionsService;
+ directionsService = new google.maps.DirectionsService;
   directionsDisplay = new google.maps.DirectionsRenderer;
   information;
-  constructor(public navCtrl: NavController,public navParams:NavParams) {
-    this.information=this.navParams.get('history');
-    console.log(this.information);
-    
+  latitudePosition;
+  longitudePosition;
+  bar;
+  rate;
+  constructor(
+      public navCtrl: NavController,
+              public navParams:NavParams,
+              public platform: Platform,
+            )
+  {
+   this.information=this.navParams.get('history');
+   this.rate= this.information.driverRating;
+   /* this.platform.ready().then(() => {
+   
+     this.nativeGeocoder.forwardGeocode("139651")
+       .then((coordinates: NativeGeocoderForwardResult) => {
+         this.bar = "The coordinates are latitude=" + coordinates.latitude + " and longitude=" + coordinates.longitude;
+         console.log("The coordinates are latitude=" + coordinates.latitude + " and longitude=" + coordinates.longitude);
+       })
+       .catch((error: any) => console.log(error));
+   
+   });*/
   }
 
-  ionViewDidLoad(){
+ionViewDidLoad(){
     this.initMap();
+    
   }
 
   initMap() {
     this.map = new google.maps.Map(this.mapElement.nativeElement, {
-      zoom: 7,
-      center: {lat: 41.85, lng: -87.65},
+      zoom: 10,
+      center:{lat:40.7958024,lng:43.8570917},
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       streetViewControl: false,
       zoomControl: false,
@@ -38,13 +60,18 @@ export class DriveInformationPage {
       rotateControl: false,
       fullscreenControl: false
 
+  
     });
 
     this.directionsDisplay.setMap(this.map);
-    this. calculateAndDisplayRoute()
+    this. calculateAndDisplayRoute();
+    
   }
 
-  calculateAndDisplayRoute() {
+
+
+
+ calculateAndDisplayRoute() {
     this.directionsService.route({
       origin: this.start,
       destination: this.end,
@@ -56,8 +83,11 @@ export class DriveInformationPage {
         window.alert('Directions request failed due to ' + status);
       }
     });
+    
   }
+ 
 
+  
 }
 
 

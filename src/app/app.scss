@@ -6,16 +6,23 @@
     align-items: center
 }
 
-.modal-wrapper{
-    height: 60vh;
-    width: 83vw;
-    left: calc(50% - (83vw/2));
-    top: calc(50% - (60vh/2));
-
-    
-}
-@media only screen and (min-height: 600px) and (min-width: 768px){
-    .ios .modal-wrapper {
+@media only screen and (max-height: 601px) and (max-width: 501px){
+    .modal-wrapper {
+       
+    height: 30vh;
+    width: 53vh;
+    left: calc(50% - (53vh/2));
+    top: calc(50% - (30vh/2));
+    }
+     }
+@media only screen and (min-height: 600px) and (min-width: 500px){
+   .modal-wrapper {
         border-radius: 1px;
+        height: 60vh;
+        width: 110vh;
+        left: calc(50% - (110vh/2));
+        top: calc(50% - (60vh/2));
+        
+
     }
-    }
+}

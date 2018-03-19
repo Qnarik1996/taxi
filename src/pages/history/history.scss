@@ -17,10 +17,7 @@ page-history {
                     width: fit-content;
                     max-width: fit-content;
                     position: relative;
-                    page-lines{
-                        position: absolute;
-                        left: 13px;
-                    }
+                   
                 }
                 
                     .place{
@@ -29,6 +26,10 @@ page-history {
                     }
                     .place-name{
                         font-size: 1.5em
+                    }
+                    .to-place{
+                        position: absolute;
+                         bottom: 1vh;
                     }
                     .on-icon{
                         background-color: #1feb88;
@@ -43,6 +44,8 @@ page-history {
                     }
             
             }
-    } 
     }
+     
+    }
+
 }

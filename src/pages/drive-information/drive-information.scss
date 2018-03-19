@@ -1,83 +1,147 @@
 page-drive-information {
  
-ion-content{
-    .map-col{
-        max-width: fit-content;
-        width: fit-content;
-    
-    #map{
-        height: 37vh;
-        width: 35vh;
-        float: left;
+    ion-content{
+        page-lines .connection-lines{
+            height: 1.5vh;
+        }
+        .map-col{
+            max-width: fit-content;
+            width: fit-content;
+        
+        #map{
+            height: 37vh;
+            width: 35vh;
+            float: left;
+        }
     }
-}
-.users-col{
-    height: fit-content;
-    max-height: fit-content
-}
-    .scroll-content{
-        padding: 25px;
-        overflow: hidden
+    .users-col{
+        height: fit-content;
+        max-height: fit-content;
+        padding: 0 0 0 9vh
     }
-    .on-icon{
-        background-color: #1feb88;
-        border-radius: 50%;
-        height: 1.5vh;
-        width: 1.5vh;   
-    }
-       
-    .to-row{
-        position: absolute;
-        bottom: 1vh;
-    }
-    .from-row{
-        position: relative;
-    }
-    .grid{
-     
+        .scroll-content{
+            padding: 25px;
+            overflow: hidden
+        }
         ion-row{
             [col-1]{
                 width: fit-content;
                 max-width: fit-content;
                 position: relative;
-                left: -1vh
                
             }
             
-                .place{
-                    color: grey;
-                    font-size: 0.9em
+            .place{
+                color: grey;
+                font-size: 0.9em
+            }
+            .place-name{
+                font-size: 1.2em
+            }
+           
+        
+          ion-icon{
+              font-size: 1.5em;
+              color: #1feb88;
+          }
+                .to-place{
+                    position: absolute;
+                     bottom: 1vh;
                 }
-                .place-name{
-                    font-size: 1.2em
+                .on-icon{
+                    background-color: #1feb88;
+                    border-radius: 50%;
+                    height: 1.5vh;
+                    width: 1.5vh;   
                 }
-               
-            
-              ion-icon{
-                  font-size: 1.5em
-              }
+             
         
         }
-    }
-    .users{
-       text-align: center;
-        .image-users{
-            height: 12vh;
-            width: 12vh;
-            background-image: url('../../assets/imgs/girl.jpg');
-            border-radius: 50%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            margin: 0 auto;
+        .inform{
+            margin-top: 6vh;
+            .colinform{
+                display: flex;
+                padding: 0;
+                align-items: center;
+              }          
+            ion-icon{
+                color:black;
+                font-size: 3em;
+            }
+            .ul {
+                padding: 0px !important;       
+                .rating li {
+                    padding: 0px !important;                      
+                  ion-icon {
+                    font-size: 3vh;       
+                    color: #ffb400;
+                     
+                  }
+                }
+            }
+              }
+              .driverfoto{
+                  background-image: url('../../assets/imgs/driver.jpg');
+                  height: 10vh;
+                  width: 10vh;
+                  border-radius: 50%;
+                  background-position: center;
+                  background-size: cover;
+                  float: left;
+                  margin-right: 2vh;
 
+              }
+              .driverinformation{                 
+                  color: gray;
+                  font-size: 1.3em;
+              }
+              span{
+                font-size: 1.7em;
+                color: gray;
+                margin-left: 2vh;
+              }
         }
-        .name-users{
-            font-size: 2em;
-            margin-top: 2vh;
+      
+        .users{
+           text-align: center;
+            .image-users{
+                height: 12vh;
+                width: 12vh;
+                background-image: url('../../assets/imgs/girl.png');
+                border-radius: 50%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 0 auto;
+    
+            }
+            .name-users{
+                font-size: 2em;
+                margin-top: 2vh;
+            }
         }
-    }
- 
-  
-} 
-}
+        @media only screen and (max-height: 601px) and (max-width: 501px){
+            .modal-wrapper {
+               
+            height: 30vh;
+            width: 53vh;
+            left: calc(50% - (53vh/2));
+            top: calc(50% - (30vh/2));
+            }
+             }
+        @media only screen and (min-height: 600px) and (min-width: 500px){
+           .modal-wrapper {
+                border-radius: 1px;
+                height: 60vh;
+                width: 110vh;
+                left: calc(50% - (110vh/2));
+                top: calc(50% - (60vh/2));
+                
+        
+            }
+        }
+      
+    } 
+    
+    
+    
