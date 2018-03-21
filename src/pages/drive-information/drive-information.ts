@@ -14,15 +14,14 @@ export class DriveInformationPage {
  
  @ViewChild('map') mapElement:ElementRef
   map: any;
-  start = 'erevan';
-  end = 'gyumri';
- directionsService = new google.maps.DirectionsService;
+  directionsService = new google.maps.DirectionsService;
   directionsDisplay = new google.maps.DirectionsRenderer;
   information;
   latitudePosition;
   longitudePosition;
   bar;
   rate;
+  direction;
   constructor(
       public navCtrl: NavController,
               public navParams:NavParams,
@@ -30,7 +29,9 @@ export class DriveInformationPage {
             )
   {
    this.information=this.navParams.get('history');
+   this.direction=this.information.directions;
    this.rate= this.information.driverRating;
+   console.log(this.information);
    /* this.platform.ready().then(() => {
    
      this.nativeGeocoder.forwardGeocode("139651")
@@ -51,7 +52,7 @@ ionViewDidLoad(){
   initMap() {
     this.map = new google.maps.Map(this.mapElement.nativeElement, {
       zoom: 10,
-      center:{lat:40.7958024,lng:43.8570917},
+      //center:{lat:40.7958024,lng:43.8570917},
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       streetViewControl: false,
       zoomControl: false,
@@ -59,11 +60,12 @@ ionViewDidLoad(){
       scaleControl: false,
       rotateControl: false,
       fullscreenControl: false
-
-  
     });
-
-    this.directionsDisplay.setMap(this.map);
+    this.directionsDisplay  = new google.maps.DirectionsRenderer({
+      map:this.map,
+      markerOptions:{icon:"red",label:""}
+    });
+    //this.directionsDisplay.setMap(this.map);
     this. calculateAndDisplayRoute();
     
   }
@@ -72,12 +74,33 @@ ionViewDidLoad(){
 
 
  calculateAndDisplayRoute() {
+  for(let i=0; i< this.direction.length ; i++){
+    
+  }
+  
     this.directionsService.route({
-      origin: this.start,
-      destination: this.end,
+    
+      origin: this.information.directions[0],
+      destination:this.direction[2],
       travelMode: 'DRIVING'
     }, (response, status) => {
       if (status === 'OK') {
+        new google.maps.Marker({
+          position: this.information.directions[2],
+          icon:{
+            url:"assets/imgs/point.png",
+            scaledSize:{height:25,width:25}
+         },          
+          map: this.map
+        });
+        new google.maps.Marker({
+          icon:{
+             url:"assets/imgs/circle.png",
+             scaledSize:{height:15,width:15}
+          },          
+          position: this.information.directions[0],
+          map: this.map
+        });
         this.directionsDisplay.setDirections(response);
       } else {
         window.alert('Directions request failed due to ' + status);

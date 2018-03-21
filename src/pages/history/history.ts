@@ -5,8 +5,24 @@ import { DriveInformationPage } from '../barrel';
 
 const history=[
   {
-    from:"Historical Library & Museum", 
-    to:"Historical Library & Museum",
+    directions:[
+      {
+        label:"Gyumry",
+        lat:40.795301,
+        lng:43.846812
+      },
+ 
+      {
+        label:"Spitak",
+        lat:40.6415301,
+        lng:44.2523182
+      },
+      {
+        label:"Erevan",
+        lat:40.2036917,
+        lng:44.4873235
+      }
+    ],
     userName:'Vannesa Donavan',
     driverName:'Noarn Chomsky',
     driverRating:3,
@@ -18,6 +34,19 @@ const history=[
 },
 
   {
+    directions:[
+      {
+        label:"Historical Library & Museum",
+        lat:40.795301,
+        lng:43.846812
+      },
+ 
+      {
+        label:"Historical Library & Museum Fnal",
+        lat:40.179681,
+        lng:44.506264
+      }
+    ],
     from:"Historical Library & Museum", 
     to:"Historical Library & Museum",
     userName:'Vannesa Donavan',
@@ -29,6 +58,19 @@ const history=[
     driverRating:2,
   },
   {
+    directions:[
+      {
+        label:"Historical Library & Museum",
+        lat:40.795301,
+        lng:43.846812
+      },
+ 
+      {
+        label:"Historical Library & Museum Fnal",
+        lat:40.179681,
+        lng:44.506264
+      }
+    ],
     from:"Historical Library & Museum", 
     to:"Historical Library & Museum",
     userName:'Vannesa Donavan',

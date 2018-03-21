@@ -2,7 +2,9 @@ page-drive-information {
  
     ion-content{
         page-lines .connection-lines{
-            height: 1.5vh;
+           
+            left: 5px;
+    top: 15px;
         }
         .map-col{
             max-width: fit-content;
@@ -17,14 +19,14 @@ page-drive-information {
     .users-col{
         height: fit-content;
         max-height: fit-content;
-        padding: 0 0 0 9vh
+       
     }
         .scroll-content{
             padding: 25px;
             overflow: hidden
         }
         ion-row{
-            [col-1]{
+            [col-2]{
                 width: fit-content;
                 max-width: fit-content;
                 position: relative;
@@ -41,37 +43,49 @@ page-drive-information {
            
         
           ion-icon{
-              font-size: 1.5em;
+             
               color: #1feb88;
+              font-size: 1.8em; 
           }
-                .to-place{
-                    position: absolute;
-                     bottom: 1vh;
-                }
+            
                 .on-icon{
                     background-color: #1feb88;
                     border-radius: 50%;
-                    height: 1.5vh;
-                    width: 1.5vh;   
+                    height: 15px;
+                    width: 15px;   
                 }
+               
+            
+               
              
         
         }
         .inform{
             margin-top: 6vh;
+            
             .colinform{
                 display: flex;
                 padding: 0;
                 align-items: center;
-              }          
+              }     
+              .cash{
+                padding-left: 3vh;
+                span{
+                    margin-left: 4vh;                    
+                    font-size: 1.8em;
+                }
+            }     
             ion-icon{
                 color:black;
                 font-size: 3em;
             }
             .ul {
-                padding: 0px !important;       
+                padding: 0px !important;  
+                .rating{ margin: 0px !important;   } 
+             
                 .rating li {
-                    padding: 0px !important;                      
+                    padding: 0px !important;
+                                        
                   ion-icon {
                     font-size: 3vh;       
                     color: #ffb400;
@@ -93,10 +107,11 @@ page-drive-information {
               }
               .driverinformation{                 
                   color: gray;
-                  font-size: 1.3em;
+                  font-size: 1.4em;
+                  margin-top: 2vh;
               }
               span{
-                font-size: 1.7em;
+                font-size: 1.2em;
                 color: gray;
                 margin-left: 2vh;
               }
@@ -120,27 +135,8 @@ page-drive-information {
                 margin-top: 2vh;
             }
         }
-        @media only screen and (max-height: 601px) and (max-width: 501px){
-            .modal-wrapper {
-               
-            height: 30vh;
-            width: 53vh;
-            left: calc(50% - (53vh/2));
-            top: calc(50% - (30vh/2));
-            }
-             }
-        @media only screen and (min-height: 600px) and (min-width: 500px){
-           .modal-wrapper {
-                border-radius: 1px;
-                height: 60vh;
-                width: 110vh;
-                left: calc(50% - (110vh/2));
-                top: calc(50% - (60vh/2));
-                
-        
-            }
-        }
-      
+     
+    
     } 
     
     

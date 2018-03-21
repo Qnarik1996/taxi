@@ -6,18 +6,25 @@
   <ion-grid >
     <ion-row class="first-row">
      <ion-col col-1>
-      <div class="on-icon"></div>
-      <page-lines></page-lines>
-      <ion-icon color="secondary" md="md-pin" ios="md-pin"></ion-icon>
+      
+      
      </ion-col>
     <ion-col>
-      <div class="place">Pickup Location</div>
-      <div class="place-name">{{item.from}}</div>
-      <div class="to-place">
-        <div class="place">Pickup Location</div>
-        <div class="place-name">{{item.to}}</div>
-      </div>
-      
+      <ion-grid>
+        <ion-row *ngFor="let direction of item.directions; let i = index">
+          <ion-col col-1>
+              <div *ngIf="i!=item.directions.length-1" class="on-icon">
+                  <page-lines></page-lines>
+              </div>
+              <ion-icon *ngIf="i==item.directions.length-1" color="secondary" md="md-pin" ios="md-pin"></ion-icon>
+            </ion-col>
+          <ion-col col-11>
+              <div class="place">Pickup Location</div>
+              <div class="place-name">{{direction.label}}</div>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
      </ion-col>
     </ion-row>
    

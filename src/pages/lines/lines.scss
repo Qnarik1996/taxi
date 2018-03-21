@@ -1,9 +1,14 @@
 page-lines {
+    margin-top: 25px;
      .connection-lines{
-        height: 2.5vh;
-        width: 0.5vh;
-        border-radius: 12px;
+        height: 9px;
+        width: 4px;
+        border-radius: 13px;
         background-color: silver;
-        margin: 3px auto;
+        position: relative;
+        left: 8px;
+        top: 19px;
+        margin-top: 2px;
+        
      }
  }
