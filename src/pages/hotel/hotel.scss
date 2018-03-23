@@ -30,7 +30,7 @@ page-hotel {
                     background-size: cover;
                     background-position: center;
                     background-repeat: no-repeat;
-                    background-image: url('../../assets/imgs/girl.png');
+                    
                     border: 3px solid white;
                 }
                 .text{
@@ -52,6 +52,9 @@ page-hotel {
                     border: 2px solid white;
                     font-weight: bold;
                     height: 2.1em
+                }
+                .button-outline-ios-newblue.activated{
+                    background: none
                 }
             
              }

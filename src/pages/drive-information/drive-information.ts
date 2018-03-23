@@ -20,8 +20,9 @@ export class DriveInformationPage {
   latitudePosition;
   longitudePosition;
   bar;
+  waypts= [];
   rate;
-  direction;
+  direction
   constructor(
       public navCtrl: NavController,
               public navParams:NavParams,
@@ -32,17 +33,7 @@ export class DriveInformationPage {
    this.direction=this.information.directions;
    this.rate= this.information.driverRating;
    console.log(this.information);
-   /* this.platform.ready().then(() => {
-   
-     this.nativeGeocoder.forwardGeocode("139651")
-       .then((coordinates: NativeGeocoderForwardResult) => {
-         this.bar = "The coordinates are latitude=" + coordinates.latitude + " and longitude=" + coordinates.longitude;
-         console.log("The coordinates are latitude=" + coordinates.latitude + " and longitude=" + coordinates.longitude);
-       })
-       .catch((error: any) => console.log(error));
-   
-   });*/
-  }
+   }
 
 ionViewDidLoad(){
     this.initMap();
@@ -63,30 +54,39 @@ ionViewDidLoad(){
     });
     this.directionsDisplay  = new google.maps.DirectionsRenderer({
       map:this.map,
-      markerOptions:{icon:"red",label:""}
+      markerOptions:{icon:" ",label:""}
     });
     //this.directionsDisplay.setMap(this.map);
-    this. calculateAndDisplayRoute();
+    this. calculateAndDisplayRoute(this.directionsService);
     
   }
 
 
 
 
- calculateAndDisplayRoute() {
-  for(let i=0; i< this.direction.length ; i++){
+ calculateAndDisplayRoute(directionsService) {
+  for(let i=1; i< this.direction.length-1 ; i++){
+    
+      this.waypts.push({
+        location: this.direction[i],
+        stopover: true
+      });
     
   }
+    
+  
   
     this.directionsService.route({
     
       origin: this.information.directions[0],
-      destination:this.direction[2],
+      destination:this.direction[this.direction.length-1],
+      waypoints: this.waypts,
+      optimizeWaypoints: true,
       travelMode: 'DRIVING'
     }, (response, status) => {
       if (status === 'OK') {
         new google.maps.Marker({
-          position: this.information.directions[2],
+          position: this.information.directions[this.direction.length-1],
           icon:{
             url:"assets/imgs/point.png",
             scaledSize:{height:25,width:25}
@@ -101,17 +101,34 @@ ionViewDidLoad(){
           position: this.information.directions[0],
           map: this.map
         });
+        
+        for(let i=1; i< this.direction.length-1 ; i++){
+          new google.maps.Marker({
+          
+            icon:{
+               url:"assets/imgs/circle.png",
+               scaledSize:{height:15,width:15}
+            },     
+           
+            position: this.direction[i],
+            map: this.map
+          });
+        }
+        
         this.directionsDisplay.setDirections(response);
       } else {
         window.alert('Directions request failed due to ' + status);
       }
     });
-    
   }
+}
+
+    
+  
  
 
   
-}
+
 
 
 

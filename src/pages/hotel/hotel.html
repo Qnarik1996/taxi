@@ -9,7 +9,7 @@
 
                         <ion-card-content>
 
-                            <div class="photo"></div>
+                            <div class="photo" [ngStyle]="{'background-image':item.photo | image}"></div>
                             <div class="text">
                                 <div class="name">{{item.name}}</div>
                                 <div class="tel">{{item.tel}}</div>

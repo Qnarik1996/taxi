@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { Geolocation } from '@ionic-native/geolocation';
 import { NavController } from 'ionic-angular';
 import { Ionic2RatingModule } from 'ionic2-rating';
-
+import {PipeImage} from '../pipe'
 
 
 import {MenuPage,
@@ -34,11 +34,14 @@ import {MenuPage,
     HistoryPage,
     LinesPage,
     SettingPage,
-    DriveInformationPage
+    DriveInformationPage,
+    PipeImage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{
+      mode:'ios'
+    }),
     Ionic2RatingModule
   ],
   bootstrap: [IonicApp],
@@ -51,7 +54,8 @@ import {MenuPage,
     HistoryPage,
     LinesPage,
     SettingPage,
-    DriveInformationPage
+    DriveInformationPage,
+   
   ],
   providers: [
     StatusBar,

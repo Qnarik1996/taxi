@@ -14,14 +14,21 @@ const history=[
  
       {
         label:"Spitak",
-        lat:40.6415301,
-        lng:44.2523182
+        lat:40.8265018,
+        lng:44.2438101
       },
+      
       {
         label:"Erevan",
         lat:40.2036917,
         lng:44.4873235
+      },
+      {
+        label:"Tsaghkadzor",
+        lat:40.5325869,
+        lng:44.7080897
       }
+
     ],
     userName:'Vannesa Donavan',
     driverName:'Noarn Chomsky',
@@ -56,6 +63,7 @@ const history=[
     speed:'40 Km',
     photoUser:'assets/imgs/girl.png',
     driverRating:2,
+    driverfoto:'assets/imgs/driver.jpg'
   },
   {
     directions:[
@@ -80,6 +88,7 @@ const history=[
     speed:'50 Km',
     photoUser:'assets/imgs/girl.png',
     driverRating:4,
+    driverfoto:'assets/imgs/driver.jpg'
   }
 ] 
 

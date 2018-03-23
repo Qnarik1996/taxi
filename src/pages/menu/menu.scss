@@ -56,11 +56,15 @@ page-menu {
         color: white;
         font-size: 2vw;
     }
-    .down-menu{
-        margin-top: 14vh;
-        color: grey;
-        text-align: center;
-        font-size: 1.1em
+ 
+        .sign-out{
+            margin-top: 14vh;
+            text-align: center;
+            color: grey;
+            background: none;
+            font-size: 1.1em;
+        
+       
     }
         .identity{
             color: white;
@@ -87,8 +91,9 @@ page-menu {
             background-color: rgba(39, 10, 16, 0.8)
         }
         .item.activated{
-            background-color: rgba(39, 10, 16, 0.8)
+            background:none
         }
+       
     
 }
 *[p1-size]{

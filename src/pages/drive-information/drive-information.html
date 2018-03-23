@@ -2,7 +2,8 @@
   <ion-grid>
     <ion-row>
       <ion-col class="map-col" col-5>
-        <div #map id="map" > </div>        
+        <div #map id="map" > </div>  
+              
                 <ion-grid>
                     <ion-row *ngFor="let line of direction; let i = index">
                       <ion-col col-2>
@@ -21,7 +22,7 @@
       </ion-col>
       <ion-col class="users-col" col-7>
           <div class="users">
-              <div class="image-users">
+              <div class="image-users" [ngStyle]="{'background-image':information.photoUser | image}">
                 
               </div>
               <div class="name-users">{{information.userName}}</div>
@@ -29,7 +30,7 @@
             <ion-grid class="inform">
               <ion-row>
                 <ion-col class="ul" col-7>                  
-                    <div class="driverfoto"></div>                  
+                    <div class="driverfoto"  [ngStyle]="{'background-image':information.driverfoto | image}"></div>                  
                   <div >
                       <rating [(ngModel)]="rate" class="rating" 
                       readOnly="true"                     
