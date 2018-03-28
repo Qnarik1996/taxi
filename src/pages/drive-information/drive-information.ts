@@ -3,7 +3,6 @@ import { NavController,NavParams, Platform } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 
 
-
 declare var google;
 @Component({
   selector: 'page-drive-information',
@@ -27,12 +26,12 @@ export class DriveInformationPage {
       public navCtrl: NavController,
               public navParams:NavParams,
               public platform: Platform,
+              
             )
   {
    this.information=this.navParams.get('history');
    this.direction=this.information.directions;
    this.rate= this.information.driverRating;
-   console.log(this.information);
    }
 
 ionViewDidLoad(){
@@ -43,26 +42,26 @@ ionViewDidLoad(){
   initMap() {
     this.map = new google.maps.Map(this.mapElement.nativeElement, {
       zoom: 10,
-      //center:{lat:40.7958024,lng:43.8570917},
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       streetViewControl: false,
       zoomControl: false,
       mapTypeControl: false,
       scaleControl: false,
       rotateControl: false,
-      fullscreenControl: false
+      fullscreenControl: false,
+      liteMode:true,
+      scrollwheel: false,
+      draggable:false
+ 
     });
+    
     this.directionsDisplay  = new google.maps.DirectionsRenderer({
       map:this.map,
       markerOptions:{icon:" ",label:""}
     });
     //this.directionsDisplay.setMap(this.map);
-    this. calculateAndDisplayRoute(this.directionsService);
-    
+    this. calculateAndDisplayRoute(this.directionsService);    
   }
-
-
-
 
  calculateAndDisplayRoute(directionsService) {
   for(let i=1; i< this.direction.length-1 ; i++){
@@ -74,8 +73,6 @@ ionViewDidLoad(){
     
   }
     
-  
-  
     this.directionsService.route({
     
       origin: this.information.directions[0],
@@ -85,14 +82,7 @@ ionViewDidLoad(){
       travelMode: 'DRIVING'
     }, (response, status) => {
       if (status === 'OK') {
-        new google.maps.Marker({
-          position: this.information.directions[this.direction.length-1],
-          icon:{
-            url:"assets/imgs/point.png",
-            scaledSize:{height:25,width:25}
-         },          
-          map: this.map
-        });
+    
         new google.maps.Marker({
           icon:{
              url:"assets/imgs/circle.png",
@@ -111,6 +101,15 @@ ionViewDidLoad(){
             },     
            
             position: this.direction[i],
+            map: this.map
+          });
+
+          new google.maps.Marker({
+            position: this.information.directions[this.direction.length-1],
+            icon:{
+              url:"assets/imgs/point.png",
+              scaledSize:{height:25,width:25}
+           },          
             map: this.map
           });
         }

@@ -1,72 +1,60 @@
-<ion-content >
+<ion-content>
   <ion-grid>
     <ion-row>
       <ion-col class="map-col" col-5>
-        <div #map id="map" > </div>  
-              
-                <ion-grid>
-                    <ion-row *ngFor="let line of direction; let i = index">
-                      <ion-col col-2>
-                          <div *ngIf="i!=direction.length-1" class="on-icon">
-                              <page-lines></page-lines>
-                          </div>
-                          <ion-icon *ngIf="i==direction.length-1" color="secondary" md="md-pin" ios="md-pin"></ion-icon>
-                        </ion-col>
-                      <ion-col col-10>
-                          <div class="place">Pickup Location</div>
-                          <div class="place-name">{{line.label}}</div>
-                      </ion-col>
-                    </ion-row>            
-                  </ion-grid>        
-          
+        <div #map id="map"> </div>
+
+        <ion-grid>
+          <ion-row *ngFor="let line of direction; let i = index">
+            <ion-col col-2>
+              <div *ngIf="i!=direction.length-1" class="on-icon">
+                <page-lines></page-lines>
+              </div>
+              <ion-icon *ngIf="i==direction.length-1" color="secondary" md="md-pin" ios="md-pin"></ion-icon>
+            </ion-col>
+            <ion-col col-10>
+              <div class="place">Pickup Location</div>
+              <div class="place-name">{{line.label}}</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
       </ion-col>
       <ion-col class="users-col" col-7>
-          <div class="users">
-              <div class="image-users" [ngStyle]="{'background-image':information.photoUser | image}">
-                
+        <div class="users">
+          <div class="image-users" [ngStyle]="{'background-image':information.photoUser | image}"></div>
+          <div class="name-users">{{information.userName}}</div>
+        </div>
+        <ion-grid class="inform">
+          <ion-row>
+            <ion-col class="ul" col-7>
+              <div class="driverfoto" [ngStyle]="{'background-image':information.driverfoto | image}"></div>
+              <div>
+                <rating [(ngModel)]="rate" class="rating" readOnly="true" max="4" emptyStarIconName="star-outline" halfStarIconName="star-half"
+                  starIconName="star" nullable="false"></rating>
+                <div class="driverinformation">{{information.driverName}}</div>
               </div>
-              <div class="name-users">{{information.userName}}</div>
-            </div>
-            <ion-grid class="inform">
-              <ion-row>
-                <ion-col class="ul" col-7>                  
-                    <div class="driverfoto"  [ngStyle]="{'background-image':information.driverfoto | image}"></div>                  
-                  <div >
-                      <rating [(ngModel)]="rate" class="rating" 
-                      readOnly="true"                     
-                      max="4" 
-                      emptyStarIconName="star-outline" 
-                      halfStarIconName="star-half" 
-                      starIconName="star" 
-                      nullable="false"></rating>
-                      <div class="driverinformation">{{information.driverName}}</div>
-                  </div>
-                   
-                </ion-col>
-                <ion-col align-self-end class="colinform"> 
-                  <ion-icon name="calendar">                                       
-                  </ion-icon>
-                  <span>{{information.date}}</span> 
-                </ion-col>
-              </ion-row>
-              <ion-row style="margin-top: 3vh">
-                <ion-col col-7 class="colinform cash">
-                  <ion-icon name="cash"></ion-icon>
-                  <span>{{information.price}}</span>
-                </ion-col>
-                <ion-col class="colinform">
-                    <ion-icon name="clock"></ion-icon>
-                    <span>{{information.speed}}</span>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
+
+            </ion-col>
+            <ion-col align-self-end class="colinform">
+              <ion-icon name="calendar">
+              </ion-icon>
+              <span>{{information.date}}</span>
+            </ion-col>
+          </ion-row>
+          <ion-row style="margin-top: 3vh">
+            <ion-col col-7 class="colinform cash">
+              <ion-icon name="cash"></ion-icon>
+              <span>{{information.price}}</span>
+            </ion-col>
+            <ion-col class="colinform">
+              <ion-icon name="clock"></ion-icon>
+              <span>{{information.speed}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-col>
     </ion-row>
- 
+
   </ion-grid>
-  
- 
-
- 
 </ion-content>
-

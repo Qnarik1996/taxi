@@ -1,10 +1,16 @@
 page-drive-information {
  
     ion-content{
+        position: fixed !important;
+       
+        .scroll-content{
+            contain: content;
+            height: fit-content;
+        }
         page-lines .connection-lines{
            
             left: 5px;
-    top: 15px;
+            top: 15px;
         }
         .map-col{
             max-width: fit-content;

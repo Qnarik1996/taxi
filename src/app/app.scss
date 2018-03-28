@@ -5,32 +5,22 @@
     display: flex;
     align-items: center
 }
+ .modal-wrapper{
+    min-height: 70vh!important;
+    left: calc(50% - (110vh/2)) !important;
+    width: 110vh !important;     
+   height: auto !important;
+   top: calc(50% - (70vh/2)) !important;
+}
 
-@media only screen and (max-height: 601px) and (max-width: 501px){
-    .modal-wrapper {
-       
-    height: 30vh;
-    width: 53vh;
-    left: calc(50% - (53vh/2));
-    top: calc(50% - (30vh/2));
-    }
-     }
-@media only screen and (min-height: 600px) and (min-width: 500px){
-   .modal-wrapper {
-        height: 70vh;
-        width: 110vh;
-        left: calc(50% - (110vh/2));
-        top: calc(50% - (70vh/2));
-        
 
-    }
     .gmnoprint{
         display: none
     }
-    img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"] {
+    img[src="http://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"] {
         display: none; 
     }
-}
+
 @media only screen and (min-height: 100px) and (min-width: 100px){
 .ios .modal-wrapper {
     border-radius: 1px;
