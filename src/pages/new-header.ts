@@ -16,9 +16,7 @@ import {Component, Input} from '@angular/core';
         </ion-navbar>
 </ion-header>`,
 styles:[
-    `ion-header{
-        box-shadow:0 1px 12px rgba(0, 0, 0, 0.3);
-    }
+    `
     ion-navbar{
         height: 9vh;
         .toolbar-content-ios{
@@ -46,3 +44,8 @@ styles:[
 export class NewHeader{
 @Input() pageName;
 }
+
+/*
+ion-header{
+        box-shadow:0 1px 12px rgba(0, 0, 0, 0.3);
+    }*/ 

@@ -17,7 +17,10 @@ import {MenuPage,
         HistoryPage,
         LinesPage,
         SettingPage,
-        DriveInformationPage
+        DriveInformationPage,
+        Tab1Page,
+        Tab2Page,
+        Tab3Page
 
 } from '../pages/barrel';
 
@@ -35,7 +38,10 @@ import {MenuPage,
     LinesPage,
     SettingPage,
     DriveInformationPage,
-    PipeImage
+    PipeImage,
+    Tab1Page,
+    Tab2Page,
+    Tab3Page
   ],
   imports: [
     BrowserModule,
@@ -55,6 +61,9 @@ import {MenuPage,
     LinesPage,
     SettingPage,
     DriveInformationPage,
+    Tab1Page,
+    Tab2Page,
+    Tab3Page
    
   ],
   providers: [

@@ -1,3 +1,19 @@
 page-setting {
+    .scroll-content{
+        background-color: Gainsboro 
+    }
+    .tabs-ios .tab-button{     
+     
+        max-width: 34%
+    }
+ 
+     .tabs-ios .tab-button:hover:not(.disable-hover), .tabs-ios .tab-button[aria-selected=true]{
+         color: #1e458c
+     }
 
+
+
+   .tabs-ios .tab-button .activated{
+        border-bottom:2px solid  #1e458c
+   }
 }
