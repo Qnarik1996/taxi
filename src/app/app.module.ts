@@ -9,7 +9,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 import {PipeImage} from '../pipe'
 
 
-import {MenuPage,
+import {
+        HomePage,
+        MenuPage,
         HotelPage,
         MapPage,
         NewHeader,
@@ -30,6 +32,7 @@ import {MenuPage,
 @NgModule({
   declarations: [
     MyApp,
+    HomePage,
     MapPage,
     MenuPage,
     HotelPage,
@@ -53,6 +56,7 @@ import {MenuPage,
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    HomePage,
     MapPage,
     MenuPage,
     HotelPage,

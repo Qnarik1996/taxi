@@ -1,0 +1,52 @@
+page-home {
+    .scroll-content{
+        overflow: hidden
+    }
+    .top-header{
+        background: #1A0550;
+        height: 38vh;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        display: flex;
+        align-items: center;
+    }
+    .drive-div{
+        margin: 0 auto;
+        .drive{
+            background-image: url('../../assets/imgs/car.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 15vh;
+            width: 15vh;
+            margin: 0 auto
+        }
+    }
+    .registration{
+
+        width: fit-content;
+        margin: 0 auto;
+        
+        form, input, optgroup, select    {
+            border: 2px solid grey;
+            border-radius: 27px;
+             height: 57px;
+        width: 286px;
+            padding: 12px;
+        }
+        ion-label{
+            font-size: 1em;
+            margin-left: 21px
+        }
+        .login{
+            text-align: center;
+            button{
+                font-size: 1.4em;
+                width: 56%;
+                background: #33C5F6;
+                margin-top: 20px;
+            }
+        }
+    }
+   
+}

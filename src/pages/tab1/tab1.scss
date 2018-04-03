@@ -1,3 +1,41 @@
 page-tab1 {
+    .card-ios{
+        margin: 10px;
+    }
+    .big-card{
+        margin-top: 10vh;
+    
+    ion-card{
+        display: flex;
+        align-items: center;
+        height: 100px;
+        .card-content-ios{
+            
+            width: 100%;
+            .number{
+                float: left;
+                display: flex;
+                font-size: 1.5em;
+            }
+            .dollar{
+                float: right;
+                align-items: center;
+                display: flex;
+                span{
+                    color: grey;
+                    font-size: 1.5em;
+                    margin-left: 13px;
+                    
+                }
+            }
+        }
+
+    }
+}
+.list{
+    ion-card{
+        height: 80px
+    }
+}
 
 }

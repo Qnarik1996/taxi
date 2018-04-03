@@ -1,19 +1,28 @@
 page-setting {
     .scroll-content{
-        background-color: Gainsboro 
+        background-color: Gainsboro;
+        margin-top: 0 !important ;
     }
-    .tabs-ios .tab-button{     
-     
-        max-width: 34%
+    .tabs-ios[tabsPlacement=top] .tabbar{
+        top:1% !important;
+        background: none;
+        border-bottom:none
     }
- 
-     .tabs-ios .tab-button:hover:not(.disable-hover), .tabs-ios .tab-button[aria-selected=true]{
-         color: #1e458c
-     }
+    .tabs-ios .tab-button{
+        background: white;
+        max-width: 34%;
+        
+    }
+  
+       #tab-t0-1{
+        margin-right: 0.5%;
+        margin-left: 0.5%
+       }
+       .tabs-ios .tab-button:hover:not(.disable-hover), .tabs-ios .tab-button[aria-selected=true]{
+        color: #1A0550;
+        border-bottom: 3px solid;
+       }
+        
+    
 
-
-
-   .tabs-ios .tab-button .activated{
-        border-bottom:2px solid  #1e458c
-   }
 }

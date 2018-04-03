@@ -1,5 +1,18 @@
 <ion-content>
-<div class="list">
-
-</div>
+    <div class="big-card">
+        <ion-card>
+            <ion-card-content>
+                <div class="number">7-10</div>
+                <div class="dollar">
+                    <ion-icon name="cash"></ion-icon>
+                    <span>200$</span>
+                </div>
+            </ion-card-content>
+        </ion-card>
+    </div>
+    <div class="list">
+        <ion-card *ngFor="let item of list"></ion-card>
+    </div>
+       
+   
 </ion-content>
