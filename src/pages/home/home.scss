@@ -27,19 +27,33 @@ page-home {
         width: fit-content;
         margin: 0 auto;
         
-        form, input, optgroup, select    {
-            border: 2px solid grey;
+       ion-input  {
+            border: 3px solid grey;
             border-radius: 27px;
              height: 57px;
-        width: 286px;
+            width: 286px;
             padding: 12px;
+            display: flex;
+            align-items: center;
         }
         ion-label{
-            font-size: 1em;
+            font-size: 1.2em;
             margin-left: 21px
         }
+        .address{ 
+            margin-top:10px;
+            text-align: center;
+            .a-2{
+                margin-top: 22px;
+            } 
+            a{
+                color: #33C5F6;
+            }
+        }
+        
         .login{
             text-align: center;
+       
             button{
                 font-size: 1.4em;
                 width: 56%;

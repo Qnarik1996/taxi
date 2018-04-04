@@ -1,30 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { HttpModule } from '@angular/http'
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Geolocation } from '@ionic-native/geolocation';
 import { NavController } from 'ionic-angular';
 import { Ionic2RatingModule } from 'ionic2-rating';
-import {PipeImage} from '../pipe'
-
+import { PipeImage } from '../pipe'
+import { Local } from '../services/local'
 
 import {
-        HomePage,
-        MenuPage,
-        HotelPage,
-        MapPage,
-        NewHeader,
-        MyApp,
-        HistoryPage,
-        LinesPage,
-        SettingPage,
-        DriveInformationPage,
-        Tab1Page,
-        Tab2Page,
-        Tab3Page
+  HomePage,
+  MenuPage,
+  HotelPage,
+  MapPage,
+  NewHeader,
+  MyApp,
+  HistoryPage,
+  LinesPage,
+  SettingPage,
+  DriveInformationPage,
+  Tab1Page,
+  Tab2Page,
+  Tab3Page
+
 
 } from '../pages/barrel';
+import { ApiService } from '../services/api.service';
 
 
 
@@ -48,10 +51,11 @@ import {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp,{
-      mode:'ios'
+    IonicModule.forRoot(MyApp, {
+      mode: 'ios'
     }),
-    Ionic2RatingModule
+    Ionic2RatingModule, 
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -68,13 +72,15 @@ import {
     Tab1Page,
     Tab2Page,
     Tab3Page
-   
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Geolocation,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    Local,
+    ApiService,
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

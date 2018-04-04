@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import {NavController, NavParams, Nav } from 'ionic-angular';
 
 import { HotelPage, HistoryPage, MapPage,SettingPage, HomePage} from '../barrel';
+import { Local } from '../../services/local';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { HotelPage, HistoryPage, MapPage,SettingPage, HomePage} from '../barrel'
 })
 export class MenuPage {
 @ViewChild(Nav) nav:Nav
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private local:Local) {
   }
 activePage=MapPage
   rootPage=MapPage;
@@ -50,7 +51,9 @@ activePage=MapPage
     
   }
   goToRegistration(){
-    this.navCtrl.setRoot(HomePage)
+
+    this.navCtrl.setRoot(HomePage);
+
   }
   
 }

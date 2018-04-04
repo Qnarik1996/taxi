@@ -5,16 +5,26 @@
     </div>  
   </div>
 
-  <div class="registration">
+  <form [formGroup]="registration" class="registration">
     <ion-label>Email Address </ion-label>
-      <input placeholder="Enter Email Address" type="text">
+      <ion-input placeholder="Enter Email Address" formControlName="email" [(ngModel)]="email" type="text"></ion-input>
+
       <ion-label>Password </ion-label>
-      <input placeholder="Tap to enter password" type=""><br>
-      <div class="login">
-          <button (tap)="goToMenu()" ion-button round > LOGIN</button>
+      <ion-input placeholder="Tap to enter password" formControlName="password" [(ngModel)]="password" type=""></ion-input>
+      <div class="address">
+          <a href="">Forget Password?</a>
+          <div class="a-2">
+              <a href="">Register</a>
+          </div> 
       </div>
-  </div>
-  
+      
+
+      <div class="login">
+          
+        <button (tap)="login()" [disabled]="!registration.valid" ion-button round > LOGIN</button>
+    </div>
+    </form>
+   
   
 
 </ion-content>
