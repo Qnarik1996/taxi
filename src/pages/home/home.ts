@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { MenuPage } from '../barrel';
-import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Local } from '../../services/local';
 import { ApiService } from '../../services/api.service';
 
@@ -15,26 +15,52 @@ export class HomePage {
   email;
   password;
   bool;
-  constructor(public navCtrl: NavController, 
-              public navParams: NavParams,
-              public formBuilder:FormBuilder,
-              private local:Local,
-              private apiService:ApiService
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public formBuilder: FormBuilder,
+    private local: Local,
+    private apiService: ApiService
   ) {
-    this.registration=this.formBuilder.group({
-      email:['',Validators.compose([Validators.required,Validators.email])],
-      password:['',Validators.compose([Validators.required])]
+    this.registration = this.formBuilder.group({
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      password: ['', Validators.compose([Validators.required])]
     })
   }
-  
-  login(){
-    this.apiService.login({username:this.email,password:this.password}).subscribe(data=>{
-      this.navCtrl.setRoot(MenuPage)
+  /*obj = {
+    next : (data) => {
+      console.log("nextmer ", data)
+      for(let i = 0; i < 100000000; i++){
+        if(i == 100000000 - 1){
+          console.log("hello")
+        }
+      }
+    },
+    error : (error) => {
+      console.log("errormer ", error)
+    },
+    complete : () => {
+      this.navCtrl.push(MenuPage)
+      console.log("complete")
+    }
+  }*/
+  login() {
+    this.apiService.login({ username: this.email, password: this.password }).subscribe(
+      (data) => {
+        console.log(data)
+      },
+      (err) => {},
+      () => {
+        this.navCtrl.push(MenuPage)
+      }
+    )
+  }
 
-      
-    })
+  c() {
+    this.apiService.consol(4)
+      .then((data) => { console.log(data) })
+      .catch((error) => { console.log(error) })
   }
-  
+
 
 
 }

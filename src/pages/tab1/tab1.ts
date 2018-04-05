@@ -8,6 +8,7 @@ import {  NavController, NavParams } from 'ionic-angular';
   templateUrl: 'tab1.html',
 })
 export class Tab1Page {
+  ok:boolean=false;
   list=[
     {},
     {},
@@ -17,6 +18,9 @@ export class Tab1Page {
   ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+  openList(){
+    this.ok=!this.ok
   }
 
  

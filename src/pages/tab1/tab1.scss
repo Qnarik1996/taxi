@@ -32,6 +32,19 @@ page-tab1 {
 
     }
 }
+.acardion{
+    transition: height 1000ms cubic-bezier(.06,.97,1,1.17);
+    background: grey;
+    width: 97.6%;
+    margin: 0 auto;
+    display: block;
+}
+.open-list{
+    height: 200px;
+}
+.close-list{
+    height: 0px;  
+}
 .list{
     ion-card{
         height: 80px
@@ -39,3 +52,5 @@ page-tab1 {
 }
 
 }
+
+

@@ -1,6 +1,6 @@
 <ion-content>
     <div class="big-card">
-        <ion-card>
+        <ion-card (tap)="openList()">
             <ion-card-content>
                 <div class="number">7-10</div>
                 <div class="dollar">
@@ -10,6 +10,7 @@
             </ion-card-content>
         </ion-card>
     </div>
+    <div [ngClass]="{'open-list' : ok, 'close-list' : !ok}" class="acardion" ></div>
     <div class="list">
         <ion-card *ngFor="let item of list"></ion-card>
     </div>

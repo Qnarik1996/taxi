@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import {NavController, NavParams, Nav } from 'ionic-angular';
 
 import { HotelPage, HistoryPage, MapPage,SettingPage, HomePage} from '../barrel';
-import { Local } from '../../services/local';
+
 
 
 @Component({
@@ -12,7 +12,7 @@ import { Local } from '../../services/local';
 })
 export class MenuPage {
 @ViewChild(Nav) nav:Nav
-  constructor(public navCtrl: NavController, public navParams: NavParams,private local:Local) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 activePage=MapPage
   rootPage=MapPage;
