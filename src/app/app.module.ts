@@ -7,9 +7,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { Geolocation } from '@ionic-native/geolocation';
 import { NavController } from 'ionic-angular';
 import { Ionic2RatingModule } from 'ionic2-rating';
-import { PipeImage } from '../pipe'
+import { ChartsModule } from 'ng2-charts';
+//pipe
+import { PipeImage } from '../pipe';
+//service
 import { Local } from '../services/local'
-
+import { ApiService } from '../services/api.service';
+//components
 import {
   HomePage,
   MenuPage,
@@ -27,7 +31,7 @@ import {
 
 
 } from '../pages/barrel';
-import { ApiService } from '../services/api.service';
+
 
 
 
@@ -55,7 +59,8 @@ import { ApiService } from '../services/api.service';
       mode: 'ios'
     }),
     Ionic2RatingModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

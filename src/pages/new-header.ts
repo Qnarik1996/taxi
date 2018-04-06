@@ -30,7 +30,7 @@ styles:[
        
     }
     .title-name{
-        margin-left:10vh;
+        margin-left:60px;
         font-size: 1.6em;
         
     }

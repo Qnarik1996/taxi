@@ -1,5 +1,5 @@
 <ion-content>
-    <button (tap)="addNewCard()" ion-button style="position:absolute;z-index:5;top:0; height:20px; width:20px; right:0;"> </button>
+    
     <div class="menuopen">
         <button menuToggle ion-button icon-only>
             <ion-icon md="md-menu" ios="md-menu"></ion-icon>
@@ -19,10 +19,12 @@
                     </div>
                 </ion-col>
             </ion-row>
-
+         
         </ion-grid>
 
-
+        <button (tap)="addNewCard()" ion-button class="add-button"  icon-only>
+                <ion-icon name="paper-plane" class="plane"></ion-icon>    
+        </button>
 
         <div style="text-align:center; color: gray;">
             <ion-icon [name]="icon" (click)="ok()"></ion-icon>

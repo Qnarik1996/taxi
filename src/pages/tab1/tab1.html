@@ -10,10 +10,14 @@
             </ion-card-content>
         </ion-card>
     </div>
-    <div [ngClass]="{'open-list' : ok, 'close-list' : !ok}" class="acardion" ></div>
+
+    <ion-card [ngClass]="{'open-list' : open, 'close-list' : !open}" class="acardion">
+        <canvas #barCanvas></canvas>
+    </ion-card>
+
     <div class="list">
         <ion-card *ngFor="let item of list"></ion-card>
     </div>
-       
-   
+
+
 </ion-content>

@@ -34,13 +34,12 @@ page-tab1 {
 }
 .acardion{
     transition: height 1000ms cubic-bezier(.06,.97,1,1.17);
-    background: grey;
     width: 97.6%;
     margin: 0 auto;
-    display: block;
+   
 }
 .open-list{
-    height: 200px;
+    height: 500px
 }
 .close-list{
     height: 0px;  

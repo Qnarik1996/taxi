@@ -50,6 +50,8 @@ export class HomePage {
       },
       (err) => {},
       () => {
+        this.local.set('password',this.password);
+        this.local.set('email',this.email);
         this.navCtrl.push(MenuPage)
       }
     )

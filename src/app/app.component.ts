@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage, MenuPage } from '../pages/barrel';
 import { ApiService } from '../services/api.service';
+import { Local } from '../services/local';
 
 
 
@@ -20,10 +21,14 @@ export class MyApp implements OnInit {
   }
   rootPage:any;
   @ViewChild('nav') nav;
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private apiService:ApiService) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private apiService:ApiService,private local:Local) {
     platform.ready().then(() => {
-      
-          this.rootPage=HomePage;
+      if(JSON.parse(localStorage.getItem('password'))){
+        this.rootPage=MenuPage
+      }else{
+        this.rootPage=HomePage;
+      }
+        
                
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
