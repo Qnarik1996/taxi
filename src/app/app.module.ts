@@ -27,7 +27,8 @@ import {
   DriveInformationPage,
   Tab1Page,
   Tab2Page,
-  Tab3Page
+  Tab3Page,
+  ChartPage
 
 
 } from '../pages/barrel';
@@ -51,7 +52,8 @@ import {
     PipeImage,
     Tab1Page,
     Tab2Page,
-    Tab3Page
+    Tab3Page,
+    ChartPage
   ],
   imports: [
     BrowserModule,
@@ -76,7 +78,8 @@ import {
     DriveInformationPage,
     Tab1Page,
     Tab2Page,
-    Tab3Page
+    Tab3Page,
+    ChartPage
 
   ],
   providers: [

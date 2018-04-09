@@ -2,22 +2,57 @@
     <div class="big-card">
         <ion-card (tap)="openList()">
             <ion-card-content>
-                <div class="number">7-10</div>
-                <div class="dollar">
-                    <ion-icon name="cash"></ion-icon>
-                    <span>200$</span>
-                </div>
+                <ion-grid>
+                    <ion-row>
+                            <ion-col fit-content>
+                                    <ion-icon greyColor [name]="icon"></ion-icon>
+                                  
+                            </ion-col>
+                            <ion-col> 
+                                    <div class="data">  
+                                       April 03 - May 03    
+                                   </div>
+                               </ion-col>
+                        
+                        <ion-col align-self-end>
+                                <div class="dollar">
+                                        <ion-icon name="cash"></ion-icon>
+                                        <span>200$</span>
+                                    </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+               
+
+               
             </ion-card-content>
         </ion-card>
     </div>
 
-    <ion-card [ngClass]="{'open-list' : open, 'close-list' : !open}" class="acardion">
-        <canvas #barCanvas></canvas>
-    </ion-card>
+<!--charts-->
+ 
+<page-chart  [open]="open"></page-chart>
 
-    <div class="list">
-        <ion-card *ngFor="let item of list"></ion-card>
+      
+
+    <div class="list" *ngFor="let item of list" (tap)="openCards(item)">
+        <ion-card  >
+            <ion-card-content>
+                    <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                        <ion-icon greyColor [name]="item.icon"></ion-icon>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+            </ion-card-content>
+          
+            
+        </ion-card>
+      
+       
     </div>
+    <page-chart ></page-chart>
 
 
 </ion-content>

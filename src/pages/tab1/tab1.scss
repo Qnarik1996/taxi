@@ -12,7 +12,9 @@ page-tab1 {
         .card-content-ios{
             
             width: 100%;
-            .number{
+            .data{
+               
+                
                 float: left;
                 display: flex;
                 font-size: 1.5em;
@@ -32,22 +34,23 @@ page-tab1 {
 
     }
 }
-.acardion{
-    transition: height 1000ms cubic-bezier(.06,.97,1,1.17);
-    width: 97.6%;
-    margin: 0 auto;
-   
-}
-.open-list{
-    height: 500px
-}
-.close-list{
-    height: 0px;  
-}
+
 .list{
     ion-card{
-        height: 80px
+        height: 80px;
+        align-items: center;
+        display: flex
     }
+}
+
+
+  
+*[fit-content]{
+    max-width: fit-content;
+    width: fit-content;
+}
+*[greyColor]{
+    color: grey
 }
 
 }

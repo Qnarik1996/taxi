@@ -11,3 +11,4 @@ export * from './drive-information/drive-information';
 export * from './tab1/tab1';
 export * from './tab2/tab2'
 export * from './tab3/tab3';
+export * from './chart/chart'
