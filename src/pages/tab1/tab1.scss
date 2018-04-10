@@ -1,14 +1,15 @@
 page-tab1 {
+    .scroll-content{
+        padding-bottom: 9vh;
+    }
     .card-ios{
         margin: 10px;
     }
     .big-card{
         margin-top: 10vh;
     
-    ion-card{
-        display: flex;
-        align-items: center;
-        height: 100px;
+    
+}
         .card-content-ios{
             
             width: 100%;
@@ -32,16 +33,20 @@ page-tab1 {
             }
         }
 
-    }
-}
+    
 
-.list{
-    ion-card{
+        page-chart{
+            height: 16vw;
+        }
+
+    .first-card{
         height: 80px;
         align-items: center;
-        display: flex
+        display: flex;
+        margin-bottom: 5px
     }
-}
+      
+
 
 
   

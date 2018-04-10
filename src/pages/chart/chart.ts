@@ -7,13 +7,19 @@ import { Chart } from 'chart.js';
   templateUrl: 'chart.html',
 })
 export class ChartPage {
-  @Input() open;
+
+  @Input() list;
   @ViewChild('barCanvas') barCanvas;
   barChart: any;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
-ngOnInit(){
+  constructor(public navCtrl: NavController, public navParams: NavParams) { 
+  
+    
+  }
+  ngOnInit() {
+
+
     this.barChart = new Chart(this.barCanvas.nativeElement, {
       type: 'bar',
       data: {
@@ -22,56 +28,67 @@ ngOnInit(){
           {
 
             backgroundColor: "rgba(74, 239, 52, 1)",
-            data: [500, 300, 150, 500, 200, 130, 150, 500, 300, 150, 500, 200, 130, 150, 500]
+            data: this.list.data1
           },
           {
             backgroundColor: "rgba(255, 168, 0, 1)",
-            data: [350, 400, 130, 130, 350, 125, 200, 350, 400, 130, 130, 350, 125, 200, 300]
+            data: this.list.data2
           }
         ]
       },
 
-      
-      options: {
-        scaleShowVerticalLines: true,
 
+      options: {
+        tooltips: {
+          enabled: true
+        },
+        scaleShowVerticalLines: false,
         legend: {
           display: false,
-      
+
           labels: {
-            display:false,
+            display: false,
           }
         },
-    
+
         title: {
           display: false,
 
         },
-    
-        
         scales: {
-            xAxes: [{
-                gridLines: {
-                    display:false,
-                    
-                }
-            }],
-            yAxes:[
-                {
-                    ticks: {
-                        min: 100,
-                        max: 500,
-                        stepSize: 200,
-                      }
-           }],
-           
+          xAxes: [{
+            gridLines: {
+              display: false,
 
-          }
+            }
+          }],
+          yAxes: [{
+            gridLines: {
+              display: true,
+            },
+            display: true,
+            
+            ticks: {
+              beginAtZero: true,
+              fontFamily: "Montserrat",
+              min: 100,
+              max: 500,
+              stepSize: 200,
+              
+              
+            },
+          
+        }
+          ],
+
+
+
+        }
       }
     });
   }
 
-  
+
 
 
 }
