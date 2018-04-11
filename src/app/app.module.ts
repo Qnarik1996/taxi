@@ -25,10 +25,11 @@ import {
   LinesPage,
   SettingPage,
   DriveInformationPage,
-  Tab1Page,
+  ListPage,
   Tab2Page,
   Tab3Page,
-  ChartPage
+
+  AccordionWidthChart
 
 
 } from '../pages/barrel';
@@ -50,10 +51,11 @@ import {
     SettingPage,
     DriveInformationPage,
     PipeImage,
-    Tab1Page,
+    ListPage,
     Tab2Page,
     Tab3Page,
-    ChartPage
+
+    AccordionWidthChart
   ],
   imports: [
     BrowserModule,
@@ -76,10 +78,11 @@ import {
     LinesPage,
     SettingPage,
     DriveInformationPage,
-    Tab1Page,
+    ListPage,
     Tab2Page,
     Tab3Page,
-    ChartPage
+
+    AccordionWidthChart
 
   ],
   providers: [

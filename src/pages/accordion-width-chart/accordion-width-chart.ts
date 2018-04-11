@@ -1,25 +1,22 @@
 import { Component, ViewChild, Input } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Content } from 'ionic-angular';
 import { Chart } from 'chart.js';
-
 @Component({
-  selector: 'page-chart',
-  templateUrl: 'chart.html',
+  selector: 'accordion-width-chart',
+  templateUrl: 'accordion-width-chart.html',
 })
-export class ChartPage {
+export class AccordionWidthChart {
 
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+  @Input() k;
   @Input() list;
+  @Input() last;
+  @Input() data;
+  @Input() h;
   @ViewChild('barCanvas') barCanvas;
   barChart: any;
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) { 
-  
-    
-  }
   ngOnInit() {
-
-
     this.barChart = new Chart(this.barCanvas.nativeElement, {
       type: 'bar',
       data: {
@@ -28,16 +25,14 @@ export class ChartPage {
           {
 
             backgroundColor: "rgba(74, 239, 52, 1)",
-            data: this.list.data1
+            data: this.data.data1
           },
           {
             backgroundColor: "rgba(255, 168, 0, 1)",
-            data: this.list.data2
+            data: this.data.data2
           }
         ]
       },
-
-
       options: {
         tooltips: {
           enabled: true
@@ -45,15 +40,12 @@ export class ChartPage {
         scaleShowVerticalLines: false,
         legend: {
           display: false,
-
           labels: {
             display: false,
           }
         },
-
         title: {
           display: false,
-
         },
         scales: {
           xAxes: [{
@@ -67,29 +59,44 @@ export class ChartPage {
               display: true,
             },
             display: true,
-            
+
             ticks: {
-              beginAtZero: true,
               fontFamily: "Montserrat",
               min: 100,
               max: 500,
               stepSize: 200,
-              
-              
+
             },
-          
-        }
+          }
           ],
-
-
-
         }
       }
     });
   }
-
-
-
-
+  openCards(data,k) {
+     for (let i = 0; i < this.list.length; i++) {
+      if (this.list[i].open===true && i!==k) {          
+        this.list[i].open =false;
+        this.list[i].icon='arrow-down'
+      }
+    }
+    this.data.open=!this.data.open;
+    this.data.icon='arrow-up';
+    if (!data.open) {
+      data.icon = 'arrow-down';
+    } else {
+      data.icon ='arrow-up';
+    }
+  }
+  getHeigth() {
+    return this.h + 'px'
+  }
+  
 }
+
+
+
+
+
 //http://tobiasahlin.com/blog/chartjs-charts-to-get-you-started/
+

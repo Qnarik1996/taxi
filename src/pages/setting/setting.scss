@@ -6,7 +6,8 @@ page-setting {
     .tabs-ios[tabsPlacement=top] .tabbar{
         top:1% !important;
         background: none;
-        border-bottom:none
+        border-bottom:none;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
     .tabs-ios .tab-button{
         background: white;

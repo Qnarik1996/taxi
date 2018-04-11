@@ -1,0 +1,32 @@
+<ion-card class="first-card" (tap)="openCards(data,k)" [ngStyle]="{'height': getHeigth()}">
+    <ion-card-content>
+        <ion-grid>
+            <ion-row>
+                <ion-col fit-content>
+                    <ion-icon greyColor [name]="data.icon"></ion-icon>
+                </ion-col>
+                <ion-col>
+                    <div class="data">
+                        {{data.date}}
+                    </div>
+                </ion-col>
+                <ion-col align-self-end>
+                    <div class="dollar">
+                        <ion-icon name="cash"></ion-icon>
+                        <span>{{data.price}}</span>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card-content>
+</ion-card>
+
+<!--charts-->
+<ion-card [ngClass]="{'open-list' : data.open, 'close-list' : !data.open}" class="acardion">
+    <canvas style="
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    height:14vw;
+    width:100%" #barCanvas></canvas>
+</ion-card>
