@@ -1,37 +1,35 @@
 <new-header [pageName]="pageName"></new-header>
 
 
-<ion-content  top>
-<ion-card *ngFor="let item of history" (tap)="openInformation(item)">
-  <ion-grid >
-    <ion-row class="first-row">
-     <ion-col col-1>
-      
-      
-     </ion-col>
-    <ion-col>
-      <ion-grid>
-        <ion-row *ngFor="let direction of item.directions; let i = index">
-          <ion-col col-1>
-              <div *ngIf="i!=item.directions.length-1" class="on-icon">
-                  <page-lines></page-lines>
-              </div>
-              <ion-icon *ngIf="i==item.directions.length-1" color="secondary" md="md-pin" ios="md-pin"></ion-icon>
-            </ion-col>
-          <ion-col col-11>
-              <div class="place">Pickup Location</div>
-              <div class="place-name">{{direction.label}}</div>
-          </ion-col>
-        </ion-row>
+<ion-content top>
+  <ion-card *ngFor="let item of history" (tap)="openInformation(item)">
+    <ion-grid>
+      <ion-row class="first-row">
+        <ion-col col-1>
 
-      </ion-grid>
-      
-     </ion-col>
-    </ion-row>
-   
-        
-      
-    
-  </ion-grid>       
+
+        </ion-col>
+        <ion-col>
+          <ion-grid>
+            <ion-row *ngFor="let direction of item.directions; let i = index">
+              <ion-col col-1>
+                <div *ngIf="i!=item.directions.length-1" class="on-icon">
+                  <page-lines></page-lines>
+                </div>
+                <ion-icon *ngIf="i==item.directions.length-1" color="secondary" md="md-pin" ios="md-pin"></ion-icon>
+              </ion-col>
+              <ion-col col-11>
+                <div class="place">Pickup Location</div>
+                <div class="place-name">{{direction.label}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </ion-col>
+      </ion-row>
+
+
+    </ion-grid>
   </ion-card>
+
 </ion-content>

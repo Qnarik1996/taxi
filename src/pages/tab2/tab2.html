@@ -1,6 +1,49 @@
-
-
-
 <ion-content>
+    <div class="user-photo">
+  
+    </div>
+    <div class="user-name">Vannesa Donavan</div>  
+    <form [formGroup]="user">
+    <ion-grid class="list">
+        <ion-row >
+            <ion-col >
+                <ion-item>
+                    <ion-label floating>First Name</ion-label>
+                    <ion-input formControlName="firstName" type="text" [(ngModel)]="firstName" value=""></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col>
+                    <ion-item>
+                            <ion-label floating>Last Name</ion-label>
+                            <ion-input formControlName="lastName" type="text" [(ngModel)]="lastName" value=""></ion-input>
+                        </ion-item>
+            </ion-col>
+        </ion-row>  
+        <ion-row>
+            <ion-col>
+                    <ion-item>
+                            <ion-label floating>Email</ion-label>
+                            <ion-input type="email" formControlName="email" [(ngModel)]="email" value=""></ion-input>
+                        </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                    <ion-item>
+                            <ion-label floating>Password</ion-label>
+                            <ion-input type="password" formControlName="password" [(ngModel)]="password" value=""></ion-input>
+                        </ion-item>
+            </ion-col>
+        </ion-row>  
+        <ion-row style="margin-top: 25px">
+            <ion-col col-7 ><button ion-button class="save"[disabled]="!user.valid" round>Save</button></ion-col>
+            <ion-col ><button ion-button class="log-out">Log Out</button></ion-col>
+        </ion-row>
+ 
+   </ion-grid>
+
+   
+   
+</form>
 
 </ion-content>

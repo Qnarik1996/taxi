@@ -7,10 +7,10 @@
 
   <form [formGroup]="registration" class="registration">
     <ion-label>Email Address </ion-label>
-      <ion-input placeholder="Enter Email Address" formControlName="email" [(ngModel)]="email" type="text"></ion-input>
+      <ion-input ng-reflect-model="" placeholder="Enter Email Address" formControlName="email" [(ngModel)]="email" type="text"></ion-input>
 
       <ion-label>Password </ion-label>
-      <ion-input placeholder="Tap to enter password" formControlName="password" [(ngModel)]="password" type="" ></ion-input>
+      <ion-input ng-reflect-model="" placeholder="Tap to enter password" formControlName="password" [(ngModel)]="password" type="password" ></ion-input>
       <div class="address">
           <a href="">Forget Password?</a>
           <div class="a-2">

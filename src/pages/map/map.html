@@ -1,5 +1,5 @@
 <ion-content>
-    
+
     <div class="menuopen">
         <button menuToggle ion-button icon-only>
             <ion-icon md="md-menu" ios="md-menu"></ion-icon>
@@ -19,13 +19,12 @@
                     </div>
                 </ion-col>
             </ion-row>
-         
+
         </ion-grid>
 
-        <button (tap)="addNewCard()" ion-button class="add-button"  icon-only>
-                <ion-icon name="paper-plane" class="plane"></ion-icon>    
+        <button (tap)="addNewCard()" ion-button class="add-button" [ngClass]="{'plane-open':okay,'plane-close':!okay}" icon-only>
+            <ion-icon name="paper-plane" class="plane"></ion-icon>
         </button>
-
         <div style="text-align:center; color: gray;">
             <ion-icon [name]="icon" (click)="ok()"></ion-icon>
         </div>
@@ -99,7 +98,7 @@
                                 <p> %</p>
                             </div>
                         </ion-col>
-                        <ion-col  align-self-center>
+                        <ion-col align-self-center>
                             <span>Promo</span>
                         </ion-col>
                     </ion-row>

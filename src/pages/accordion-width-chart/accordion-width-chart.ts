@@ -34,6 +34,7 @@ export class AccordionWidthChart {
         ]
       },
       options: {
+        
         tooltips: {
           enabled: true
         },
@@ -59,7 +60,6 @@ export class AccordionWidthChart {
               display: true,
             },
             display: true,
-
             ticks: {
               fontFamily: "Montserrat",
               min: 100,

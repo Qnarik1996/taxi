@@ -6,15 +6,30 @@ page-map {
     .add-button{
       position: absolute;
       z-index: 5;
-      top: -6vw;
       height: 50px;
       width: 50px;
-      right: 81px;
       box-shadow:0 1px 12px rgba(0, 0, 0, 0.3);
+    }
+    .plane-open{
+     
+      top: -6vw;
+     
+      right: 81px;
+     
+    }
+    .plane-close{
+ 
+      top: -13vw;
+      right: 108px;
+
+  }
+
+    
       .plane{
         color: #FF435C
        }
-    }
+    
+
   
   .messege-grid{
     flex-direction: column-reverse;
@@ -22,7 +37,7 @@ page-map {
     width: fit-content;  
     position: absolute;
     right: 20px;
-    top: -44vw;
+    top: -48vw;
     .row{
       margin: 1vw 0;
       .col{

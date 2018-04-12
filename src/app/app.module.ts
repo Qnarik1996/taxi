@@ -28,7 +28,7 @@ import {
   ListPage,
   Tab2Page,
   Tab3Page,
-
+  HotelRegistrPage,
   AccordionWidthChart
 
 
@@ -54,7 +54,7 @@ import {
     ListPage,
     Tab2Page,
     Tab3Page,
-
+    HotelRegistrPage,
     AccordionWidthChart
   ],
   imports: [
@@ -81,7 +81,7 @@ import {
     ListPage,
     Tab2Page,
     Tab3Page,
-
+    HotelRegistrPage,
     AccordionWidthChart
 
   ],
