@@ -1,6 +1,7 @@
 page-tab2 {
     .scroll-content{
-         background-color: white
+         background-color: white;
+         overflow: hidden
     }
     .user-photo{
        
@@ -11,7 +12,7 @@ page-tab2 {
         background-size: cover;
         width: 100px;
         border-radius: 50%;
-        margin: 70px auto 0 auto;
+        margin: 90px auto 0 auto;
        
     }
     .user-name{
@@ -48,4 +49,19 @@ page-tab2 {
         background: none;
         font-size: 1.5em
     }
+    .invalid{
+        border-bottom: 1px solid grey;
+        padding-left: 0
+    }
+    .valid{
+        border-bottom: 1px solid #48EBD0;
+        padding-left: 0
+    }
+    .text-input-ios{
+        color: grey
+    }
+    .item-ios.item-block .item-inner{
+        border: none
+    }
+    //'invalid':!user.controls.email.valid,
 }

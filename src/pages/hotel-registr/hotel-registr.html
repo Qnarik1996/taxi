@@ -1,5 +1,65 @@
+<ion-content>
+    <button ion-button icon-only (tap)="close()">
+        <ion-icon name="close"></ion-icon>
+    </button>
+    <div class="hotel-image"></div>
+    <p>{{hotelName}}</p>
+    <form [formGroup]="hotel">
+        <ion-grid>
 
+            <ion-row>
+                <ion-col padding-right-none>
+                    <ion-item [ngClass]="{'invalid':!hotel.controls.name.valid,'valid':hotel.controls.name.valid}">
+                        <ion-label floating>Name</ion-label>
+                        <ion-input formControlName="name" [(ngModel)]="name" type="text"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col padding-left-none>
+                    <ion-item padding-left-none [ngClass]="{'invalid':!hotel.controls.address.valid,'valid':hotel.controls.address.valid}">
+                        <ion-label floating>Address</ion-label>
+                        <ion-input formControlName="address" [(ngModel)]="address" type="text"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row class="contact-info">
+                <ion-col>
+                    <div>Contact info.</div>
+                </ion-col>
 
-<ion-content >
-sfsvd
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-item [ngClass]="{'invalid':!hotel.controls.firstName.valid,'valid':hotel.controls.firstName.valid}">
+                        <ion-label floating>First Name</ion-label>
+                        <ion-input [(ngModel)]="firstName" formControlName="firstName" type="text"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col>
+                    <ion-item [ngClass]="{'invalid':!hotel.controls.lastName.valid,'valid':hotel.controls.lastName.valid}">
+                        <ion-label floating>Last Name</ion-label>
+                        <ion-input formControlName="lastName" [(ngModel)]="lastName" type="text"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row margin-top>
+                <ion-col>
+                    <ion-item [ngClass]="{'invalid':!hotel.controls.email.valid,'valid':hotel.controls.email.valid}">
+                        <ion-label floating>Email</ion-label>
+                        <ion-input [(ngModel)]="email" formControlName="email" type="email"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col>
+                    <ion-item [ngClass]="{'invalid':!hotel.controls.phone.valid,'valid':hotel.controls.phone.valid}">
+                        <ion-label floating>Phone</ion-label>
+                        <ion-input [(ngModel)]="phone" formControlName="phone" type=""></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <div class="save-div">
+                <button ion-button class="save" round (tap)="save()" [disabled]="hotel.valid">Save</button>
+            </div>
+
+        </ion-grid>
+    </form>
 </ion-content>

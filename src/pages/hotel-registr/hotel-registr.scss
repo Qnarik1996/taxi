@@ -1,3 +1,78 @@
 page-hotel-registr {
+    .scroll-content{
+        overflow: hidden
+    }
+    .button[icon-only]{
+        float: right
+    }
+    .hotel-image{
+        background-image: url('../../assets/imgs/hotel.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin: 10px auto;
+       
+    }
+    p{
+        text-align: center;
+        font-size: 1.5em
+    }
+    .grid{
+        width: 90%;
+    }
+    .save-div{
+        margin-top: 25px;
+        text-align: center;
 
+    
+    .save{
+        background-color: #48EBD0;
+        color: white;
+        width: 15%;
+        border-radius: 18px;
+        
+    }
 }
+    .log-out{
+        color: #F1211F;
+        background: none;
+        float: right;
+        font-size: 1.5em;
+        width: fit-content;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .contact-info{
+        margin-top: 40px;
+        
+        font-size: 1.3em
+    }
+    .button-ios.activated{
+        background: none;
+        font-size: 1.5em
+    }
+    .invalid{
+        border-bottom: 1px solid grey;
+        padding-left: 0
+    }
+    .valid{
+        border-bottom: 2px solid #33C3F5;
+        padding-left: 0
+    }
+    .text-input-ios{
+        color: grey
+    }
+    .item-ios.item-block .item-inner{
+        border: none
+    }
+    *[padding-left-none]{
+        padding-left: 0px
+    }
+    *[padding-right-none]{
+        padding-right: 0px
+    }
+  }

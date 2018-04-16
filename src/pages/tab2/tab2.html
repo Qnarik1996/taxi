@@ -7,31 +7,31 @@
     <ion-grid class="list">
         <ion-row >
             <ion-col >
-                <ion-item>
+                <ion-item [ngClass]="{'invalid':!user.controls.firstName.valid,'valid':user.controls.firstName.valid}">
                     <ion-label floating>First Name</ion-label>
-                    <ion-input formControlName="firstName" type="text" [(ngModel)]="firstName" value=""></ion-input>
+                    <ion-input  formControlName="firstName" type="text" [(ngModel)]="firstName" value=""></ion-input>
                 </ion-item>
             </ion-col>
-            <ion-col>
-                    <ion-item>
+            <ion-col offset-2>
+                    <ion-item [ngClass]="{'invalid':!user.controls.lastName.valid,'valid':user.controls.lastName.valid}">
                             <ion-label floating>Last Name</ion-label>
-                            <ion-input formControlName="lastName" type="text" [(ngModel)]="lastName" value=""></ion-input>
+                            <ion-input formControlName="lastName"  type="text" [(ngModel)]="lastName" value=""></ion-input>
                         </ion-item>
             </ion-col>
         </ion-row>  
         <ion-row>
             <ion-col>
-                    <ion-item>
+                    <ion-item [ngClass]="{'invalid':!user.controls.email.valid,'valid':user.controls.email.valid}">
                             <ion-label floating>Email</ion-label>
-                            <ion-input type="email" formControlName="email" [(ngModel)]="email" value=""></ion-input>
+                            <ion-input type="email" formControlName="email"  [(ngModel)]="email" value=""></ion-input>
                         </ion-item>
             </ion-col>
         </ion-row>
         <ion-row>
             <ion-col>
-                    <ion-item>
+                    <ion-item [ngClass]="{'invalid':!user.controls.password.valid,'valid':user.controls.password.valid}">
                             <ion-label floating>Password</ion-label>
-                            <ion-input type="password" formControlName="password" [(ngModel)]="password" value=""></ion-input>
+                            <ion-input type="password" formControlName="password"  [(ngModel)]="password" value=""></ion-input>
                         </ion-item>
             </ion-col>
         </ion-row>  
