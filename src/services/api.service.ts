@@ -1,15 +1,19 @@
 import { Injectable } from "@angular/core";
-//import { Http } from "@angular/http"
-import { HttpClient } from "@angular/common/http"
+import { HttpClient,HttpHeaders } from "@angular/common/http"
+import { Http,Headers } from '@angular/http';
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map"
+import { Local } from "./local";
 @Injectable()
 export class ApiService {
+    public accessToken:string='';
     private baseUrl: string = "http://164.132.107.245:8633/api"
-    constructor(private http: HttpClient) { }
+    constructor(private httpclient: HttpClient,private http:Http) { }
     public login(info) {
-        return this.http.post(this.baseUrl + "/Login", info);
+        return this.httpclient.post(this.baseUrl + "/Login", info);
     }
+
+
     consol(i) {
         return new Promise((resolve, reject) => {
             if (i == 3) {
@@ -24,5 +28,40 @@ export class ApiService {
                 })
             }
         })
+    }
+
+   
+
+    public get(url){
+        this.accessToken=JSON.parse(localStorage.getItem('accessToken'));
+        const httpOptions = {
+            headers: new HttpHeaders({
+              'Content-Type':  'application/json',
+              'Authorization': 'Bearer ' + this.accessToken
+            })
+          };
+        return this.httpclient.get(this.baseUrl+url, httpOptions)
+    }
+    
+    public post(url,options){
+        this.accessToken=JSON.parse(localStorage.getItem('accessToken'));
+        const httpOptions = {
+            headers: new HttpHeaders({
+              'Content-Type':  'application/json',
+              'Authorization': 'Bearer ' + this.accessToken
+            })
+          };
+        return this.httpclient.post(this.baseUrl+url,options,httpOptions)
+    }
+
+    public delete(url){
+        this.accessToken=JSON.parse(localStorage.getItem('accessToken'));
+        const httpOptions = {
+            headers: new HttpHeaders({
+              'Content-Type':  'application/json',
+              'Authorization': 'Bearer ' + this.accessToken
+            })
+          };
+        return this.httpclient.delete(this.baseUrl+url,httpOptions)
     }
 }

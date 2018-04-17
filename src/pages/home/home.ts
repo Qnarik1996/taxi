@@ -45,8 +45,10 @@ export class HomePage {
   }*/
   login() {
     this.apiService.login({ username: this.email, password: this.password }).subscribe(
-      (data) => {
-        console.log(data)
+      (data:any) => {
+        this.apiService.accessToken=data.accessToken;
+        this.local.set('accessToken',data.accessToken);
+        this.local.set('refreshToken',data.refreshToken);
       },
       (err) => {},
       () => {

@@ -10,6 +10,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class HotelRegistrPage {
   hotelName;
+  hotel;
+
   name;
   address;
   firstName;
@@ -17,7 +19,7 @@ export class HotelRegistrPage {
   phone;
   email;
 
-  hotel;
+
   constructor(public navCtrl: NavController,
               public formBuilder:FormBuilder,
               public navParams: NavParams,
@@ -25,8 +27,9 @@ export class HotelRegistrPage {
               public viewCtrl:ViewController
             ) {
                 this.hotelName=this.navParams.get('hotelName');
+                //valid
                 this.hotel = this.formBuilder.group({
-                  hotelName:['',Validators.required],
+                 
                   address:['',Validators.required],
                   name:['',Validators.required],
                   firstName:['',Validators.required],
@@ -40,8 +43,8 @@ export class HotelRegistrPage {
     this.viewCtrl.dismiss()
   }
   save(){
-
-    this.viewCtrl.dismiss()
+    console.log(this.hotel)
+    this.viewCtrl.dismiss(this.hotel)
   }
 
 }

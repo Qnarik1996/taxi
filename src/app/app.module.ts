@@ -33,6 +33,8 @@ import {
 
 
 } from '../pages/barrel';
+import { HttpModule } from '@angular/http';
+import { PartnerService } from '../services/partner.service';
 
 
 
@@ -58,6 +60,7 @@ import {
     AccordionWidthChart
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp, {
       mode: 'ios'
@@ -91,6 +94,7 @@ import {
     Geolocation,
     Local,
     ApiService,
+    PartnerService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

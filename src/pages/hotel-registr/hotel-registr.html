@@ -8,7 +8,7 @@
         <ion-grid>
 
             <ion-row>
-                <ion-col padding-right-none>
+                <ion-col col-7 padding-right-none>
                     <ion-item [ngClass]="{'invalid':!hotel.controls.name.valid,'valid':hotel.controls.name.valid}">
                         <ion-label floating>Name</ion-label>
                         <ion-input formControlName="name" [(ngModel)]="name" type="text"></ion-input>
@@ -34,7 +34,7 @@
                         <ion-input [(ngModel)]="firstName" formControlName="firstName" type="text"></ion-input>
                     </ion-item>
                 </ion-col>
-                <ion-col>
+                <ion-col offset-2>
                     <ion-item [ngClass]="{'invalid':!hotel.controls.lastName.valid,'valid':hotel.controls.lastName.valid}">
                         <ion-label floating>Last Name</ion-label>
                         <ion-input formControlName="lastName" [(ngModel)]="lastName" type="text"></ion-input>
@@ -48,7 +48,7 @@
                         <ion-input [(ngModel)]="email" formControlName="email" type="email"></ion-input>
                     </ion-item>
                 </ion-col>
-                <ion-col>
+                <ion-col offset-2>
                     <ion-item [ngClass]="{'invalid':!hotel.controls.phone.valid,'valid':hotel.controls.phone.valid}">
                         <ion-label floating>Phone</ion-label>
                         <ion-input [(ngModel)]="phone" formControlName="phone" type=""></ion-input>
@@ -57,7 +57,7 @@
             </ion-row>
 
             <div class="save-div">
-                <button ion-button class="save" round (tap)="save()" [disabled]="hotel.valid">Save</button>
+                <button ion-button class="save" round (tap)="save()" [disabled]="!hotel.valid">Save</button>
             </div>
 
         </ion-grid>
