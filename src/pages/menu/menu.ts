@@ -3,6 +3,7 @@ import {NavController, NavParams, Nav } from 'ionic-angular';
 
 import { HotelPage, HistoryPage, MapPage,SettingPage, HomePage} from '../barrel';
 import { Local } from '../../services/local';
+import { PartnerService } from '../../services/partner.service';
 
 
 
@@ -13,10 +14,17 @@ import { Local } from '../../services/local';
 })
 export class MenuPage {
 @ViewChild(Nav) nav:Nav
-  constructor(public navCtrl: NavController, public navParams: NavParams,private local:Local) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              private local:Local,
+              public partnerService:PartnerService
+            ) {
   }
+
 activePage=MapPage
   rootPage=MapPage;
+  name;
+  phoneNumber
   pages:any[]=[
     {
       iconsName:"ios-pin",
@@ -40,7 +48,14 @@ activePage=MapPage
     },
 
   ]
-
+ngOnInit(){
+  this.partnerService.getPartner().subscribe((data:any)=>{
+    this.name=data.firstName;
+    this.phoneNumber=data.phone
+    console.log('data',data);
+    this.local.set('data',data)
+  })
+}
  
   addClass(page){
     

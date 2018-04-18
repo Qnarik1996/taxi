@@ -26,7 +26,33 @@ export class HomePage {
       password: ['', Validators.compose([Validators.required])]
     })
   }
-  /*obj = {
+  
+  login() {
+    this.apiService.login({ username: this.email, password: this.password }).subscribe(
+      (data:any) => {
+        this.apiService.accessToken=data.accessToken;
+        this.local.set('accessToken',data.accessToken);
+        this.local.set('refreshToken',data.refreshToken);
+      },
+      (err) => {},
+      () => {
+        this.local.set('password',this.password);
+        this.local.set('email',this.email);       
+        this.navCtrl.push(MenuPage)
+      }
+    )
+  }
+
+  c() {
+    this.apiService.consol(4)
+      .then((data) => { console.log(data) })
+      .catch((error) => { console.log(error) })
+  }
+
+
+
+}
+/*obj = {
     next : (data) => {
       console.log("nextmer ", data)
       for(let i = 0; i < 100000000; i++){
@@ -43,28 +69,3 @@ export class HomePage {
       console.log("complete")
     }
   }*/
-  login() {
-    this.apiService.login({ username: this.email, password: this.password }).subscribe(
-      (data:any) => {
-        this.apiService.accessToken=data.accessToken;
-        this.local.set('accessToken',data.accessToken);
-        this.local.set('refreshToken',data.refreshToken);
-      },
-      (err) => {},
-      () => {
-        this.local.set('password',this.password);
-        this.local.set('email',this.email);
-        this.navCtrl.push(MenuPage)
-      }
-    )
-  }
-
-  c() {
-    this.apiService.consol(4)
-      .then((data) => { console.log(data) })
-      .catch((error) => { console.log(error) })
-  }
-
-
-
-}

@@ -1,44 +1,36 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Local } from '../../services/local';
 import { ViewController } from 'ionic-angular/navigation/view-controller';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PartnerService } from '../../services/partner.service';
 
 @Component({
   selector: 'page-hotel-registr',
   templateUrl: 'hotel-registr.html',
 })
-export class HotelRegistrPage {
-  hotelName;
+export class HotelRegistrPage implements OnInit{
+  id;
   hotel;
-
+  hotelIformation={};
   name;
   address;
   firstName;
   lastName;
-  phone;
   email;
 
 
   constructor(public navCtrl: NavController,
-              public formBuilder:FormBuilder,
               public navParams: NavParams,
               public local:Local,
-              public viewCtrl:ViewController
+              public viewCtrl:ViewController,
+              public partnerService:PartnerService
             ) {
-                this.hotelName=this.navParams.get('hotelName');
-                //valid
-                this.hotel = this.formBuilder.group({
-                 
-                  address:['',Validators.required],
-                  name:['',Validators.required],
-                  firstName:['',Validators.required],
-                  lastName:['',Validators.required],
-                  email:['',Validators.compose([Validators.required,Validators.email])],
-                  phone:['',Validators.required]
-
-    })
+                this.id=this.navParams.get('id');
+                console.log('id',this.id)
+              
   }
+
   close(){
     this.viewCtrl.dismiss()
   }
@@ -47,5 +39,20 @@ export class HotelRegistrPage {
     this.viewCtrl.dismiss(this.hotel)
   }
 
+  ngOnInit(){
+    this.getHotelById(this.id);
+  }
+
+  getHotelById(id){
+    this.partnerService.getHotelsById(id).subscribe((data)=>{
+      this.hotelIformation=data;
+      console.log(data);
+     
+      
+     
+      
+
+    })
+  }
+
 }
-//Validators.pattern('[(][+][0-9]{3}[)][0-9]{2}[ ][0-9]{2}[ ][0-9]{2}[ ][0-9]{2}')

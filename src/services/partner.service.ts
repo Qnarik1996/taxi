@@ -12,4 +12,9 @@ export class PartnerService{
     public getPartner(){
         return this.apiService.get('/partner');
     }
+
+    public getHotelsById(id){
+        return this.apiService.get('/hotels/'+id);
+    }
+   
 }

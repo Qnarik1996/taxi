@@ -3,21 +3,21 @@
         <ion-icon name="close"></ion-icon>
     </button>
     <div class="hotel-image"></div>
-    <p>{{hotelName}}</p>
-    <form [formGroup]="hotel">
+    <p>{{hotelIformation.name}}</p>
+   
         <ion-grid>
 
             <ion-row>
                 <ion-col col-7 padding-right-none>
-                    <ion-item [ngClass]="{'invalid':!hotel.controls.name.valid,'valid':hotel.controls.name.valid}">
+                    <ion-item >
                         <ion-label floating>Name</ion-label>
-                        <ion-input formControlName="name" [(ngModel)]="name" type="text"></ion-input>
+                        <ion-input value={{hotelIformation.name}} type="text"></ion-input>
                     </ion-item>
                 </ion-col>
                 <ion-col padding-left-none>
-                    <ion-item padding-left-none [ngClass]="{'invalid':!hotel.controls.address.valid,'valid':hotel.controls.address.valid}">
+                    <ion-item padding-left-none >
                         <ion-label floating>Address</ion-label>
-                        <ion-input formControlName="address" [(ngModel)]="address" type="text"></ion-input>
+                        <ion-input  value={{hotelIformation.address}} type="text"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
@@ -29,37 +29,37 @@
             </ion-row>
             <ion-row>
                 <ion-col>
-                    <ion-item [ngClass]="{'invalid':!hotel.controls.firstName.valid,'valid':hotel.controls.firstName.valid}">
+                    <ion-item >
                         <ion-label floating>First Name</ion-label>
-                        <ion-input [(ngModel)]="firstName" formControlName="firstName" type="text"></ion-input>
+                        <ion-input value={{hotelIformation.contactPersonFirstName}}  type="text"></ion-input>
                     </ion-item>
                 </ion-col>
                 <ion-col offset-2>
-                    <ion-item [ngClass]="{'invalid':!hotel.controls.lastName.valid,'valid':hotel.controls.lastName.valid}">
+                    <ion-item >
                         <ion-label floating>Last Name</ion-label>
-                        <ion-input formControlName="lastName" [(ngModel)]="lastName" type="text"></ion-input>
+                        <ion-input value={{hotelIformation.contactPersonLastName}}  type="text"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
             <ion-row margin-top>
                 <ion-col>
-                    <ion-item [ngClass]="{'invalid':!hotel.controls.email.valid,'valid':hotel.controls.email.valid}">
+                    <ion-item >
                         <ion-label floating>Email</ion-label>
-                        <ion-input [(ngModel)]="email" formControlName="email" type="email"></ion-input>
+                        <ion-input value={{hotelIformation.email}}  type="email"></ion-input>
                     </ion-item>
                 </ion-col>
                 <ion-col offset-2>
-                    <ion-item [ngClass]="{'invalid':!hotel.controls.phone.valid,'valid':hotel.controls.phone.valid}">
+                    <ion-item >
                         <ion-label floating>Phone</ion-label>
-                        <ion-input [(ngModel)]="phone" formControlName="phone" type=""></ion-input>
+                        <ion-input value={{hotelIformation.phoneNumber}}  type=""></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
 
             <div class="save-div">
-                <button ion-button class="save" round (tap)="save()" [disabled]="!hotel.valid">Save</button>
+                <button ion-button class="save" round (tap)="save()" >Save</button>
             </div>
 
         </ion-grid>
-    </form>
+    
 </ion-content>

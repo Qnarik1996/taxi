@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PartnerService } from '../../services/partner.service';
+import { HomePage } from '../barrel';
+import { Local } from '../../services/local';
 
 
 @Component({
@@ -8,21 +10,33 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: 'tab2.html',
 })
 export class Tab2Page {
-  user;
+  @Output() a = new EventEmitter();
+  bool=false;
+  partner;
   firstName;
   lastName;
   email;
   password
-  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder) {
-    this.user = this.formBuilder.group({
-      firstName:['',Validators.required],
-      lastName:['',Validators.required],
-      email:['',Validators.compose([Validators.required,Validators.email])],
-      password:['',Validators.required]
-
-    })
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public partnerService:PartnerService,
+              public local:Local  
+            ) 
+              {}
+             
+              
+             
+   ngOnInit(){
+    this.partner=JSON.parse(localStorage.getItem('data'));
+    
+   }           
+  logOut(event){
+    this.bool=event;
+    console.log(this.bool);   
   }
-
-
-
-}
+  emit(){
+    this.bool=true;
+    this.a.emit(this.bool);
+  }
+} 
+  

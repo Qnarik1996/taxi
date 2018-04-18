@@ -2,48 +2,45 @@
     <div class="user-photo">
   
     </div>
-    <div class="user-name">Vannesa Donavan</div>  
-    <form [formGroup]="user">
+    <div class="user-name">{{partner.firstName}}</div>  
+   
     <ion-grid class="list">
         <ion-row >
-            <ion-col >
-                <ion-item [ngClass]="{'invalid':!user.controls.firstName.valid,'valid':user.controls.firstName.valid}">
+            <ion-col>
+                <ion-item>
                     <ion-label floating>First Name</ion-label>
-                    <ion-input  formControlName="firstName" type="text" [(ngModel)]="firstName" value=""></ion-input>
+                    <ion-input  type="text" [(ngModel)]="firstName" value={{partner.firstName}}></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col offset-2>
-                    <ion-item [ngClass]="{'invalid':!user.controls.lastName.valid,'valid':user.controls.lastName.valid}">
+                    <ion-item >
                             <ion-label floating>Last Name</ion-label>
-                            <ion-input formControlName="lastName"  type="text" [(ngModel)]="lastName" value=""></ion-input>
+                            <ion-input type="text" [(ngModel)]="lastName" value={{partner.lastName}}></ion-input>
                         </ion-item>
             </ion-col>
         </ion-row>  
         <ion-row>
             <ion-col>
-                    <ion-item [ngClass]="{'invalid':!user.controls.email.valid,'valid':user.controls.email.valid}">
+                    <ion-item >
                             <ion-label floating>Email</ion-label>
-                            <ion-input type="email" formControlName="email"  [(ngModel)]="email" value=""></ion-input>
+                            <ion-input type="email"   [(ngModel)]="email" value={{partner.email}}></ion-input>
                         </ion-item>
             </ion-col>
         </ion-row>
         <ion-row>
             <ion-col>
-                    <ion-item [ngClass]="{'invalid':!user.controls.password.valid,'valid':user.controls.password.valid}">
+                    <ion-item>
                             <ion-label floating>Password</ion-label>
-                            <ion-input type="password" formControlName="password"  [(ngModel)]="password" value=""></ion-input>
+                            <ion-input type="password"   [(ngModel)]="password" value={{partner.password}}></ion-input>
                         </ion-item>
             </ion-col>
         </ion-row>  
         <ion-row style="margin-top: 25px">
-            <ion-col col-7 ><button ion-button class="save"[disabled]="!user.valid" round>Save</button></ion-col>
-            <ion-col ><button ion-button class="log-out">Log Out</button></ion-col>
+            <ion-col col-7 ><button ion-button class="save" round>Save</button></ion-col>
+            <ion-col ><button ion-button class="log-out" (click)="emit()">Log Out</button></ion-col>
         </ion-row>
  
    </ion-grid>
-
    
-   
-</form>
 
 </ion-content>

@@ -5,7 +5,7 @@ page-tab2 {
     }
     .user-photo{
        
-        background-image: url('../../assets/imgs/girl.png');
+       // background-image: url('../../assets/imgs/girl.png');
         background-position: center;
         background-repeat: no-repeat;
         height: 100px;
@@ -49,19 +49,12 @@ page-tab2 {
         background: none;
         font-size: 1.5em
     }
-    .invalid{
-        border-bottom: 1px solid grey;
-        padding-left: 0
-    }
-    .valid{
-        border-bottom: 1px solid #48EBD0;
-        padding-left: 0
-    }
+  
     .text-input-ios{
         color: grey
     }
     .item-ios.item-block .item-inner{
-        border: none
+        border-bottom: 1px solid #48EBD0;
     }
-    //'invalid':!user.controls.email.valid,
+   
 }
