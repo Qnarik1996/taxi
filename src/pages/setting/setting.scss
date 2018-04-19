@@ -2,6 +2,7 @@ page-setting {
     .scroll-content{
         background-color: Gainsboro;
         margin-top: 0 !important ;
+        overflow: hidden;
     }
     .tabs-ios[tabsPlacement=top] .tabbar{
         top:1% !important;

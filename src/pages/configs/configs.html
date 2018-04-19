@@ -35,9 +35,9 @@
                         </ion-item>
             </ion-col>
         </ion-row>  
-        <ion-row style="margin-top: 25px">
-            <ion-col col-7 ><button ion-button class="save" round>Save</button></ion-col>
-            <ion-col ><button ion-button class="log-out" (click)="emit()">Log Out</button></ion-col>
+        <ion-row for-buttons-margin>
+            <ion-col col-7 ><button ion-button class="save" round (tap)="save()">Save</button></ion-col>
+            <ion-col ><button ion-button class="log-out" (tap)="logOut()">Log Out</button></ion-col>
         </ion-row>
  
    </ion-grid>

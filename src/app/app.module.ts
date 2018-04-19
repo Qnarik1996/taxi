@@ -26,7 +26,7 @@ import {
   SettingPage,
   DriveInformationPage,
   ListPage,
-  Tab2Page,
+  ConfigsPage,
   Tab3Page,
   HotelRegistrPage,
   AccordionWidthChart
@@ -54,7 +54,7 @@ import { PartnerService } from '../services/partner.service';
     DriveInformationPage,
     PipeImage,
     ListPage,
-    Tab2Page,
+    ConfigsPage,
     Tab3Page,
     HotelRegistrPage,
     AccordionWidthChart
@@ -82,7 +82,7 @@ import { PartnerService } from '../services/partner.service';
     SettingPage,
     DriveInformationPage,
     ListPage,
-    Tab2Page,
+    ConfigsPage,
     Tab3Page,
     HotelRegistrPage,
     AccordionWidthChart

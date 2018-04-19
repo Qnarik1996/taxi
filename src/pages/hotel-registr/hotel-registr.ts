@@ -11,14 +11,12 @@ import { PartnerService } from '../../services/partner.service';
 })
 export class HotelRegistrPage implements OnInit{
   id;
-  hotel;
   hotelIformation={};
   name;
   address;
   firstName;
   lastName;
   email;
-
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -27,31 +25,28 @@ export class HotelRegistrPage implements OnInit{
               public partnerService:PartnerService
             ) {
                 this.id=this.navParams.get('id');
-                console.log('id',this.id)
-              
+                console.log('id',this.id)              
   }
 
   close(){
     this.viewCtrl.dismiss()
   }
   save(){
-    console.log(this.hotel)
-    this.viewCtrl.dismiss(this.hotel)
+    this.partnerService.postHotels(this.hotelIformation).subscribe(()=>{
+      this.viewCtrl.dismiss()
+    })
+   
   }
 
   ngOnInit(){
     this.getHotelById(this.id);
   }
 
+
   getHotelById(id){
     this.partnerService.getHotelsById(id).subscribe((data)=>{
       this.hotelIformation=data;
-      console.log(data);
-     
-      
-     
-      
-
+      console.log(data);  
     })
   }
 

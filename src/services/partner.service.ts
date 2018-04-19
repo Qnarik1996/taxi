@@ -7,7 +7,7 @@ export class PartnerService{
 
     public getHotels(){
         return this.apiService.get('/hotels');
-    }
+    }  
 
     public getPartner(){
         return this.apiService.get('/partner');
@@ -16,5 +16,12 @@ export class PartnerService{
     public getHotelsById(id){
         return this.apiService.get('/hotels/'+id);
     }
-   
+
+
+    public postHotels(option){
+        return this.apiService.postJS('/hotels/edit',option)
+    }  
+   public postPartner(option){
+       return this.apiService.post('/partner',option)
+   }
 }

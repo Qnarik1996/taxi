@@ -26,7 +26,7 @@
           <div class="name-users">{{information.userName}}</div>
         </div>
         <ion-grid class="inform">
-          <ion-row>
+       <ion-row>
             <ion-col class="ul" col-7>
               <div class="driverfoto" [ngStyle]="{'background-image':information.driverfoto | image}"></div>
               <div>
@@ -43,15 +43,54 @@
             </ion-col>
           </ion-row>
           <ion-row style="margin-top: 3vh">
-            <ion-col col-7 class="colinform cash">
-              <ion-icon name="cash"></ion-icon>
-              <span>{{information.price}}</span>
+              <ion-col col-7 class="colinform cash">
+                <ion-icon name="cash"></ion-icon>
+                <span>{{information.price}}</span>
+              </ion-col>
+              <ion-col class="colinform">
+                <ion-icon name="clock"></ion-icon>
+                <span>{{information.speed}}</span>
+              </ion-col>
+            </ion-row>
+          
+
+
+            
+         <!--  <ion-row>
+            <ion-col col-2>
+                <div class="driverfoto" [ngStyle]="{'background-image':information.driverfoto | image}"></div>
+                
             </ion-col>
-            <ion-col class="colinform">
-              <ion-icon name="clock"></ion-icon>
-              <span>{{information.speed}}</span>
+            <ion-col>
+                <div class="ul">
+                    <rating [(ngModel)]="rate" class="rating" readOnly="true" max="4" emptyStarIconName="star-outline" halfStarIconName="star-half"
+                      starIconName="star" nullable="false"></rating>
+                    <div class="driverinformation">{{information.driverName}}</div>
+                </div>
+            </ion-col>
+            <ion-col col-2 align-self-center class="colinform">
+                <ion-icon name="calendar">
+                </ion-icon>
+            </ion-col>
+            <ion-col align-self-center fit-content>
+                <span>{{information.date}}</span>
             </ion-col>
           </ion-row>
+          <ion-row style="margin-top: 3vh">
+              <ion-col col-2>
+                <ion-icon margin-left-20 name="cash" margin-left-20></ion-icon> </ion-col>
+               <ion-col align-self-center col-5 margin-left-20><span>{{information.price}}</span></ion-col>
+             
+              <ion-col center >
+                <ion-icon name="clock"></ion-icon>
+              </ion-col>
+              <ion-col align-self-center><span style="margin:0">{{information.speed}}</span></ion-col>               
+              
+            </ion-row>-->
+
+
+
+
         </ion-grid>
       </ion-col>
     </ion-row>

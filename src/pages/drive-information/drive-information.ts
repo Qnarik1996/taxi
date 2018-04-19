@@ -103,6 +103,7 @@ ionViewDidLoad(){
             position: this.direction[i],
             map: this.map
           });
+        }
 
           new google.maps.Marker({
             position: this.information.directions[this.direction.length-1],
@@ -112,7 +113,7 @@ ionViewDidLoad(){
            },          
             map: this.map
           });
-        }
+        
         
         this.directionsDisplay.setDirections(response);
       } else {

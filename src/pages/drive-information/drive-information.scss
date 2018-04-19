@@ -85,9 +85,11 @@ page-drive-information {
                 color:black;
                 font-size: 3em;
             }
+            
             .ul {
-                padding: 0px !important;  
-                .rating{ margin: 0px !important;   } 
+                padding: 0px !important;}  
+                .rating{ margin: 0px !important; 
+                padding: 0  } 
              
                 .rating li {
                     padding: 0px !important;
@@ -98,7 +100,7 @@ page-drive-information {
                      
                   }
                 }
-            }
+            
               }
               .driverfoto{
                   height: 10vh;
@@ -139,7 +141,16 @@ page-drive-information {
                 margin-top: 2vh;
             }
         }
-     
+     *[margin-left-20]{
+         margin-left: 20px
+     }
+     *[center]{
+         text-align: center
+     }
+     *[fit-content]{
+        width: fit-content;
+         max-width: fit-content
+     }
     
     } 
     

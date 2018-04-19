@@ -29,7 +29,6 @@ export class ApiService {
             }
         })
     }
-
    
 
     public get(url){
@@ -48,9 +47,22 @@ export class ApiService {
         const httpOptions = {
             headers: new HttpHeaders({
               'Content-Type':  'application/json',
-              'Authorization': 'Bearer ' + this.accessToken
-            })
-          };
+              'Authorization': 'Bearer ' + this.accessToken,
+            }),
+        };
+        return this.httpclient.post(this.baseUrl+url,options,httpOptions)
+    }
+
+    public postJS(url,options){
+        this.accessToken=JSON.parse(localStorage.getItem('accessToken'));
+        //headers=
+        const httpOptions:any = {
+            headers: new HttpHeaders({
+              'Content-Type':  'application/json',
+              'Authorization': 'Bearer ' + this.accessToken,
+            }),
+            responseType:'text'
+        };
         return this.httpclient.post(this.baseUrl+url,options,httpOptions)
     }
 
