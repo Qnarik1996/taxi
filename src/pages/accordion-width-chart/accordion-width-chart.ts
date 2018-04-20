@@ -11,7 +11,6 @@ export class AccordionWidthChart {
   }
   @Input() k;
   @Input() list;
-  @Input() last;
   @Input() data;
   @Input() h;
   @ViewChild('barCanvas') barCanvas;

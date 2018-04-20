@@ -1,0 +1,27 @@
+page-bank-account {
+    .scroll-content{
+        background: white !important
+    }
+    .item-ios{
+        background: none
+    }
+  .grid{
+    width: 80%;
+    max-width: 80%;
+    margin: 100px auto 0 auto;
+  }
+    .save-button-col{
+        text-align: center
+    }
+    .save{
+        background: #48EBD0;
+        width: 13%
+    }
+    .button-ios.activated{
+        background:none;
+        opacity: 1
+    }
+    *[margin-row]{
+        margin-top: 50px
+    }
+}

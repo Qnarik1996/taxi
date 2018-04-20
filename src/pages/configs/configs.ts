@@ -27,10 +27,7 @@ export class ConfigsPage {
     this.partner=JSON.parse(localStorage.getItem('data'));    
    }  
    save(){
-    this.partnerService.postPartner(this.partner).subscribe((data)=>{
-      console.log(data);
-      
-    })
+    this.partnerService.postPartner(this.partner).subscribe(()=>{  })
    }         
 
   logOut(){

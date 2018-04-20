@@ -55,7 +55,6 @@ export class ApiService {
 
     public postJS(url,options){
         this.accessToken=JSON.parse(localStorage.getItem('accessToken'));
-        //headers=
         const httpOptions:any = {
             headers: new HttpHeaders({
               'Content-Type':  'application/json',

@@ -17,9 +17,10 @@ page-drive-information {
             width: fit-content;
         
         #map{
-            height: 37vh;
-            width: 35vh;
+            height: 294px;
+            width: 278px;
             float: left;
+
         }
     }
     .users-col{
@@ -67,7 +68,7 @@ page-drive-information {
         
         }
         .inform{
-            margin-top: 6vh;
+            margin-top: 95px;
             
             .colinform{
                 display: flex;
@@ -75,9 +76,9 @@ page-drive-information {
                 align-items: center;
               }     
               .cash{
-                padding-left: 3vh;
+                padding-left: 10px;
                 span{
-                    margin-left: 4vh;                    
+                    margin-left: 40px;                    
                     font-size: 1.8em;
                 }
             }     
@@ -95,7 +96,7 @@ page-drive-information {
                     padding: 0px !important;
                                         
                   ion-icon {
-                    font-size: 3vh;       
+                    font-size: 20px;       
                     color: #ffb400;
                      
                   }
@@ -103,32 +104,32 @@ page-drive-information {
             
               }
               .driverfoto{
-                  height: 10vh;
-                  width: 10vh;
+                  height: 70px;
+                  width: 70px;
                   border-radius: 50%;
                   background-position: center;
                   background-size: cover;
                   float: left;
-                  margin-right: 2vh;
+                  margin-right: 20px;
 
               }
               .driverinformation{                 
                   color: gray;
                   font-size: 1.4em;
-                  margin-top: 2vh;
+                  margin-top:20px;
               }
               span{
                 font-size: 1.2em;
                 color: gray;
-                margin-left: 2vh;
+                margin-left: 20px
               }
         }
       
         .users{
            text-align: center;
             .image-users{
-                height: 12vh;
-                width: 12vh;
+                height: 100px;
+                width: 100px;
                 border-radius: 50%;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -138,7 +139,7 @@ page-drive-information {
             }
             .name-users{
                 font-size: 2em;
-                margin-top: 2vh;
+                margin-top: 20px;
             }
         }
      *[margin-left-20]{

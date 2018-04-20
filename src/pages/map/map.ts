@@ -57,6 +57,7 @@ count=0;
     controlUI.style.backgroundSize = 'cover',
       controlUI.style.backgroundPosition = 'center';
     controlDiv.style.marginLeft = "calc(50% - 50px)";
+    controlDiv.style.pointerEvents="";
     controlDiv.appendChild(controlUI);
     
     controlUI.addEventListener('click', function () {

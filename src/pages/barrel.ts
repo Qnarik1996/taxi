@@ -10,6 +10,6 @@ export * from './setting/setting';
 export * from './drive-information/drive-information';
 export * from './list/list';
 export * from './configs/configs'
-export * from './tab3/tab3';
+export * from './bank-account/bank-account';
 export * from './accordion-width-chart/accordion-width-chart';
 export * from './hotel-registr/hotel-registr'

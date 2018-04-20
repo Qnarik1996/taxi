@@ -51,6 +51,16 @@ page-hotel-registr {
         margin-left: 12px;
         font-size: 1.3em
     }
+    .label-ios[floating]{
+        font-size: 1.3em
+    }
+    p{
+        margin-bottom: 13px;
+    }
+    .button-ios{
+        border-radius: 0;
+        margin: 0
+    }
     .button-ios.activated{
         background: none;
         font-size: 1.5em;

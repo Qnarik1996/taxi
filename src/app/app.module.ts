@@ -27,7 +27,7 @@ import {
   DriveInformationPage,
   ListPage,
   ConfigsPage,
-  Tab3Page,
+  BankAccountPage,
   HotelRegistrPage,
   AccordionWidthChart
 
@@ -55,7 +55,7 @@ import { PartnerService } from '../services/partner.service';
     PipeImage,
     ListPage,
     ConfigsPage,
-    Tab3Page,
+    BankAccountPage,
     HotelRegistrPage,
     AccordionWidthChart
   ],
@@ -83,7 +83,7 @@ import { PartnerService } from '../services/partner.service';
     DriveInformationPage,
     ListPage,
     ConfigsPage,
-    Tab3Page,
+    BankAccountPage,
     HotelRegistrPage,
     AccordionWidthChart
 

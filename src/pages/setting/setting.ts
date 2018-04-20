@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import {NavController, NavParams } from 'ionic-angular';
-import {ListPage, ConfigsPage, Tab3Page, HomePage} from '../barrel'
+import {ListPage, ConfigsPage, BankAccountPage, HomePage} from '../barrel'
 @Component({
   selector: 'page-setting',
   templateUrl: 'setting.html',
@@ -17,7 +17,7 @@ export class SettingPage {
   this.pageName = this.navParams.get('pageName');
   this.tab1 = ListPage;
   this.tab2 = ConfigsPage;
-  this.tab3 = Tab3Page;
+  this.tab3 = BankAccountPage;
  
   }
 

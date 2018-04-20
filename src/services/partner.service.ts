@@ -22,6 +22,6 @@ export class PartnerService{
         return this.apiService.postJS('/hotels/edit',option)
     }  
    public postPartner(option){
-       return this.apiService.post('/partner',option)
+       return this.apiService.postJS('/partner/edit',option)
    }
 }
