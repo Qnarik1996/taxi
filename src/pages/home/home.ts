@@ -4,6 +4,7 @@ import { MenuPage } from '../barrel';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Local } from '../../services/local';
 import { ApiService } from '../../services/api.service';
+import { PartnerService } from '../../services/partner.service';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class HomePage {
     public navParams: NavParams,
     public formBuilder: FormBuilder,
     private local: Local,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private partnerService:PartnerService
   ) {
     this.registration = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],
@@ -33,6 +35,12 @@ export class HomePage {
         this.apiService.accessToken=data.accessToken;
         this.local.set('accessToken',data.accessToken);
         this.local.set('refreshToken',data.refreshToken);
+        this.partnerService.getRole().subscribe(
+          (data:any)=>{
+            this.local.set('role', data.role);
+          }
+        )
+        
       },
       (err) => {},
       () => {

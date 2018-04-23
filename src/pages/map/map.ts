@@ -1,6 +1,8 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, MenuController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { PartnerService } from '../../services/partner.service';
+import 'rxjs/operators/map';
 declare var google;
 const order: any[] = [
 
@@ -13,10 +15,12 @@ const order: any[] = [
 export class MapPage {
 count=0;
   constructor(public navCtrl: NavController, public menuCtrl: MenuController,
-    private geolocation: Geolocation) {
+    private geolocation: Geolocation, private partnerService:PartnerService) {
 
   }
   order = order;
+
+
   ionViewDidLoad() {
     this.loadMap()
   }
@@ -92,10 +96,8 @@ count=0;
       .then((location) => {
         let latLng = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
         this.initMap(latLng);
-
       })
       .catch(() => {
-
         let latLng = new google.maps.LatLng(40.7958024, 43.8570917);
         this.initMap(latLng)
       });

@@ -33,11 +33,11 @@ export class AccordionWidthChart {
         ]
       },
       options: {
-        
+    
         tooltips: {
           enabled: true
         },
-        scaleShowVerticalLines: false,
+      
         legend: {
           display: false,
           labels: {
@@ -55,11 +55,13 @@ export class AccordionWidthChart {
             }
           }],
           yAxes: [{
+            scaleShowVerticalLines: false,
             gridLines: {
               display: true,
             },
             display: true,
             ticks: {
+              
               fontFamily: "Montserrat",
               min: 100,
               max: 500,
