@@ -5,8 +5,8 @@
             <ion-icon md="md-menu" ios="md-menu"></ion-icon>
         </button>
     </div>
-    <div [ngClass]="{'bot':okay == false, 'bottom':okay == true}">
-
+    <div [ngClass]="{'bot':okay == false, 'bottom':okay == true}" center>
+        <button full  ion-button (tap)="ok()" [ngClass]="{'open':okay}" no-margin >Պատվիրել</button>
         <ion-grid class="messege-grid">
             <ion-row *ngFor="let item of order; let i=index">
                 <ion-col>
@@ -22,10 +22,11 @@
 
         </ion-grid>
 
-        <button (tap)="addNewCard()" ion-button class="add-button" [ngClass]="{'plane-open':okay,'plane-close':!okay}" icon-only>
+      <!--  <button (tap)="addNewCard()" ion-button class="add-button"  icon-only>
             <ion-icon name="paper-plane" class="plane"></ion-icon>
-        </button>
-        <div style="text-align:center; color: gray;">
+        </button>-->
+        <div style="text-align:center; color: gray">
+     
             <ion-icon [name]="icon" (click)="ok()"></ion-icon>
         </div>
         <ion-grid>

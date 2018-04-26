@@ -14,6 +14,7 @@ const order: any[] = [
 
 export class MapPage {
 count=0;
+marker;
   constructor(public navCtrl: NavController, public menuCtrl: MenuController,
     private geolocation: Geolocation, private partnerService:PartnerService) {
 
@@ -52,16 +53,36 @@ count=0;
   }
 
 
-  CenterControl(controlDiv, thisComponent) {
+ CenterControl(controlDiv, thisComponent) {
+ /* var controlUI = document.createElement('div');
+  controlUI.style.backgroundColor = '#fff';
+  controlUI.style.border = '2px solid #fff';
+  controlUI.style.borderRadius = '3px';
+  controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+  controlUI.style.textAlign = 'center';
 
-    var controlUI = document.createElement('div');
-    controlUI.style.backgroundImage = "url('assets/imgs/car.png')";
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior.
+  var controlText = document.createElement('div');
+  controlText.style.color = 'rgb(25,25,25)';
+  controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+  controlText.style.fontSize = '16px';
+  controlText.style.lineHeight = '38px';
+  controlText.style.paddingLeft = '5px';
+  controlText.style.paddingRight = '5px';
+  controlText.innerHTML = 'Պատվիրել';
+  controlUI.appendChild(controlText);*/
+     var controlUI = document.createElement('div');
+   // controlUI.style.backgroundImage = "url('assets/imgs/car.png')";
     controlUI.style.height = '100px';
     controlUI.style.width = '100px';
     controlUI.style.backgroundSize = 'cover',
       controlUI.style.backgroundPosition = 'center';
-    controlDiv.style.marginLeft = "calc(50% - 50px)";
-    controlDiv.style.pointerEvents="";
+      controlUI.style.textAlign = 'center';
+    controlUI.title = 'Click to recenter the map';
+    controlUI.style.display="none";
+    //controlDiv.style.marginLeft = "calc(50% - 50px)";
     controlDiv.appendChild(controlUI);
     
     controlUI.addEventListener('click', function () {
@@ -83,13 +104,18 @@ count=0;
       mapTypeControl: false,
       scaleControl: false,
       rotateControl: false,
-      fullscreenControl: false
-
+      fullscreenControl: false,
+      //draggable: false,
     }
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOption);
+    this.marker = new google.maps.Marker({
+      position: latLng,
+      map: this.map,
+    
+    });
     var centerControlDiv = document.createElement('div');
     var centerControl = new this.CenterControl(centerControlDiv, this);
-    this.map.controls[google.maps.ControlPosition.LEFT_CENTER].push(centerControlDiv);
+    this.map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
   }
   loadMap() {
     this.geolocation.getCurrentPosition()

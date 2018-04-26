@@ -8,27 +8,21 @@ page-map {
       z-index: 5;
       height: 50px;
       width: 50px;
+      top: -75px;
+      right: 81px;
       box-shadow:0 1px 12px rgba(0, 0, 0, 0.3);
     }
-    .plane-open{
-     
-      top: -6vw;
-     
-      right: 81px;
-     
+    .open{
+      display:none;
+      margin:0;
+      .button-inner{
+        color: red
+      } 
     }
-    .plane-close{
- 
-      top: -13vw;
-      right: 108px;
-
-  }
-
-    
-      .plane{
-        color: #FF435C
-       }
-    
+   
+    .plane{
+        color: #FF435C;         
+         }   
 
   
   .messege-grid{
@@ -118,7 +112,7 @@ page-map {
         position: absolute;
         height: 35vh;
         width: 100%;
-        bottom: -35vh;
+        bottom: -30vh;
         background: white; 
         transition: bottom 1s;
         z-index: 99999999
@@ -262,6 +256,9 @@ margin: 0 auto
       }
     }
    
+  }
+  *[center]{
+    text-align: center
   }
   }
 

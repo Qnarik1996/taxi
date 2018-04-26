@@ -22,7 +22,11 @@ export class MyApp implements OnInit {
   }
   rootPage: any;
   @ViewChild('nav') nav;
-  constructor(private partnerService: PartnerService, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private apiService: ApiService, private local: Local) {
+  constructor(private partnerService: PartnerService, 
+              platform: Platform, statusBar: StatusBar,
+              splashScreen: SplashScreen, 
+              private apiService: ApiService,
+              private local: Local) {
     platform.ready().then(() => {
     /*  if (JSON.parse(localStorage.getItem('password'))) {
         this.rootPage = MenuPage
