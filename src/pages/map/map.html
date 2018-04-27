@@ -6,7 +6,7 @@
         </button>
     </div>
     <div [ngClass]="{'bot':okay == false, 'bottom':okay == true}" center>
-        <button full  ion-button (tap)="ok()" [ngClass]="{'open':okay}" no-margin >Պատվիրել</button>
+        <button full  ion-button (tap)="ok()" [ngClass]="{'open':okay}" class="color-button" no-margin >Պատվիրել</button>
         <ion-grid class="messege-grid">
             <ion-row *ngFor="let item of order; let i=index">
                 <ion-col>
@@ -27,7 +27,7 @@
         </button>-->
         <div style="text-align:center; color: gray">
      
-            <ion-icon [name]="icon" (click)="ok()"></ion-icon>
+            <ion-icon [name]="icon" (tap)="ok()"></ion-icon>
         </div>
         <ion-grid>
             <ion-row justify-content-center>

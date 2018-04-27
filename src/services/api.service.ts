@@ -8,9 +8,9 @@ import { Local } from "./local";
 export class ApiService {
     public accessToken: string = '';
     private baseUrl: string = "http://164.132.107.245:8633/api"
-    constructor(private httpclient: HttpClient, private http: Http) { }
+    constructor(private httpClient: HttpClient, private http: Http) { }
     public login(info) {
-        return this.httpclient.post(this.baseUrl + "/Login", info);
+        return this.httpClient.post(this.baseUrl + "/Login", info);
     }
 
 
@@ -39,7 +39,7 @@ export class ApiService {
                 'Authorization': 'Bearer ' + this.accessToken
             }),
         };
-        return this.httpclient.get(this.baseUrl + url, httpOptions)
+        return this.httpClient.get(this.baseUrl + url, httpOptions)
     }
 
     public post(url, options) {
@@ -51,7 +51,7 @@ export class ApiService {
             }),
 
         };
-        return this.httpclient.post(this.baseUrl + url, options, httpOptions)
+        return this.httpClient.post(this.baseUrl + url, options, httpOptions)
     }
 
     public postJS(url, options) {
@@ -63,7 +63,7 @@ export class ApiService {
             }),
             responseType: 'text'
         };
-        return this.httpclient.post(this.baseUrl + url, options, httpOptions)
+        return this.httpClient.post(this.baseUrl + url, options, httpOptions)
     }
 
     public delete(url) {
@@ -74,6 +74,6 @@ export class ApiService {
                 'Authorization': 'Bearer ' + this.accessToken
             })
         };
-        return this.httpclient.delete(this.baseUrl + url, httpOptions)
+        return this.httpClient.delete(this.baseUrl + url, httpOptions)
     }
 }

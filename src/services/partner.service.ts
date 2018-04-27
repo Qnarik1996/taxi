@@ -5,7 +5,7 @@ import { Local } from './local';
 
 @Injectable()
 export class PartnerService{
-    constructor(private apiService:ApiService, private httpclient:HttpClient,private local:Local){}
+    constructor(private apiService:ApiService, private httpClient:HttpClient,private local:Local){}
     getRole(){
         return this.apiService.get('/Login/getrole');
     }
@@ -25,7 +25,7 @@ export class PartnerService{
             responseType:'text',
             observe: 'response'
           };
-        return this.httpclient.get('http://164.132.107.245:8633/api/Login/' + role , httpOptions)
+        return this.httpClient.get('http://164.132.107.245:8633/api/Login/' + role , httpOptions)
     }
     public getHotels(){
         return this.apiService.get('/hotels');

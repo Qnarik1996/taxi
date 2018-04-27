@@ -48,7 +48,7 @@ marker;
     if (this.okay) {
       this.icon = 'arrow-down';
     } else {
-      this.icon = 'arrow-up';
+      this.icon = '';
     }
   }
 
@@ -100,12 +100,14 @@ marker;
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       streetViewControl: false,
-      zoomControl: false,
+      zoomControl: true,
       mapTypeControl: false,
       scaleControl: false,
       rotateControl: false,
       fullscreenControl: false,
-      //draggable: false,
+      scrollwheel:true,
+      touchZoom:true,     
+      draggable: false,
     }
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOption);
     this.marker = new google.maps.Marker({

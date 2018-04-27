@@ -15,11 +15,13 @@ page-map {
     .open{
       display:none;
       margin:0;
-      .button-inner{
-        color: red
-      } 
+      
     }
-   
+   .color-button{
+    .button-inner{
+      color: red
+    } 
+   }
     .plane{
         color: #FF435C;         
          }   
