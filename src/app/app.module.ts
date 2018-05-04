@@ -29,7 +29,8 @@ import {
   ConfigsPage,
   BankAccountPage,
   HotelRegistrPage,
-  AccordionWidthChart
+  AccordionWidthChart,
+  EditPhotoPage
 
 
 } from '../pages/barrel';
@@ -57,7 +58,8 @@ import { PartnerService } from '../services/partner.service';
     ConfigsPage,
     BankAccountPage,
     HotelRegistrPage,
-    AccordionWidthChart
+    AccordionWidthChart,
+    EditPhotoPage
   ],
   imports: [
     HttpModule,
@@ -85,7 +87,8 @@ import { PartnerService } from '../services/partner.service';
     ConfigsPage,
     BankAccountPage,
     HotelRegistrPage,
-    AccordionWidthChart
+    AccordionWidthChart,
+    EditPhotoPage
 
   ],
   providers: [

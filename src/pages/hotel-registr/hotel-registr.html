@@ -2,7 +2,7 @@
     <button ion-button icon-only (tap)="close()">
         <ion-icon name="close"></ion-icon>
     </button>
-    <div class="hotel-image"></div>
+    <div class="hotel-image" [ngStyle]="{'background-image':fileUrl+hotelIformation.contactPersonImagePath | image}"></div>
     <p>{{hotelIformation.name}}</p>
    
         <ion-grid>

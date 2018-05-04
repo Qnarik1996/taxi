@@ -28,7 +28,7 @@ export class MyApp implements OnInit {
               private apiService: ApiService,
               private local: Local) {
     platform.ready().then(() => {
-    /*  if (JSON.parse(localStorage.getItem('password'))) {
+    /*  if (JSON.parse(localStorage.getItem('email'))) {
         this.rootPage = MenuPage
       } else {
         this.rootPage = HomePage;

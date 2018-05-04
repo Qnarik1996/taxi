@@ -6,20 +6,32 @@
             <ion-col  *ngFor="let item of cards;let i=index" col-4>
                 
                     <ion-card class="in-card" >
-
+                        <button ion-button icon-only class="edit" (tap)="editPhoto(item)">
+                            <ion-icon name="send"> </ion-icon>    
+                        </button>
                         <ion-card-content>
-
-                            <div class="text" >
-                               <div class="name">{{item.name}}</div>
-                               <div class="information">{{item.phoneNumber}}</div>
-                               <div class="information">{{item.address}}</div>
-                               <div class="information">{{item.contactPersonFirstName}}</div>
-                             </div>
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                        <div class="image-hotel" [ngStyle]="{'background-image':fileUrl+item.hotelImagePath | image}"></div>
+                                </ion-col>
+                                <ion-col>
+                                        <div class="text" >
+                                                <div class="name">{{item.name}}</div>
+                                                <div class="information">{{item.phoneNumber}}</div>
+                                                <div class="information">{{item.address}}</div>
+                                                <div class="information">{{item.contactPersonFirstName}}</div>
+                                              </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                            
+                            
                            
                             <ion-grid class="buttons-grid">
                                 <ion-row >
                                     <ion-col>
-                                        <button block color="newblue" ion-button round outline >Switch</button>
+                                        <button block color="newblue" ion-button round outline (tap)="switch()">Switch</button>
                                     </ion-col>
                                     <ion-col>
                                         <button block color="newblue" ion-button round outline (tap)="openHotel(item)">Info</button>

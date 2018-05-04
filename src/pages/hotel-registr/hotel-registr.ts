@@ -10,6 +10,7 @@ import { PartnerService } from '../../services/partner.service';
   templateUrl: 'hotel-registr.html',
 })
 export class HotelRegistrPage implements OnInit{
+  fileUrl:string="http://zont.cab:8633/api/file/"
   id;
   hotelIformation={};
   name;

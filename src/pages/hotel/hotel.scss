@@ -8,36 +8,30 @@ page-hotel {
             width: 32.33333%;
             padding: 15px;
             .in-card{
+            
+                height: 100%;
+                width: 100%;
+                margin-left: 0px;           
                 
-                background-image: url('../../assets/imgs/taxi.jpg');
+                
+               .edit{
+                   float:right;
+               }
+                .image-hotel{
+
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-                height: 100%;
-                width: 100%;
-                margin-left: 0vh;
-                    
-                
-                
-                .buttons-grid{
-                margin-top: 17vh;
-                }
-                .photo{
-                    height: 8vh;
-                    width: 8vh;
-                    border-radius: 50%;
-                    float: left;
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    
-                    border: 3px solid white;
-                }
-                .text{
+                height: 150px;
+                width: 150px;
                 float: left;
-                margin-top: 1vh;
-                color: white;
-                margin-left: 3vh;
+                }
+            
+                .text{
+                float: right;
+        
+                color: black;
+               
                 }
                 .name{
                     font-size: 1.3em;
@@ -51,9 +45,9 @@ page-hotel {
                    
                 }
                 .button-outline-ios-newblue, .button-outline-android-newblue {
-                    border-color: white;
-                    color: white;
-                    border: 2px solid white;
+                    border-color: black;
+                    color: black;
+                    border: 2px solid black;
                     font-weight: bold;
                     height: 2.1em
                 }

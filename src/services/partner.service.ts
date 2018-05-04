@@ -15,7 +15,6 @@ export class PartnerService{
     }
     checkAccessToken(){
         let role = JSON.parse(localStorage.getItem('role'));
-        //return this.apiService.get('/login/' + role);
         let accessToken=JSON.parse(localStorage.getItem('accessToken'));
         const httpOptions:any = {
             headers: new HttpHeaders({

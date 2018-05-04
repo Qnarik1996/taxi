@@ -1,8 +1,9 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { NavController, MenuController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { PartnerService } from '../../services/partner.service';
 import 'rxjs/operators/map';
+import { HubConnection } from '@aspnet/signalr'
 declare var google;
 const order: any[] = [
 
@@ -12,9 +13,26 @@ const order: any[] = [
   templateUrl: 'map.html'
 })
 
-export class MapPage {
-count=0;
-marker;
+export class MapPage implements OnInit {
+  switchedHotelInfo:any;
+  flag:boolean=false;
+  hubConnection:HubConnection;
+  count=0;
+  marker;
+  ngOnInit(){
+    this.hubConnection = new HubConnection("http://zont.cab:8633/hub/map")
+    this.hubConnection.on('nearDriversResponse', data => {
+      console.log(data);
+      this.flag=true;
+  });
+  this.hubConnection.start()
+    .then(()=>{
+        if(this.flag){
+          this.getDriversLocation();
+        }
+    })
+  }
+  
   constructor(public navCtrl: NavController, public menuCtrl: MenuController,
     private geolocation: Geolocation, private partnerService:PartnerService) {
 
@@ -53,44 +71,6 @@ marker;
   }
 
 
- CenterControl(controlDiv, thisComponent) {
- /* var controlUI = document.createElement('div');
-  controlUI.style.backgroundColor = '#fff';
-  controlUI.style.border = '2px solid #fff';
-  controlUI.style.borderRadius = '3px';
-  controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
-  controlUI.style.textAlign = 'center';
-
-  controlDiv.appendChild(controlUI);
-
-  // Set CSS for the control interior.
-  var controlText = document.createElement('div');
-  controlText.style.color = 'rgb(25,25,25)';
-  controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-  controlText.style.fontSize = '16px';
-  controlText.style.lineHeight = '38px';
-  controlText.style.paddingLeft = '5px';
-  controlText.style.paddingRight = '5px';
-  controlText.innerHTML = 'Պատվիրել';
-  controlUI.appendChild(controlText);*/
-     var controlUI = document.createElement('div');
-   // controlUI.style.backgroundImage = "url('assets/imgs/car.png')";
-    controlUI.style.height = '100px';
-    controlUI.style.width = '100px';
-    controlUI.style.backgroundSize = 'cover',
-      controlUI.style.backgroundPosition = 'center';
-      controlUI.style.textAlign = 'center';
-    controlUI.title = 'Click to recenter the map';
-    controlUI.style.display="none";
-    //controlDiv.style.marginLeft = "calc(50% - 50px)";
-    controlDiv.appendChild(controlUI);
-    
-    controlUI.addEventListener('click', function () {
-      thisComponent.ok()
-    });
-  }
-
-
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   okay: boolean = false;
@@ -102,10 +82,10 @@ marker;
       streetViewControl: false,
       zoomControl: true,
       mapTypeControl: false,
-      scaleControl: false,
+      scaleControl: true,
       rotateControl: false,
       fullscreenControl: false,
-      scrollwheel:true,
+      scrollWheelZoom:true,
       touchZoom:true,     
       draggable: false,
     }
@@ -114,10 +94,9 @@ marker;
       position: latLng,
       map: this.map,
     
+    
     });
-    var centerControlDiv = document.createElement('div');
-    var centerControl = new this.CenterControl(centerControlDiv, this);
-    this.map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
+ 
   }
   loadMap() {
     this.geolocation.getCurrentPosition()
@@ -132,5 +111,35 @@ marker;
 
   }
 
+  private getDriversLocation(latitude=48.864716,longitude=2.349014){
+    this.hubConnection.invoke('nearDrivers', {latitude:latitude,longitude:longitude});
+  }
+
+  
+
 
 }
+/*this.hubConnection.on("nearDriversResponse",(msg)=>{
+      console.log(msg);
+      
+      for (let i = 0; i < this.nearDrivers.length; i++) {
+        this.nearDrivers[i].setMap(null);
+      }
+      this.nearDrivers = []
+      var icon = {
+        url: "/assets/map/taxi.ico",
+        scaledSize: new google.maps.Size(50, 50),
+        origin: new google.maps.Point(0,0), 
+        anchor: new google.maps.Point(0, 0) 
+    };
+      for (let i = 0; i < msg.length; i++) { 
+        
+        this.nearDrivers[i] = new google.maps.Marker({
+          position: new google.maps.LatLng(msg[i].latitude,msg[i].longitude),
+          map: this.map,
+          title: 'samplemarker',
+          icon:icon,
+        
+      });        
+      }
+    })*/

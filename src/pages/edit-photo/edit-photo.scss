@@ -1,0 +1,20 @@
+page-edit-photo {
+    .scroll-content{
+        overflow: hidden;
+    }
+    .person-image{
+        height: 200px;
+        width: 200px;
+        margin: 0 auto;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat
+    }
+    #profile_pic{
+        border: 1px solid grey;
+        margin-top: 35px;
+    }
+    *[center]{
+        text-align: center
+    }
+}

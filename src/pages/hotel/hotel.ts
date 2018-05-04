@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular/components/modal/modal-controller';
-import { HotelRegistrPage } from '../barrel';
+import { HotelRegistrPage, EditPhotoPage } from '../barrel';
 import { ApiService } from '../../services/api.service';
 import { PartnerService } from '../../services/partner.service';
 
@@ -15,6 +15,7 @@ import { PartnerService } from '../../services/partner.service';
 export class HotelPage implements OnInit{
   cards=[]
   pageName;
+  fileUrl:string='http://zont.cab:8633/api/file/'
   constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController,private partnerService:PartnerService) {
     this.pageName = this.navParams.get('pageName')
     
@@ -25,8 +26,8 @@ export class HotelPage implements OnInit{
 
   private getHotels(){
     this.partnerService.getHotels().subscribe((data:any)=>{
-      this.cards.push(data[data.length-1]);
-      console.log('data',data[data.length-1]); 
+      console.log(data);
+      this.cards=data;
 
     })
   }
@@ -37,6 +38,10 @@ export class HotelPage implements OnInit{
     hotel.present()
 
 
+  }
+  editPhoto(item){
+    let edit=this.modalCtrl.create(EditPhotoPage,{'hotelImagePath':item.hotelImagePath,'contactPersonImagePath':item.contactPersonImagePath});
+    edit.present()
   }
 
   
