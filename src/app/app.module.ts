@@ -36,7 +36,7 @@ import {
 } from '../pages/barrel';
 import { HttpModule } from '@angular/http';
 import { PartnerService } from '../services/partner.service';
-
+import { HotelInformation } from '../services/hotel-information';
 
 
 
@@ -96,6 +96,7 @@ import { PartnerService } from '../services/partner.service';
     SplashScreen,
     Geolocation,
     Local,
+    HotelInformation,
     ApiService,
     PartnerService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }

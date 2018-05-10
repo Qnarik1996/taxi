@@ -14,7 +14,58 @@ page-edit-photo {
         border: 1px solid grey;
         margin-top: 35px;
     }
+    .file-upload{
+        display: block;
+        text-align: center;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 15px;
+       
+     }
+    .file-upload .file-select{
+        display: block;
+        border: 2px solid #dce4ec;
+        color: #34495e;
+        cursor: pointer;
+        height: 44px;
+        line-height: 40px;
+        text-align: left;
+        background: #FFFFFF;
+        overflow: hidden;
+        position: relative;
+        width: 40%;
+        margin: 0 auto;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    .file-upload .file-select .file-select-name{
+        line-height: 40px;
+        display: inline-block;
+        padding: 0 10px;
+    }
+     .file-upload .file-select .file-select-button{
+        background: #dce4ec;
+        padding: 0 10px;
+        display: inline-block;
+        height: 40px;
+        line-height: 40px;
+        float: right;
+    }
+    .file-upload .file-select input[type=file]{
+        z-index: 100;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+    .change-button{
+        margin-top: 20px;
+    }
+
     *[center]{
         text-align: center
     }
+    
 }
+ 

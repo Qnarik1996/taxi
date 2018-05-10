@@ -2,7 +2,15 @@
     <button ion-button icon-only (tap)="close()">
         <ion-icon name="close"></ion-icon>
     </button>
-    <div class="hotel-image" [ngStyle]="{'background-image':fileUrl+hotelIformation.contactPersonImagePath | image}"></div>
+   
+    <button ion-button class="edit-photo-button">Edit Photo</button>
+    <div class="hotel-image" [ngStyle]="{'background-image':fileUrl+hotelIformation.contactPersonImagePath | image}"> </div>
+
+    
+
+
+
+
     <p>{{hotelIformation.name}}</p>
    
         <ion-grid>
@@ -11,13 +19,13 @@
                 <ion-col col-7 padding-right-none>
                     <ion-item >
                         <ion-label floating>Name</ion-label>
-                        <ion-input value={{hotelIformation.name}} type="text"></ion-input>
+                        <ion-input  [(ngModel)]="hotelIformation.name" type="text"></ion-input>
                     </ion-item>
                 </ion-col>
                 <ion-col padding-left-none>
                     <ion-item padding-left-none >
                         <ion-label floating>Address</ion-label>
-                        <ion-input  value={{hotelIformation.address}} type="text"></ion-input>
+                        <ion-input [(ngModel)]="hotelIformation.address" type="text"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
@@ -31,13 +39,13 @@
                 <ion-col>
                     <ion-item >
                         <ion-label floating>First Name</ion-label>
-                        <ion-input value={{hotelIformation.contactPersonFirstName}}  type="text"></ion-input>
+                        <ion-input [(ngModel)]="hotelIformation.contactPersonFirstName" type="text"></ion-input>
                     </ion-item>
                 </ion-col>
                 <ion-col offset-2>
                     <ion-item >
                         <ion-label floating>Last Name</ion-label>
-                        <ion-input value={{hotelIformation.contactPersonLastName}}  type="text"></ion-input>
+                        <ion-input [(ngModel)]="hotelIformation.contactPersonLastName"  type="text"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
@@ -45,13 +53,13 @@
                 <ion-col>
                     <ion-item >
                         <ion-label floating>Email</ion-label>
-                        <ion-input value={{hotelIformation.email}}  type="email"></ion-input>
+                        <ion-input [(ngModel)]="hotelIformation.email"  type="email"></ion-input>
                     </ion-item>
                 </ion-col>
                 <ion-col offset-2>
                     <ion-item >
                         <ion-label floating>Phone</ion-label>
-                        <ion-input value={{hotelIformation.phoneNumber}}  type=""></ion-input>
+                        <ion-input [(ngModel)]="hotelIformation.phoneNumber"  type=""></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>

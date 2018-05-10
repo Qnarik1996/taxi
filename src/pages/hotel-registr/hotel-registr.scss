@@ -73,10 +73,16 @@ page-hotel-registr {
     .item-ios.item-block .item-inner{
         border-bottom: 2px solid #33C3F5
     }
+    .edit-photo-button{
+        position: absolute;
+        top: 8%;
+        right: 18%;
+    }
     *[padding-left-none]{
         padding-left: 0px
     }
     *[padding-right-none]{
         padding-right: 0px
     }
+    
   }
