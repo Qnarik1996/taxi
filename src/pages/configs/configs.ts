@@ -24,14 +24,13 @@ export class ConfigsPage {
             ) 
              {}                                   
    ngOnInit(){
-    this.partner=JSON.parse(localStorage.getItem('data'));    
+    this.partner=JSON.parse(localStorage.getItem('partner'));    
    }  
    save(){
-    this.partnerService.postPartner(this.partner).subscribe(()=>{  })
+    this.partnerService.postPartner(this.partner).subscribe((data)=>{ })
    }         
 
   logOut(){
-    this.local.remove('password'),
     this.local.remove('email')     
     this.app.getRootNav().setRoot(HomePage);
    }

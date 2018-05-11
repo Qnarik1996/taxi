@@ -45,16 +45,8 @@ export class HotelPage implements OnInit{
     let edit=this.modalCtrl.create(EditPhotoPage,{'hotel':item,'hotelImagePath':item.hotelImagePath,'contactPersonImagePath':item.contactPersonImagePath});
     edit.present()
   }
-
-/*  switch(item){
-  
-    this.navCtrl.setRoot(MenuPage,{'id':item.id})
-  }*/
   
   switch(item){
-   /* this.local.set('index',index)
-    this.local.set('hotel'+index,item)
-    this.navCtrl.setRoot(MenuPage,{'index':index})*/
     this.hotelInformation.setHotel(item)
     console.log('switch',this.hotelInformation.hotelInfo);    
     this.navCtrl.setRoot(MapPage)

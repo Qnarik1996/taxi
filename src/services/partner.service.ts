@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Local } from './local';
-import { RequestOptions,Headers,Http } from '@angular/http';
+import { RequestOptions, Headers, Http } from '@angular/http';
 
 @Injectable()
 export class PartnerService {
     private baseUrl: string = "http://164.132.107.245:8633/api"
     constructor(private apiService: ApiService, private httpClient: HttpClient, private local: Local,
-                private http:Http
+        private http: Http
     ) { }
     getRole() {
         return this.apiService.get('/Login/getrole');
@@ -77,7 +77,6 @@ export class PartnerService {
         headers.append('Authorization', 'Bearer ' + accessToken)
         let options = new RequestOptions({ headers: headers });
         return this.http.post(this.baseUrl + '/hotels/edit', formData, options)
-           
 
     }
     public postPartner(option) {

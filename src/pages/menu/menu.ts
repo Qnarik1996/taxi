@@ -34,10 +34,8 @@ export class MenuPage implements OnInit{
     public hotelService: HotelInformation,
     public zone: NgZone,
    
-  ) {
-    
+  ) {    
   }
-
 
   pages: any[] = [
     {
@@ -70,11 +68,6 @@ export class MenuPage implements OnInit{
       this.hotel = this.hotelService.hotelInfo
      })  
 
-
-    
-    console.log(this.hotel, "this.hotel")
-    console.log('service-hotel-menu', this.hotel);
-
     this.partnerService.getPartner().subscribe((data: any) => {
       console.log('partner', data);
       this.phoneNumber=data.phone;
@@ -84,36 +77,20 @@ export class MenuPage implements OnInit{
     })
 
   }
-  console() {
-    console.log('console', this.hotel)
-  }
 
-  addClass(page) {
+
+  /*addClass(page) {
     return this.activePage == page.component
-  }
+    [class.checked-menu]="addClass(page)"
+  }*/
   openPage(page) {
     this.activePage = page.component;
     this.nav.setRoot(page.component, { pageName: page.pageName })
 
   }
   SignOut() {
-
     this.local.remove('email');
     this.navCtrl.setRoot(HomePage);
-
   }
 
 }
-    /* this.id = this.navParams.get('id');    
-     if (this.navParams.get('id')) {    
-         this.partnerService.getHotelsById(this.id).subscribe((data) => {
-         this.hotel = data;          
-         this.flag=true;
-         console.log(this.flag);
-         
-         console.log('hotelInfo', this.hotel);
-       }) 
-     }*/
-         /*this.index = JSON.parse(localStorage.getItem('index'));
-    this.hotel = JSON.parse(localStorage.getItem('hotel' + this.index));
-    console.log('hotelinfo', this.hotel)  */

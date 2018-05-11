@@ -19,10 +19,6 @@ export class EditPhotoPage {
     this.contactPersonImagePath='http://zont.cab:8633/api/file/'+this.navParams.get('contactPersonImagePath');
     this.hotelImagePath='http://zont.cab:8633/api/file/'+this.navParams.get('hotelImagePath');
     this.hotel=this.navParams.get('hotel')
-    console.log(this.hotel);
-    
-    console.log(this.hotelImagePath);
-    console.log(this.contactPersonImagePath);
     
   }
   constructor(public navCtrl: NavController,public viewCtrl:ViewController, public navParams: NavParams,private partnerService:PartnerService) { }
@@ -46,6 +42,7 @@ export class EditPhotoPage {
           this.contactPersonImagePath = e.target.result;
       };
       reader.readAsDataURL(event.target.files[0]);
+      
   }
   }
 

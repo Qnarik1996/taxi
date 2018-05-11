@@ -27,8 +27,8 @@ export class MapPage implements OnInit {
     
     this.hubConnection = new HubConnection("http://zont.cab:8633/hub/map")
     this.hubConnection.on('nearDriversResponse', (data) => {
-      console.log(data);
-      this.flag=true;
+      console.log('driver',data);
+ 
       for (let i = 0; i < this.nearDrivers.length; i++) {
         this.nearDrivers[i].setMap(null);
       }
@@ -45,43 +45,19 @@ export class MapPage implements OnInit {
         position: new google.maps.LatLng(data[i].latitude,data[i].longitude),
         map: this.map,
         title: 'samplemarker',
-        icon:icon,
-      
+        icon:icon,      
     });        
     }
+    
   });
   this.hubConnection.start()
     .then(()=>{
-        if(this.flag){
-          this.getDriversLocation();
-        }
+      if(this.hotelService.hotelInfo){
+        this.getDriversLocation(this.hotelService.hotelInfo.latitude,this.hotelService.hotelInfo.longitude);
+      }       
     })
   }
-  /*this.hubConnection.on("nearDriversResponse",(msg)=>{
-      console.log(msg);
-      
-      for (let i = 0; i < this.nearDrivers.length; i++) {
-        this.nearDrivers[i].setMap(null);
-      }
-      this.nearDrivers = []
-      var icon = {
-        url: "/assets/map/taxi.ico",
-        scaledSize: new google.maps.Size(50, 50),
-        origin: new google.maps.Point(0,0), 
-        anchor: new google.maps.Point(0, 0) 
-    };
-      for (let i = 0; i < msg.length; i++) { 
-        
-        this.nearDrivers[i] = new google.maps.Marker({
-          position: new google.maps.LatLng(msg[i].latitude,msg[i].longitude),
-          map: this.map,
-          title: 'samplemarker',
-          icon:icon,
-        
-      });        
-      }
-    })*/
-
+  
   hotelInformation;
   constructor(public navCtrl: NavController, public menuCtrl: MenuController,public navParams:NavParams,
     private geolocation: Geolocation, private partnerService:PartnerService,public hotelService:HotelInformation) {   
@@ -90,8 +66,6 @@ export class MapPage implements OnInit {
   ionViewDidLoad() {
     this.loadMap()
   }
-//latitude:this.hotelService.hotelInfo.latitude,longitude:this.hotelService.hotelInfo.longitude
-//
 
   private getDriversLocation(latitude=48.864716,longitude=2.349014){
     this.hubConnection.invoke('nearDrivers', {latitude:latitude,longitude:longitude});
@@ -136,16 +110,16 @@ export class MapPage implements OnInit {
     var renderZoomControls = new this.ZoomControl(zoomDiv, this.map);
 
     this.map.controls[google.maps.ControlPosition.TOP_RIGHT].push(zoomDiv);
-    this.marker = new google.maps.Marker({
+   this.marker = new google.maps.Marker({
       position: latLng,
-      map: this.map,
-    
-    
+      map: this.map,       
     });
  
   }
   loadMap() {
-    this.geolocation.getCurrentPosition()
+  /* let latLng=new google.maps.LatLng(48.864716,2.349014);
+    this.initMap(latLng);*/
+  this.geolocation.getCurrentPosition()
       .then((location) => {
         let latLng = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
         this.initMap(latLng);
@@ -211,7 +185,7 @@ export class MapPage implements OnInit {
   
      google.maps.event.addDomListener(zoomin, 'click', () =>{
      var currentZoomLevel = map.getZoom();
-     if(currentZoomLevel != 21){
+     if(currentZoomLevel != 30){
        map.setZoom(currentZoomLevel + 1);}
     });
   }
