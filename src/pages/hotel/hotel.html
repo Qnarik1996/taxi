@@ -15,6 +15,8 @@
                                 <ion-col>
                                         <div class="image-hotel" [ngStyle]="{'background-image':fileUrl+item.hotelImagePath | image}"></div>
                                 </ion-col>
+                            </ion-row>
+                            <ion-row> 
                                 <ion-col>
                                         <div class="text" >
                                                 <div class="name">{{item.name}}</div>
@@ -24,23 +26,18 @@
                                               </div>
                                 </ion-col>
                             </ion-row>
+                        </ion-grid>                          
+                      </ion-card-content>
+                        <ion-grid class="buttons-grid">
+                            <ion-row >
+                                <ion-col>
+                                    <button block color="newblue" ion-button round outline (tap)="switch(item)">Switch</button>
+                                </ion-col>
+                                <ion-col>
+                                    <button block color="newblue" ion-button round outline (tap)="openHotel(item)">Info</button>
+                                </ion-col>
+                            </ion-row>
                         </ion-grid>
-                            
-                            
-                           
-                            <ion-grid class="buttons-grid">
-                                <ion-row >
-                                    <ion-col>
-                                        <button block color="newblue" ion-button round outline (tap)="switch(item)">Switch</button>
-                                    </ion-col>
-                                    <ion-col>
-                                        <button block color="newblue" ion-button round outline (tap)="openHotel(item)">Info</button>
-                                    </ion-col>
-                                </ion-row>
-                            </ion-grid>
-                        </ion-card-content>
-
-
                     </ion-card>
                 
             </ion-col>

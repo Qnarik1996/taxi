@@ -19,7 +19,9 @@ export class HotelRegistrPage implements OnInit {
   lastName;
   email;
   isDataAvailable:boolean=false;
-  ab;
+  contactPersonImagePath;
+  personImage;
+ 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public local: Local,
@@ -34,13 +36,13 @@ export class HotelRegistrPage implements OnInit {
     this.viewCtrl.dismiss()
   }
   save() {
-    this.partnerService.postHotels(null,null,
+    this.partnerService.postHotels(null,this.personImage,
       this.hotelIformation.name,this.hotelIformation.description,this.hotelIformation.email,this.hotelIformation.phoneNumber,
       this.hotelIformation.contactPersonFirstName,this.hotelIformation.contactPersonLastName,
       this.hotelIformation.contactPersonRole,this.hotelIformation.address,this.hotelIformation.longitude,
       this.hotelIformation.latitude,this.hotelIformation.id
     ).subscribe((data)=>{
-      this.viewCtrl.dismiss()
+      this.viewCtrl.dismiss(true)
     })
 
   }
@@ -48,11 +50,27 @@ export class HotelRegistrPage implements OnInit {
   ngOnInit() {
     this.getHotelById(this.id);
   }
-
+  setPersonImage(){
+    let styles={
+      'background-image':'url('+this.contactPersonImagePath+')'
+    }
+    return styles
+  }
+  PersonImageUpload(event){
+    if(event){
+      let reader=new FileReader()
+      this.personImage=event
+      reader.onload=(e:any)=>{
+        this.contactPersonImagePath=e.target.result
+      }
+      reader.readAsDataURL(event.target.files[0])
+    }
+  }
 
   getHotelById(id) {
-    this.partnerService.getHotelsById(id).subscribe((data) => {
+    this.partnerService.getHotelsById(id).subscribe((data:any) => {
       this.hotelIformation = data;
+      this.contactPersonImagePath=this.fileUrl+data.contactPersonImagePath;
       console.log(data);
     })
   }

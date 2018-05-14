@@ -4,11 +4,7 @@
                         <div class="photo-information-user" >
                                 <div class="photo-manager" *ngIf="hotelService.hotelInfo?.contactPersonImagePath" [ngStyle]="{'background-image':fileUrl+hotelService.hotelInfo.contactPersonImagePath | image}"></div>
                                 
-                                <div class="identity-user" *ngIf="!hotelService.hotelInfo?.contactPersonFirstName">
-                                        <p p1-size >{{firstName}} {{ lastName}}</p>                                     
-                                        <p p2-size >{{phoneNumber}}</p>                                        
-                                </div>
-                                <!-- -->
+                               
                                 <div class="identity" *ngIf="hotelService.hotelInfo?.contactPersonFirstName">
                                         <p p1-size >{{hotelService.hotelInfo.contactPersonFirstName}} {{ hotelService.hotelInfo.contactPersonLastName}}</p>                                     
                                         <p p2-size >{{hotelService.hotelInfo.phoneNumber }}</p>                                        

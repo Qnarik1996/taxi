@@ -13,7 +13,7 @@ import { HotelInformation } from '../../services/hotel-information';
   selector: 'page-menu',
   templateUrl: 'menu.html'
 })
-export class MenuPage implements OnInit{
+export class MenuPage implements OnInit {
   @ViewChild(Nav) nav: Nav;
   personName;
   flag: boolean = false;
@@ -22,10 +22,7 @@ export class MenuPage implements OnInit{
   activePage = MapPage
   rootPage = MapPage;
   fileUrl: string = 'http://zont.cab:8633/api/file/'
-
-  firstName;
-  lastName;
-  phoneNumber;
+  hotelinfo;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -33,9 +30,8 @@ export class MenuPage implements OnInit{
     public partnerService: PartnerService,
     public hotelService: HotelInformation,
     public zone: NgZone,
-   
-  ) {    
-  }
+
+  ) { }
 
   pages: any[] = [
     {
@@ -61,18 +57,10 @@ export class MenuPage implements OnInit{
 
   ]
 
-  
+
   ngOnInit() {
-
-     this.zone.run(() => {
-      this.hotel = this.hotelService.hotelInfo
-     })  
-
     this.partnerService.getPartner().subscribe((data: any) => {
       console.log('partner', data);
-      this.phoneNumber=data.phone;
-      this.firstName=data.firstName;
-      this.lastName=data.lastName;
       this.local.set('partner', data)
     })
 

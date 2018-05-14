@@ -8,7 +8,7 @@ page-hotel {
             width: 32.33333%;
             padding: 15px;
             .in-card{
-            
+                position: relative;
                 height: 100%;
                 width: 100%;
                 margin-left: 0px;           
@@ -22,16 +22,15 @@ page-hotel {
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-                height: 150px;
-                width: 150px;
-                float: left;
-                }
-            
+                height: 120px;
+                width: 120px;
+                margin: 0 auto;
+                border-radius: 50%;
+                border: 2px solid white
+                }            
                 .text{
-                float: right;
-        
+               text-align: center;        
                 color: black;
-               
                 }
                 .name{
                     font-size: 1.3em;
@@ -43,6 +42,11 @@ page-hotel {
                 .address{
                     font-size: 1em;
                    
+                }
+                .buttons-grid{
+                    position: absolute;
+                    bottom: -10px
+
                 }
                 .button-outline-ios-newblue, .button-outline-android-newblue {
                     border-color: black;

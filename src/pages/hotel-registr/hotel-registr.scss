@@ -78,6 +78,53 @@ page-hotel-registr {
         top: 8%;
         right: 18%;
     }
+    .file-upload{
+        display: block;
+        text-align: center;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        position: absolute;
+        top: 3%;
+        right: 12%;
+       
+     }
+    .file-upload .file-select{
+        display: block;
+        border: 2px solid #dce4ec;
+        color: #34495e;
+        height: 44px;
+        line-height: 40px;
+        text-align: left;
+        background: #FFFFFF;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    .file-upload .file-select .file-select-name{
+        line-height: 40px;
+        display: inline-block;
+        padding: 0 10px;
+    }
+     .file-upload .file-select .file-select-button{
+        background: #dce4ec;
+        padding: 0 10px;
+        display: inline-block;
+        height: 40px;
+        line-height: 40px;
+        float: right;
+    }
+    .file-upload .file-select input[type=file]{
+        z-index: 100;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
     *[padding-left-none]{
         padding-left: 0px
     }

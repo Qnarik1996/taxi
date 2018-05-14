@@ -67,7 +67,7 @@ export class EditPhotoPage {
       this.hotel.contactPersonRole,this.hotel.address,this.hotel.longitude,
       this.hotel.latitude,this.hotel.id
     ).subscribe((data)=>{
-      this.viewCtrl.dismiss()
+      this.viewCtrl.dismiss(true)
     })
   }
 }

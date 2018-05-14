@@ -2,72 +2,74 @@
     <button ion-button icon-only (tap)="close()">
         <ion-icon name="close"></ion-icon>
     </button>
+    <div class="file-upload">
+        <div class="file-select">
+
+            <div class="file-select-name" id="noFile">Choose file...</div>
+            <div class="file-select-button" id="fileName">Change</div>
+            <input type="file" name="chooseFile" (change)="PersonImageUpload($event)" id="chooseFile">
+        </div>
+    </div>
    
-   <!-- <button ion-button class="edit-photo-button">Edit Photo</button>-->
-    <div class="hotel-image" [ngStyle]="{'background-image':fileUrl+hotelIformation.contactPersonImagePath | image}"> </div>
-
-    
-
-
-
+    <div class="hotel-image" [ngStyle]="setPersonImage()"> </div>
 
     <p>{{hotelIformation.name}}</p>
-   
-        <ion-grid>
 
-            <ion-row>
-                <ion-col col-7 padding-right-none>
-                    <ion-item >
-                        <ion-label floating>Name</ion-label>
-                        <ion-input  [(ngModel)]="hotelIformation.name" type="text"></ion-input>
-                    </ion-item>
-                </ion-col>
-                <ion-col padding-left-none>
-                    <ion-item padding-left-none >
-                        <ion-label floating>Address</ion-label>
-                        <ion-input [(ngModel)]="hotelIformation.address" type="text"></ion-input>
-                    </ion-item>
-                </ion-col>
-            </ion-row>
-            <ion-row class="contact-info">
-                <ion-col>
-                    <div>Contact info.</div>
-                </ion-col>
+    <ion-grid>
 
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <ion-item >
-                        <ion-label floating>First Name</ion-label>
-                        <ion-input [(ngModel)]="hotelIformation.contactPersonFirstName" type="text"></ion-input>
-                    </ion-item>
-                </ion-col>
-                <ion-col offset-2>
-                    <ion-item >
-                        <ion-label floating>Last Name</ion-label>
-                        <ion-input [(ngModel)]="hotelIformation.contactPersonLastName"  type="text"></ion-input>
-                    </ion-item>
-                </ion-col>
-            </ion-row>
-            <ion-row margin-top>
-                <ion-col>
-                    <ion-item >
-                        <ion-label floating>Email</ion-label>
-                        <ion-input [(ngModel)]="hotelIformation.email"  type="email"></ion-input>
-                    </ion-item>
-                </ion-col>
-                <ion-col offset-2>
-                    <ion-item >
-                        <ion-label floating>Phone</ion-label>
-                        <ion-input [(ngModel)]="hotelIformation.phoneNumber"  type=""></ion-input>
-                    </ion-item>
-                </ion-col>
-            </ion-row>
-            
-            <div class="save-div">
-                <button ion-button class="save" round (tap)="save()">Save</button>
-            </div>
+        <ion-row>
+            <ion-col col-7 padding-right-none>
+                <ion-item>
+                    <ion-label floating>Name</ion-label>
+                    <ion-input [(ngModel)]="hotelIformation.name" type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col padding-left-none>
+                <ion-item padding-left-none>
+                    <ion-label floating>Address</ion-label>
+                    <ion-input [(ngModel)]="hotelIformation.address" type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row class="contact-info">
+            <ion-col>
+                <div>Contact info.</div>
+            </ion-col>
 
-        </ion-grid>
-    
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label floating>First Name</ion-label>
+                    <ion-input [(ngModel)]="hotelIformation.contactPersonFirstName" type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col offset-2>
+                <ion-item>
+                    <ion-label floating>Last Name</ion-label>
+                    <ion-input [(ngModel)]="hotelIformation.contactPersonLastName" type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row margin-top>
+            <ion-col>
+                <ion-item>
+                    <ion-label floating>Email</ion-label>
+                    <ion-input [(ngModel)]="hotelIformation.email" type="email"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col offset-2>
+                <ion-item>
+                    <ion-label floating>Phone</ion-label>
+                    <ion-input [(ngModel)]="hotelIformation.phoneNumber" type=""></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+
+        <div class="save-div">
+            <button ion-button class="save" round (tap)="save()">Save</button>
+        </div>
+
+    </ion-grid>
+
 </ion-content>

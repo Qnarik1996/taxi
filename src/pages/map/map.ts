@@ -24,7 +24,7 @@ export class MapPage implements OnInit {
   hotel:any;
   nearDrivers:any=[]
   ngOnInit(){     
-    
+    this.checkHotelInformation();
     this.hubConnection = new HubConnection("http://zont.cab:8633/hub/map")
     this.hubConnection.on('nearDriversResponse', (data) => {
       console.log('driver',data);
@@ -53,10 +53,11 @@ export class MapPage implements OnInit {
   this.hubConnection.start()
     .then(()=>{
       if(this.hotelService.hotelInfo){
-        this.getDriversLocation(this.hotelService.hotelInfo.latitude,this.hotelService.hotelInfo.longitude);
+        this.getDriversLocation();
       }       
     })
   }
+  //this.hotelService.hotelInfo.latitude,this.hotelService.hotelInfo.longitude
   
   hotelInformation;
   constructor(public navCtrl: NavController, public menuCtrl: MenuController,public navParams:NavParams,
@@ -90,7 +91,7 @@ export class MapPage implements OnInit {
   initMap(latLng) {
     let mapOption = {
       center: latLng,
-      zoom: 15,
+      zoom: 9,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       streetViewControl: true,
       zoomControl: true,
@@ -103,7 +104,7 @@ export class MapPage implements OnInit {
       fullscreenControl: false,
       scrollWheelZoom:true,
       touchZoom:true,     
-      draggable: false,
+    //  draggable: false,
     }
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOption);
     var zoomDiv = document.createElement('div');
@@ -117,9 +118,9 @@ export class MapPage implements OnInit {
  
   }
   loadMap() {
-  /* let latLng=new google.maps.LatLng(48.864716,2.349014);
-    this.initMap(latLng);*/
-  this.geolocation.getCurrentPosition()
+ let latLng=new google.maps.LatLng(48.864716,2.349014);
+    this.initMap(latLng);
+ /* this.geolocation.getCurrentPosition()
       .then((location) => {
         let latLng = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
         this.initMap(latLng);
@@ -127,7 +128,7 @@ export class MapPage implements OnInit {
       .catch(() => {
         let latLng = new google.maps.LatLng(40.7958024, 43.8570917);
         this.initMap(latLng)
-      });
+      });*/
 
   }
 
@@ -190,7 +191,12 @@ export class MapPage implements OnInit {
     });
   }
   
-
+  checkHotelInformation(){
+    let hotel=JSON.parse(localStorage.getItem('hotel'));
+    if(hotel){
+      this.hotelService.hotelInfo=hotel;
+    }
+  }
 
 }
 
