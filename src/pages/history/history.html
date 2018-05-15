@@ -1,14 +1,8 @@
 <new-header [pageName]="pageName"></new-header>
-
-
 <ion-content top>
   <ion-card *ngFor="let item of history" (tap)="openInformation(item)">
     <ion-grid>
       <ion-row class="first-row">
-        <ion-col col-1>
-
-
-        </ion-col>
         <ion-col>
           <ion-grid>
             <ion-row *ngFor="let direction of item.directions; let i = index">
@@ -24,12 +18,8 @@
               </ion-col>
             </ion-row>
           </ion-grid>
-
         </ion-col>
       </ion-row>
-
-
     </ion-grid>
   </ion-card>
-
 </ion-content>

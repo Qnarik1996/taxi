@@ -16,18 +16,21 @@ page-hotel {
                 
                .edit{
                    float:right;
+                   height: 40px;
+                   width: 40px;
+                   margin: 0;
+                   background-color: grey;
                }
                 .image-hotel{
-
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                height: 120px;
-                width: 120px;
-                margin: 0 auto;
-                border-radius: 50%;
-                border: 2px solid white
-                }            
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    height: 120px;
+                    width: 120px;
+                    margin: 0 auto;
+                    border-radius: 50%;
+                    border: 2px solid white
+                    }            
                 .text{
                text-align: center;        
                 color: black;

@@ -29,13 +29,14 @@
      
             <ion-icon [name]="icon" (tap)="ok()"></ion-icon>
         </div>
-        <ion-grid>
+     
+       <ion-grid>
             <ion-row justify-content-center>
                 <ion-col>
                     <div class="Cardiv">
-                        <div class="orderCar">
+                        <button ion-button class="orderCar">
                             <ion-icon name="car"></ion-icon>
-                        </div>
+                        </button>
                         <div class="text">
                             <span>Basic</span>
                             <span>$8.20</span>
@@ -51,9 +52,9 @@
                 </ion-col>
                 <ion-col>
                     <div class="Cardiv">
-                        <div class="orderCar">
+                        <button ion-button class="orderCar">
                             <ion-icon name="car"></ion-icon>
-                        </div>
+                        </button>
                         <div class="text">
                             <span>Normal</span>
                             <span>$25.30</span>
@@ -68,9 +69,9 @@
                 </ion-col>
                 <ion-col>
                     <div class="Cardiv">
-                        <div class="orderCar">
+                        <button ion-button class="orderCar">
                             <ion-icon name="car"></ion-icon>
-                        </div>
+                        </button>
                         <div class="text">
                             <span>Luxurious</span>
                             <span>$38.20</span>
@@ -78,36 +79,10 @@
                     </div>
                 </ion-col>
             </ion-row>
-
-
         </ion-grid>
-
         <div class="footer">
-            <div class="money">
-                <ion-grid>
-                    <ion-row justify-content-end>
-                        <ion-col>
-                            <div class="price">
-                                <div>$</div>
-                            </div>
-                        </ion-col>
-                        <ion-col align-self-center>
-                            <span>Cash</span>
-                        </ion-col>
-                        <ion-col>
-                            <div class="promo">
-                                <p> %</p>
-                            </div>
-                        </ion-col>
-                        <ion-col align-self-center>
-                            <span>Promo</span>
-                        </ion-col>
-                    </ion-row>
-                </ion-grid>
-
-            </div>
+           <button full  ion-button class="order-button" icon-only>Order</button>
         </div>
     </div>
     <div #map id="map"></div>
-
 </ion-content>

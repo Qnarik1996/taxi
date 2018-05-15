@@ -59,6 +59,11 @@ page-edit-photo {
         left: 0;
         opacity: 0;
     }
+    .button[icon-only]{
+        float: right;
+        margin: 0;
+        border-radius: 0;
+    }
     .change-button{
         margin-top: 20px;
     }

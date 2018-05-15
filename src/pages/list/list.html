@@ -1,6 +1,6 @@
 <ion-content>
     <div *ngFor="let item of list;let k=index; let last=last" [ngClass]="{'big-card':k==0}">
-        <accordion-width-chart [data] = "item" [list]="list" [k]="k" [h]= "i==0 ? 110:80"  (tap)="scrollToBottomList(last,k)">
+        <accordion-width-chart [data] = "item" [list]="list" [k]="k" [h]= "k==0 ? 110:80"  (tap)="scrollToBottomList(last,k)">
         </accordion-width-chart>       
     </div>
 </ion-content>

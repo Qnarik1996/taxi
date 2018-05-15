@@ -59,7 +59,9 @@ export class EditPhotoPage {
     };
     return styles;
   }
-
+  closeModal(){
+    this.viewCtrl.dismiss()
+  }
   updateImages(){
     this.partnerService.postHotels(this.hotelImage,this.personImage,
       this.hotel.name,this.hotel.description,this.hotel.email,this.hotel.phoneNumber,

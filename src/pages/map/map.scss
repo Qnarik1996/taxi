@@ -24,10 +24,124 @@ page-map {
    }
     .plane{
         color: #FF435C;         
-         }   
-
+         } 
   
-  .messege-grid{
+
+      .bot {
+        position: absolute;
+        height: 263px;
+        width: 100%;
+        bottom: -220px;
+        background: white; 
+        transition: bottom 1s;
+        z-index: 99999999
+      }
+      .bottom{
+        bottom: 0;
+        position: absolute;
+        height:263px;
+        width: 100%; 
+        background: white; 
+        transition: bottom 1s;
+        z-index: 99999999
+       }
+     
+    
+#map{
+    height: 100%;
+     width: 100%
+}
+.button-ios, .button-md{
+    color: #999;
+    background-color: white;
+}
+.button-ios.activated, .button-md.activated{
+  background-color: white;
+}
+.content{
+ position: absolute;
+ z-index: 999999;
+ height: 100%;
+ width: 100%;
+  
+}
+.menuopen{
+  z-index:9999999;
+  position:absolute;
+   top:0; 
+   left:0  
+}
+.orderCar{
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background: LightGray ;
+  display: flex;
+  align-items: center;
+  ion-icon{
+    font-size: 55px;
+    color: #6b0b0b;
+    margin: 0 auto;
+  }
+}
+
+.messege-grid{
+  padding: 0
+}
+
+ion-grid{ 
+ 
+  ion-row{
+  margin: 0 auto
+  }
+  }
+  .Cardiv{
+    .text{
+      text-align: center;
+      width: 100px;
+      color: grey;
+      font-size: 1.5em;
+          }
+    }
+    .connect{
+      height: 110px;
+      display: flex;
+      align-items: center;
+    .line{
+      width: 100px;
+      height: 7px;
+      border-radius: 20px;
+      background-color: silver
+      ;
+    }
+    }
+    .footer{
+      
+     // border-top: 3px solid silver;
+      
+        .order-button{
+          height: 50px;
+          width: 100%;
+          float: right;
+          background-color: #999;
+          margin: 0;
+          color: white;
+          margin-top: 5px
+        }
+      }
+      .button-ios.activated{
+        background-color: white;
+        opacity: 0;
+      }   
+  }
+  *[center]{
+    text-align: center
+  }
+  }
+
+
+/*
+ .messege-grid{
     flex-direction: column-reverse;
     height: 35vw;
     width: fit-content;  
@@ -107,162 +221,5 @@ page-map {
       }
     }
 
-}
-  
-
-      .bot {
-        position: absolute;
-        height: 35vh;
-        width: 100%;
-        bottom: -30vh;
-        background: white; 
-        transition: bottom 1s;
-        z-index: 99999999
-      }
-      .bottom{
-        bottom: 0;
-        position: absolute;
-       height: 35vh;
-        width: 100%; 
-        background: white; 
-        transition: bottom 1s;
-        z-index: 99999999
-       }
-     
-    
-#map{
-    height: 100%;
-     width: 100%
-}
-.button-ios, .button-md{
-    color: #999;
-    background-color: white;
-}
-.button-ios.activated, .button-md.activated{
-  background-color: white;
-}
-.content{
- position: absolute;
- z-index: 999999;
- height: 100%;
- width: 100%;
-  
-}
-.menuopen{
-  z-index:9999999;
-  position:absolute;
-   top:0; 
-   left:0  
-}
-.orderCar{
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  background: LightGray ;
-  display: flex;
-  align-items: center;
-  ion-icon{
-    font-size: 55px;
-    color: #6b0b0b;
-    margin: 0 auto;
-  }
-}
-
-
-
-ion-grid{
-  
- 
-ion-row{
-margin: 0 auto
-}
-}
-.Cardiv{
-  .text{
-    text-align: center;
-    width: 12vh;
-    color: grey;
-    font-size: 1.5em;
-        }
-  }
-  .connect{
-    height: 12vh;
-    display: flex;
-    align-items: center;
-  .line{
-    width: 100px;
-    height: 7px;
-    border-radius: 20px;
-    background-color: silver
-     ;
-  }
-  }
-  .footer{
-    width: 100%;
-    border-top: 3px solid silver;
-     position: relative;
-    .money{
-      width: 45vh;
-      position: absolute;
-      right: 50px;
-      ion-grid{
-        ion-row{
-          width: 100%;
-          ion-col{
-           
-            span{
-              font-size: 2em;
-            color:grey;
-          }
-             
-    .price{
-      position: absolute;
-      background-color: silver;
-      border-radius: 5px;
-      height: 46px;
-      width: 73px;
-      text-align: center;
-      align-items: center;
-      margin: 0 auto;
-      display: flex;
-    div{
-      border-radius: 50%;
-      background-color: white;
-      margin: 0 auto;
-      width: 25px;
-      color: gray;
-      font-size: 1.5em;
-      font-weight: bold;
-      text-align: center;
-    }
-  }
-  .promo{
-   
-      background-color: silver;
-      border-radius: 5px;
-      height: 46px;
-      width: 73px;
-      text-align: center;
-      align-items: center;
-      margin: 0 auto;
-      display: flex;
-      color: white;
-      font-size: 2.5em;
-      p{
-        margin: 0 auto;
-      }
-  }
-  }
-}
-}
-      }
-    }
-   
-  }
-  *[center]{
-    text-align: center
-  }
-  }
-
-
-
+} 
+*/

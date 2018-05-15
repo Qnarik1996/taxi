@@ -39,8 +39,7 @@ export class MapPage implements OnInit {
         origin: new google.maps.Point(0,0), 
         anchor: new google.maps.Point(0, 0) 
     };
-    for (let i = 0; i < data.length; i++) { 
-        
+    for (let i = 0; i < data.length; i++) {        
       this.nearDrivers[i] = new google.maps.Marker({
         position: new google.maps.LatLng(data[i].latitude,data[i].longitude),
         map: this.map,
@@ -53,11 +52,11 @@ export class MapPage implements OnInit {
   this.hubConnection.start()
     .then(()=>{
       if(this.hotelService.hotelInfo){
-        this.getDriversLocation();
+        this.getDriversLocation(this.hotelService.hotelInfo.latitude,this.hotelService.hotelInfo.longitude);
       }       
     })
   }
-  //this.hotelService.hotelInfo.latitude,this.hotelService.hotelInfo.longitude
+  
   
   hotelInformation;
   constructor(public navCtrl: NavController, public menuCtrl: MenuController,public navParams:NavParams,
@@ -91,7 +90,7 @@ export class MapPage implements OnInit {
   initMap(latLng) {
     let mapOption = {
       center: latLng,
-      zoom: 9,
+      zoom: 16,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       streetViewControl: true,
       zoomControl: true,
@@ -104,7 +103,7 @@ export class MapPage implements OnInit {
       fullscreenControl: false,
       scrollWheelZoom:true,
       touchZoom:true,     
-    //  draggable: false,
+      draggable: false,
     }
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOption);
     var zoomDiv = document.createElement('div');
@@ -118,9 +117,9 @@ export class MapPage implements OnInit {
  
   }
   loadMap() {
- let latLng=new google.maps.LatLng(48.864716,2.349014);
+ let latLng=new google.maps.LatLng(this.hotelService.hotelInfo.latitude,this.hotelService.hotelInfo.longitude);
     this.initMap(latLng);
- /* this.geolocation.getCurrentPosition()
+  /*this.geolocation.getCurrentPosition()
       .then((location) => {
         let latLng = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
         this.initMap(latLng);

@@ -44,8 +44,6 @@ export class PartnerService {
 
     public postHotels(hotelImage, personImage, hotelname, description, email, phonenumber, firstname, lastname, role, address, lng, lat, id) {
 
-        console.log(hotelImage);
-        console.log(personImage);
         let headers: Headers = new Headers();
         let formData: FormData = new FormData();
         if (hotelImage && hotelImage.target) {
