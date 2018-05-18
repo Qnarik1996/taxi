@@ -6,7 +6,7 @@
         </button>
     </div>
     <div [ngClass]="{'bot':okay == false, 'bottom':okay == true}" center>
-        <button full  ion-button (tap)="ok()" [ngClass]="{'open':okay}" class="color-button" no-margin >Պատվիրել</button>
+        <button full ion-button (tap)="ok()" [ngClass]="{'open':okay}" class="color-button" no-margin>Պատվիրել</button>
         <ion-grid class="messege-grid">
             <ion-row *ngFor="let item of order; let i=index">
                 <ion-col>
@@ -21,68 +21,37 @@
             </ion-row>
 
         </ion-grid>
-
-      <!--  <button (tap)="addNewCard()" ion-button class="add-button"  icon-only>
-            <ion-icon name="paper-plane" class="plane"></ion-icon>
-        </button>-->
+        
         <div style="text-align:center; color: gray">
-     
+
             <ion-icon [name]="icon" (tap)="ok()"></ion-icon>
         </div>
-     
-       <ion-grid>
-            <ion-row justify-content-center>
-                <ion-col>
-                    <div class="Cardiv">
-                        <button ion-button class="orderCar">
-                            <ion-icon name="car"></ion-icon>
-                        </button>
-                        <div class="text">
-                            <span>Basic</span>
-                            <span>$8.20</span>
 
-                        </div>
-                    </div>
-                </ion-col>
-                <ion-col>
-                    <div class="connect">
-                        <div class="line">
-                        </div>
-                    </div>
-                </ion-col>
-                <ion-col>
-                    <div class="Cardiv">
-                        <button ion-button class="orderCar">
-                            <ion-icon name="car"></ion-icon>
-                        </button>
-                        <div class="text">
-                            <span>Normal</span>
-                            <span>$25.30</span>
-                        </div>
-                    </div>
-                </ion-col>
-                <ion-col>
-                    <div class="connect">
-                        <div class="line">
-                        </div>
-                    </div>
-                </ion-col>
-                <ion-col>
-                    <div class="Cardiv">
-                        <button ion-button class="orderCar">
-                            <ion-icon name="car"></ion-icon>
-                        </button>
-                        <div class="text">
-                            <span>Luxurious</span>
-                            <span>$38.20</span>
-                        </div>
-                    </div>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-        <div class="footer">
-           <button full  ion-button class="order-button" icon-only>Order</button>
+        <div class="back">
+            <button ion-button (tap)="backSlide()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
         </div>
+        <ion-slides>
+            <ion-slide class="cars-slide" *ngFor="let item of cars">
+                <div class="cars-button">
+                    <button ion-button>
+                        <ion-icon [name]="item.icon"></ion-icon>
+                    </button>
+                </div>
+                <div>{{item.type}}</div>
+                <div>{{item.price}}</div>
+
+            </ion-slide>
+        </ion-slides>
+        <div class="next">
+            <button ion-button (tap)="goToSlide()">
+                <ion-icon name="arrow-forward"></ion-icon>
+            </button>
+        </div>
+        <button ion-button class="order-button">
+            Order
+        </button>
     </div>
     <div #map id="map"></div>
 </ion-content>

@@ -2,14 +2,13 @@
         <ion-content>
                 <div class="taxi-image"  >
                         <div class="photo-information-user" >
-                                <div class="photo-manager" *ngIf="hotelService.hotelInfo?.contactPersonImagePath" [ngStyle]="{'background-image':fileUrl+hotelService.hotelInfo.contactPersonImagePath | image}"></div>
+                                <div *ngIf="!hotelService.hotelInfo?.contactPersonImagePath" class="without-image-div"></div>
                                 
-                               
+                                <div class="photo-manager" *ngIf="hotelService.hotelInfo?.contactPersonImagePath" [ngStyle]="{'background-image':fileUrl+hotelService.hotelInfo.contactPersonImagePath | image}"></div>                                                             
                                 <div class="identity" *ngIf="hotelService.hotelInfo?.contactPersonFirstName">
                                         <p p1-size >{{hotelService.hotelInfo.contactPersonFirstName}} {{ hotelService.hotelInfo.contactPersonLastName}}</p>                                     
                                         <p p2-size >{{hotelService.hotelInfo.phoneNumber }}</p>                                        
-                                </div>
-                                
+                                </div>                                
                         </div>
                         <button ion-item *ngFor="let page of pages" class="nobackground" menuClose  (tap)="openPage(page)"
                                 detail-none>

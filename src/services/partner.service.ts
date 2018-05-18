@@ -80,4 +80,5 @@ export class PartnerService {
     public postPartner(option) {
         return this.apiService.postJS('/partner/edit', option)
     }
+  
 }

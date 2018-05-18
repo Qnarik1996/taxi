@@ -37,8 +37,7 @@ export class HotelPage implements OnInit{
   openHotel(item) {
     let hotel = this.modalCtrl.create(HotelRegistrPage,{'id':item.id});
     hotel.onWillDismiss((data)=>{
-      if(data){
-     
+      if(data){     
         this.getHotels().subscribe(()=>{
             let hotel=this.cards.filter((i)=>{
               return i.id===item.id;
@@ -52,15 +51,13 @@ export class HotelPage implements OnInit{
   editPhoto(item){
     let edit=this.modalCtrl.create(EditPhotoPage,{'hotel':item,'hotelImagePath':item.hotelImagePath,'contactPersonImagePath':item.contactPersonImagePath});
     edit.onDidDismiss((data)=>{
-      if(data){
-        
+      if(data){        
         this.getHotels().subscribe(()=>{
             let hotel=this.cards.filter((i)=>{
               return i.id===item.id;
             })[0];
             this.hotelInformation.setHotel(hotel);        
-        });
-            
+        });            
       }
     })
     edit.present()

@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { NavController, MenuController, NavParams } from 'ionic-angular';
+import { NavController, MenuController, NavParams, Slides } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { PartnerService } from '../../services/partner.service';
 import 'rxjs/operators/map';
@@ -15,20 +15,38 @@ const order: any[] = [
 })
 
 export class MapPage implements OnInit {
-  switchedHotelInfo:any;
-  flag:boolean=false;
-  hubConnection:HubConnection;
-  count=0;
+  switchedHotelInfo: any;
+  flag: boolean = false;
+  hubConnection: HubConnection;
+  count = 0;
   marker;
-  index:number;
-  hotel:any;
-  nearDrivers:any=[]
-  ngOnInit(){     
+  index: number;
+  hotel: any;
+  nearDrivers: any = []
+  cars = [
+    {
+      icon: "car",
+      price: "$8.20",
+      type: "Basic"
+    },
+    {
+      icon: "car",
+      price: "$9.20",
+      type: "Normal"
+    },
+    {
+      icon: "car",
+      price: "$10.20",
+      type: "Luxuirous"
+    },
+
+  ]
+  ngOnInit() {
     this.checkHotelInformation();
     this.hubConnection = new HubConnection("http://zont.cab:8633/hub/map")
     this.hubConnection.on('nearDriversResponse', (data) => {
-      console.log('driver',data);
- 
+      console.log('driver', data);
+
       for (let i = 0; i < this.nearDrivers.length; i++) {
         this.nearDrivers[i].setMap(null);
       }
@@ -36,39 +54,39 @@ export class MapPage implements OnInit {
       var icon = {
         url: "/assets/imgs/taxi.ico",
         scaledSize: new google.maps.Size(50, 50),
-        origin: new google.maps.Point(0,0), 
-        anchor: new google.maps.Point(0, 0) 
-    };
-    for (let i = 0; i < data.length; i++) {        
-      this.nearDrivers[i] = new google.maps.Marker({
-        position: new google.maps.LatLng(data[i].latitude,data[i].longitude),
-        map: this.map,
-        title: 'samplemarker',
-        icon:icon,      
-    });        
-    }
-    
-  });
-  this.hubConnection.start()
-    .then(()=>{
-      if(this.hotelService.hotelInfo){
-        this.getDriversLocation(this.hotelService.hotelInfo.latitude,this.hotelService.hotelInfo.longitude);
-      }       
-    })
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(0, 0)
+      };
+      for (let i = 0; i < data.length; i++) {
+        this.nearDrivers[i] = new google.maps.Marker({
+          position: new google.maps.LatLng(data[i].latitude, data[i].longitude),
+          map: this.map,
+          title: 'samplemarker',
+          icon: icon,
+        });
+      }
+
+    });
+    this.hubConnection.start()
+      .then(() => {
+        if (this.hotelService.hotelInfo) {
+          this.getDriversLocation(this.hotelService.hotelInfo.latitude, this.hotelService.hotelInfo.longitude);
+        }
+      })
   }
-  
-  
+
+
   hotelInformation;
-  constructor(public navCtrl: NavController, public menuCtrl: MenuController,public navParams:NavParams,
-    private geolocation: Geolocation, private partnerService:PartnerService,public hotelService:HotelInformation) {   
+  constructor(public navCtrl: NavController, public menuCtrl: MenuController, public navParams: NavParams,
+    private geolocation: Geolocation, private partnerService: PartnerService, public hotelService: HotelInformation) {
   }
   order = order;
   ionViewDidLoad() {
     this.loadMap()
   }
 
-  private getDriversLocation(latitude=48.864716,longitude=2.349014){
-    this.hubConnection.invoke('nearDrivers', {latitude:latitude,longitude:longitude});
+  private getDriversLocation(latitude = 48.864716, longitude = 2.349014) {
+    this.hubConnection.invoke('nearDrivers', { latitude: latitude, longitude: longitude });
   }
 
   //////////////////////
@@ -85,24 +103,25 @@ export class MapPage implements OnInit {
 
 
   @ViewChild('map') mapElement: ElementRef;
+  @ViewChild(Slides) slides: Slides;
   map: any;
   okay: boolean = false;
   initMap(latLng) {
     let mapOption = {
       center: latLng,
-      zoom: 16,
+      zoom: 17,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       streetViewControl: true,
       zoomControl: true,
       zoomControlOptions: {
-          position: google.maps.ControlPosition.LEFT_CENTER
+        position: google.maps.ControlPosition.LEFT_CENTER
       },
       mapTypeControl: false,
       scaleControl: true,
       rotateControl: false,
       fullscreenControl: false,
-      scrollWheelZoom:true,
-      touchZoom:true,     
+      scrollWheelZoom: true,
+      touchZoom: true,
       draggable: false,
     }
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOption);
@@ -110,34 +129,47 @@ export class MapPage implements OnInit {
     var renderZoomControls = new this.ZoomControl(zoomDiv, this.map);
 
     this.map.controls[google.maps.ControlPosition.TOP_RIGHT].push(zoomDiv);
-   this.marker = new google.maps.Marker({
+    this.marker = new google.maps.Marker({
       position: latLng,
-      map: this.map,       
+      map: this.map,
     });
- 
+
   }
   loadMap() {
- let latLng=new google.maps.LatLng(this.hotelService.hotelInfo.latitude,this.hotelService.hotelInfo.longitude);
-    this.initMap(latLng);
-  /*this.geolocation.getCurrentPosition()
-      .then((location) => {
-        let latLng = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
-        this.initMap(latLng);
-      })
-      .catch(() => {
-        let latLng = new google.maps.LatLng(40.7958024, 43.8570917);
-        this.initMap(latLng)
-      });*/
+
+    let hotel = JSON.parse(localStorage.getItem('hotel'))
+    if (hotel) {
+      let latLng = new google.maps.LatLng(this.hotelService.hotelInfo.latitude, this.hotelService.hotelInfo.longitude);
+      this.initMap(latLng);
+    }
+    else {
+      this.geolocation.getCurrentPosition()
+        .then((location) => {
+          let latLng = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
+          this.initMap(latLng);
+        })
+        .catch(() => {
+          let latLng = new google.maps.LatLng(40.7958024, 43.8570917);
+          this.initMap(latLng)
+        })
+    }
 
   }
 
+  goToSlide(item) {
+    this.slides.slideNext(500);
+
+  }
+  backSlide() {
+    this.slides.slidePrev(500)
+  }
   ZoomControl(div, map) {
 
     // Get the control DIV. We'll attach our control UI to this DIV.
-    var controlDiv = div; 
-  
+    var controlDiv = div;
+
     // Set CSS for the controls.
-    controlDiv.style.margin = '8px 18px 0px 22px';   
+    controlDiv.style.margin = '8px 18px 0px 22px';
     controlDiv.style.cursor = 'pointer';
     controlDiv.style.border = "1px solid #9e9e9e"
     controlDiv.style.backgroundColor = "#FFFFFF";
@@ -145,7 +177,7 @@ export class MapPage implements OnInit {
     controlDiv.style.borderRadius = '3px';
     controlDiv.style.height = '36px';
     controlDiv.style.width = '72px';
-  
+
     var zoomout = document.createElement('div');
     zoomout.title = 'Click to zoom out';
     zoomout.style.display = "inline-block"
@@ -153,7 +185,7 @@ export class MapPage implements OnInit {
     zoomout.style.width = '50%';
     zoomout.style.height = '100%';
     controlDiv.appendChild(zoomout);
-  
+
     var zoomoutText = document.createElement('div');
     zoomoutText.innerHTML = '<strong>-</strong>';
     zoomoutText.style.fontSize = '30px';
@@ -161,39 +193,41 @@ export class MapPage implements OnInit {
     zoomoutText.style.textAlign = 'center';
     zoomoutText.style.color = "#9e9e9e"
     zoomout.appendChild(zoomoutText);
-  
+
     var zoomin = document.createElement('div');
     zoomin.title = 'Click to zoom in';
     zoomin.style.display = "inline-block"
     zoomin.style.width = '50%';
     zoomin.style.height = '100%';
     controlDiv.appendChild(zoomin);
-  
+
     var zoominText = document.createElement('div');
     zoominText.innerHTML = '<strong>+</strong>';
     zoominText.style.fontSize = '30px';
     zoominText.style.textAlign = 'center';
     zoominText.style.color = "#9e9e9e"
     zoomin.appendChild(zoominText);
-  
+
     // Setup the click event listeners for zoom-in, zoom-out:
-    google.maps.event.addDomListener(zoomout, 'click', () =>{
-     var currentZoomLevel = map.getZoom();
-     if(currentZoomLevel != 0){
-       map.setZoom(currentZoomLevel - 1);}     
+    google.maps.event.addDomListener(zoomout, 'click', () => {
+      var currentZoomLevel = map.getZoom();
+      if (currentZoomLevel != 0) {
+        map.setZoom(currentZoomLevel - 1);
+      }
     });
-  
-     google.maps.event.addDomListener(zoomin, 'click', () =>{
-     var currentZoomLevel = map.getZoom();
-     if(currentZoomLevel != 30){
-       map.setZoom(currentZoomLevel + 1);}
+
+    google.maps.event.addDomListener(zoomin, 'click', () => {
+      var currentZoomLevel = map.getZoom();
+      if (currentZoomLevel != 30) {
+        map.setZoom(currentZoomLevel + 1);
+      }
     });
   }
-  
-  checkHotelInformation(){
-    let hotel=JSON.parse(localStorage.getItem('hotel'));
-    if(hotel){
-      this.hotelService.hotelInfo=hotel;
+
+  checkHotelInformation() {
+    let hotel = JSON.parse(localStorage.getItem('hotel'));
+    if (hotel) {
+      this.hotelService.hotelInfo = hotel;
     }
   }
 

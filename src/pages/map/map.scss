@@ -88,7 +88,9 @@ page-map {
 .messege-grid{
   padding: 0
 }
+.cars-button{
 
+}
 ion-grid{ 
  
   ion-row{
@@ -96,6 +98,7 @@ ion-grid{
   }
   }
   .Cardiv{
+    background: none;
     .text{
       text-align: center;
       width: 100px;
@@ -107,36 +110,52 @@ ion-grid{
       height: 110px;
       display: flex;
       align-items: center;
+    
     .line{
       width: 100px;
       height: 7px;
       border-radius: 20px;
-      background-color: silver
-      ;
+      background-color: silver;
     }
     }
-    .footer{
-      
-     // border-top: 3px solid silver;
-      
+ 
         .order-button{
-          height: 50px;
-          width: 100%;
-          float: right;
-          background-color: #999;
-          margin: 0;
+          position: absolute;
+          top: 50%;
+          right: 10%;
+          background-color: grey;
           color: white;
-          margin-top: 5px
+          border-radius: 50%;
         }
-      }
-      .button-ios.activated{
-        background-color: white;
-        opacity: 0;
-      }   
+   
   }
+  ion-slides{
+    width: 70%;
+    .cars-slide{
+      width: 100% !important
+    }
+  }
+  .back{
+    position: absolute;
+    top: 50%;
+    z-index: 99999;
+  }
+  .next{
+    position: absolute;
+    top: 49%;
+    right: 28%;
+    z-index: 99999;
+  }
+  .cars-button{
+    .button-ios.activated{
+      background-color: grey;
+    }
+  }
+
   *[center]{
     text-align: center
   }
+
   }
 
 
